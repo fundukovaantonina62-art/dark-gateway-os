@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dark Gateway OS — Specialized Autonomous Security Gateway for Absolute Anonymity, Multi-Layer VLESS Routing, and Zero-Footprint Networking.">
+    <title>Dark Gateway OS — Autonomous Security Gateway</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top System Panel (AwesomeWM Style) -->
+    <header class="system-panel">
+        <div class="panel-left">
+            <div class="system-logo">
+                <span class="logo-glyph">◈</span>
+                <span class="logo-title">Dark Gateway</span>
+                <span class="version-tag">v2.4 LTS</span>
+            </div>
+            <nav class="system-nav">
+                <a href="#overview" class="nav-item active">Overview</a>
+                <a href="#features" class="nav-item">Capabilities</a>
+                <a href="#architecture" class="nav-item">Routing</a>
+                <a href="#comparison" class="nav-item">Benchmark</a>
+                <a href="#download" class="nav-item">Appliance</a>
+            </nav>
+        </div>
+        <div class="panel-right">
+            <div class="status-indicator">
+                <span class="indicator-dot"></span>
+                <span class="indicator-text">TOR ROUTING: ACTIVE</span>
+            </div>
+            <button class="btn-onion" onclick="copyOnion()" title="Click to copy official .onion address">
+                <span class="onion-badge">ONION v3</span>
+                <span id="onion-text">tkefu5...mayid.onion</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="page-layout">
+        <!-- Sidebar HUD (Conky Styled) -->
+        <aside class="sidebar-hud">
+            <div class="hud-window">
+                <div class="hud-header">
+                    <span class="hud-title">SYSTEM TELEMETRY</span>
+                    <span class="hud-status">LIVE</span>
+                </div>
+                <div class="hud-body">
+                    <div class="hud-section">
+                        <div class="hud-label">CORE SYSTEM</div>
+                        <div class="hud-row"><span>KERNEL:</span> <span class="val">6.12.0-amd64</span></div>
+                        <div class="hud-row"><span>ENVIRONMENT:</span> <span class="val">AwesomeWM 4.3</span></div>
+                        <div class="hud-row"><span>RAM USAGE:</span> <span class="val">384MB / 1024MB</span></div>
+                        <div class="hud-row"><span>UPTIME:</span> <span class="val">100.0% Hermetic</span></div>
+                    </div>
+
+                    <div class="hud-section">
+                        <div class="hud-label">NETWORK ISOLATION</div>
+                        <div class="hud-row"><span>WAN (eth0):</span> <span class="val-green">NAT / Firewalled</span></div>
+                        <div class="hud-row"><span>LAN (eth1):</span> <span class="val">10.152.152.10</span></div>
+                        <div class="hud-row"><span>ISOLATION:</span> <span class="val-green">STRICT (0 Leaks)</span></div>
+                    </div>
+
+                    <div class="hud-section">
+                        <div class="hud-label">TOR & PROXY ROUTING</div>
+                        <div class="hud-row"><span>TOR STATUS:</span> <span class="val-green">Online (Circuit 100%)</span></div>
+                        <div class="hud-row"><span>TOR BRIDGE:</span> <span class="val-green">Active (obfs4)</span></div>
+                        <div class="hud-row"><span>VLESS EGRESS:</span> <span class="val-green">XTLS Vision (1080)</span></div>
+                        <div class="hud-row"><span>ANTI-FORENSICS:</span> <span class="val-green">wipe-traces.service</span></div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-viewport">
+            
+            <!-- HERO WINDOW -->
+            <section class="window-frame hero-window" id="overview">
+                <div class="window-titlebar">
+                    <span class="titlebar-text">Dark Gateway OS — Autonomous Security Gateway</span>
+                    <div class="window-controls">
+                        <span class="ctrl-btn">_</span>
+                        <span class="ctrl-btn">□</span>
+                        <span class="ctrl-btn">×</span>
+                    </div>
+                </div>
+                <div class="window-content hero-content">
+                    <div class="hero-header-line">
+                        <span class="tag-badge">SECURITY GATEWAY ARCHITECTURE</span>
+                        <span class="tag-meta">ZERO-TELEMETRY • ANTI-DPI • MULTI-LAYER EGRESS</span>
+                    </div>
+                    
+                    <h1 class="hero-headline">
+                        Hermetic Traffic Isolation.<br>
+                        Multi-Layer VLESS Egress.
+                    </h1>
+                    
+                    <p class="hero-lead">
+                        Dark Gateway OS is an autonomous security gateway designed to strictly isolate local workstation traffic, defeat deep-packet inspection (DPI), and route anonymous streams through private VLESS Reality exit nodes with zero captchas and zero footprint.
+                    </p>
+
+                    <div class="hero-action-bar">
+                        <a href="#download" class="btn btn-primary">
+                            <span class="btn-bullet">▪</span> Download Appliance (OVA)
+                        </a>
+                        <a href="#architecture" class="btn btn-secondary">
+                            <span>View Network Blueprint</span>
+                        </a>
+                        <button class="btn btn-secondary" onclick="copyOnion()">
+                            <span>Copy .onion Mirror</span>
+                        </button>
+                    </div>
+
+                    <!-- Embedded Terminal Console -->
+                    <div class="terminal-widget">
+                        <div class="term-titlebar">
+                            <span>user@dark-gateway: ~ (Terminal Console)</span>
+                            <span>DejaVu Sans Mono 7.5pt</span>
+                        </div>
+                        <div class="term-screen">
+                            <div class="t-line"><span class="t-prefix">[INIT]</span> Dark Gateway 2.4 initializing system modules... <span class="t-green">[OK]</span></div>
+                            <div class="t-line"><span class="t-prefix">[FIREWALL]</span> whonix-firewall: Enforcing strict stream isolation on eth1 (LAN)... <span class="t-green">[ACTIVE]</span></div>
+                            <div class="t-line"><span class="t-prefix">[TOR]</span> Bootstrapping circuit over obfs4 bridge transport... <span class="t-green">[100% DONE]</span></div>
+                            <div class="t-line"><span class="t-prefix">[PROXY]</span> Sing-Box Client: Routing 127.0.0.1:1080 ➔ VLESS Reality Vision ➔ Egress Node</div>
+                            <div class="t-line"><span class="t-prefix">[CLEAN]</span> wipe-traces.service registered on shutdown.target. Zero disk retention.</div>
+                            <div class="t-line t-cmd"><span class="t-user">user@gateway:~$</span> curl -s --socks5-hostname 127.0.0.1:1080 https://check.torproject.org/api/ip</div>
+                            <div class="t-line t-res">➔ Protected Egress: <span class="t-green">Connected through private VLESS node (0 Leaks / 0 Captchas)</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CORE CAPABILITIES (FEATURES) -->
+            <section class="window-frame" id="features">
+                <div class="window-titlebar">
+                    <span class="titlebar-text">Core Capabilities & Technical Features</span>
+                </div>
+                <div class="window-content">
+                    <div class="cards-grid">
+                        <div class="feature-box">
+                            <div class="box-header">
+                                <span class="box-icon">▪</span>
+                                <h3>Multi-Layer Proxy Egress</h3>
+                            </div>
+                            <p>Seamlessly chains onion circuits into private <b>VLESS Reality (XTLS Vision)</b>, <b>Shadowsocks</b>, or <b>Trojan</b> exit nodes. Bypasses Cloudflare/Google captchas and unlocks blocked sites.</p>
+                        </div>
+
+                        <div class="feature-box">
+                            <div class="box-header">
+                                <span class="box-icon">▪</span>
+                                <h3>DPI & Censorship Evasion</h3>
+                                <p>Integrated support for obfuscated bridges (<b>obfs4</b>, <b>webtunnel</b>, <b>snowflake</b>) providing unrestricted network operation behind strict state-level filtering.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-box">
+                            <div class="box-header">
+                                <span class="box-icon">▪</span>
+                                <h3>«Dark Pastels» System Theme</h3>
+                                <p>Engineered in the exact system palette (#222222 / #191a1d / #272727) with high-contrast text (#ffffff / #aaaaaa) and fatigue-free low-contrast borders.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-box">
+                            <div class="box-header">
+                                <span class="box-icon">▪</span>
+                                <h3>1-Click GUI Control Center</h3>
+                                <p>Graphical utilities: <b>Proxy Manager (Cmd+p)</b> with instant <code>vless://</code> key import, <b>Tor Connection Setup</b>, and <b>Network Settings GUI</b>.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-box">
+                            <div class="box-header">
+                                <span class="box-icon">▪</span>
+                                <h3>Automated Anti-Forensics</h3>
+                                <p><b>Wipe Privacy Traces (Cmd+Shift+k)</b> + <code>wipe-traces.service</code> automatically erases browser cache, cookies, shell history, and memory on shutdown while keeping Telegram proxy keys safe.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-box">
+                            <div class="box-header">
+                                <span class="box-icon">▪</span>
+                                <h3>Zero-Telemetry Apps</h3>
+                                <p>Pre-configured with Ungoogled Chromium (auto-proxy fallback), Telegram Desktop with persistent key storage, Mousepad, and zero-latency Midnight Commander.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ARCHITECTURE BLUEPRINT -->
+            <section class="window-frame" id="architecture">
+                <div class="window-titlebar">
+                    <span class="titlebar-text">Network Topology & Routing Architecture</span>
+                </div>
+                <div class="window-content">
+                    <div class="topology-diagram">
+                        <div class="topology-step">
+                            <div class="step-badge">SEGMENT 1</div>
+                            <h4>Client Workstations</h4>
+                            <p>Debian / Tails / Windows<br>No Direct WAN Gateway</p>
+                        </div>
+                        <div class="topology-divider">➔</div>
+                        <div class="topology-step active">
+                            <div class="step-badge">SECURITY GATEWAY</div>
+                            <h4>Dark Gateway Core</h4>
+                            <p>Firewall + Stream Isolation<br>eth1: 10.152.152.10</p>
+                        </div>
+                        <div class="topology-divider">➔</div>
+                        <div class="topology-step">
+                            <div class="step-badge">ANONYMOUS CIRCUIT</div>
+                            <h4>Tor Onion Overlay</h4>
+                            <p>3-Hop Encrypted Routing<br>obfs4 / snowflake bridges</p>
+                        </div>
+                        <div class="topology-divider">➔</div>
+                        <div class="topology-step active-green">
+                            <div class="step-badge">EGRESS NODE</div>
+                            <h4>VLESS Reality Exit</h4>
+                            <p>Clean Private IP<br>Target Destination</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BENCHMARK COMPARISON -->
+            <section class="window-frame" id="comparison">
+                <div class="window-titlebar">
+                    <span class="titlebar-text">Benchmark: Dark Gateway vs Standard CLI Gateway</span>
+                </div>
+                <div class="window-content">
+                    <table class="benchmark-table">
+                        <thead>
+                            <tr>
+                                <th>System Category</th>
+                                <th>Standard CLI Gateway</th>
+                                <th class="col-highlight">Dark Gateway OS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>User Interface (UI/UX)</td>
+                                <td class="td-muted">TTY Console only (Text-mode)</td>
+                                <td class="td-accent">AwesomeWM Dark Pastels GUI</td>
+                            </tr>
+                            <tr>
+                                <td>Multi-Protocol Proxies</td>
+                                <td class="td-muted">Unsupported (Requires custom iptables)</td>
+                                <td class="td-accent">VLESS Reality, Shadowsocks, Trojan</td>
+                            </tr>
+                            <tr>
+                                <td>Desktop Telemetry</td>
+                                <td class="td-muted">None (Manual terminal utilities)</td>
+                                <td class="td-accent">Conky Live Bridge & VLESS Monitor</td>
+                            </tr>
+                            <tr>
+                                <td>Bridge & Proxy Management</td>
+                                <td class="td-muted">Manual editing in nano/vim</td>
+                                <td class="td-accent">1-Click GUI Wizard (vless:// import)</td>
+                            </tr>
+                            <tr>
+                                <td>Anti-Forensic Sanitization</td>
+                                <td class="td-muted">Manual history clearing</td>
+                                <td class="td-accent">Automated wipe-traces.service on shutdown</td>
+                            </tr>
+                            <tr>
+                                <td>Memory Profile & Cold Boot</td>
+                                <td class="td-muted">~280 MB RAM (CLI only)</td>
+                                <td class="td-accent">~384 MB RAM (Full GUI, Boot &lt; 8s)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- APPLIANCE DOWNLOAD & SECURITY -->
+            <section class="window-frame" id="download">
+                <div class="window-titlebar">
+                    <span class="titlebar-text">Virtual Appliance Deployment & Integrity</span>
+                </div>
+                <div class="window-content download-box">
+                    <div class="download-info">
+                        <h3>Dark Gateway OS — Virtual Appliance (OVA)</h3>
+                        <p>Universal image compatible with VMware Fusion / Workstation, VirtualBox, KVM / QEMU, and Proxmox VE.</p>
+                        
+                        <div class="hash-field">
+                            <span class="hash-type">SHA-256:</span>
+                            <code class="hash-string" id="file-hash">8a4f91c6e27b134d98a72c4e5f0b12a893c72e19034f59c78214de98a213904a</code>
+                            <button class="btn btn-mini" onclick="copyHash()">Copy</button>
+                        </div>
+                    </div>
+                    <div class="download-buttons">
+                        <button class="btn btn-primary" onclick="alert('Download package available in local Gateway repository.')">
+                            <span class="btn-bullet">⬇</span> Download OVA (4.7 GB)
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- System Footer -->
+    <footer class="system-footer">
+        <div class="footer-inner">
+            <span>DARK GATEWAY OS • ZERO LOGS • ZERO COMPROMISES</span>
+            <span>HOSTED ON THE TOR ONION NETWORK (.ONION v3)</span>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
