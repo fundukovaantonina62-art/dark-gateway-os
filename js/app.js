@@ -1,16 +1,16 @@
 // Dark Gateway OS — Shared Client Scripts (Terminal simulator, Lightbox modal, Copy helpers)
 
 const COPY_TOASTS = {
-    "en": { "copied": "COPIED!", "btn": "✓ Copied" },
-    "ru": { "copied": "СКОПИРОВАНО!", "btn": "✓ Скопировано" },
-    "es": { "copied": "¡COPIADO!", "btn": "✓ Copiado" },
-    "zh": { "copied": "已复制！", "btn": "✓ 已复制" },
-    "de": { "copied": "KOPIERT!", "btn": "✓ Kopiert" },
-    "fr": { "copied": "COPIÉ !", "btn": "✓ Copié" },
-    "pt": { "copied": "COPIADO!", "btn": "✓ Copiado" },
-    "ja": { "copied": "コピーしました!", "btn": "✓ コピー完了" },
-    "tr": { "copied": "KOPYALANDI!", "btn": "✓ Kopyalandı" },
-    "ar": { "copied": "تم النسخ بنجاح!", "btn": "✓ تم النسخ" }
+    "en": { "copied": "COPIED!", "btn": "✓ Copied", "addr": "✓ Address Copied" },
+    "ru": { "copied": "СКОПИРОВАНО!", "btn": "✓ Скопировано", "addr": "✓ Адрес скопирован" },
+    "es": { "copied": "¡COPIADO!", "btn": "✓ Copiado", "addr": "✓ Dirección copiada" },
+    "zh": { "copied": "已复制！", "btn": "✓ 已复制", "addr": "✓ 地址已复制" },
+    "de": { "copied": "KOPIERT!", "btn": "✓ Kopiert", "addr": "✓ Adresse kopiert" },
+    "fr": { "copied": "COPIÉ !", "btn": "✓ Copié", "addr": "✓ Adresse copiée" },
+    "pt": { "copied": "COPIADO!", "btn": "✓ Copiado", "addr": "✓ Endereço copiado" },
+    "ja": { "copied": "コピーしました!", "btn": "✓ コピー完了", "addr": "✓ アドレスをコピーしました" },
+    "tr": { "copied": "KOPYALANDI!", "btn": "✓ Kopyalandı", "addr": "✓ Adres Kopyalandı" },
+    "ar": { "copied": "تم النسخ بنجاح!", "btn": "✓ تم النسخ", "addr": "✓ تم نسخ العنوان" }
 };
 
 function getToastMessages() {
@@ -55,6 +55,27 @@ function copyHash() {
         }
     }).catch(err => {
         console.error('Failed to copy hash:', err);
+    });
+}
+
+function copyDonate() {
+    const walletText = document.getElementById('usdt-wallet-addr')?.textContent.trim() || 'TLzJkFEYnGcmot8QGY2ZcKQSNGWKVAXqch';
+    const btn = document.getElementById('copy-donate-btn');
+    const toast = getToastMessages();
+    navigator.clipboard.writeText(walletText).then(() => {
+        if (btn) {
+            const original = btn.textContent;
+            btn.textContent = toast.addr || toast.btn;
+            btn.classList.remove('text-gray-300', 'bg-dark-input');
+            btn.classList.add('text-accent-green', 'bg-dark-hover', 'border-accent-green');
+            setTimeout(() => {
+                btn.textContent = original;
+                btn.classList.remove('text-accent-green', 'bg-dark-hover', 'border-accent-green');
+                btn.classList.add('text-gray-300', 'bg-dark-input');
+            }, 2500);
+        }
+    }).catch(err => {
+        console.error('Failed to copy donate address:', err);
     });
 }
 
