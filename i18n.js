@@ -304,7 +304,7 @@ const I18N = {
         "sec_threat_i1": "• <b>Protection against ISP sniffing:</b> 100% of outbound traffic is encapsulated inside WebTunnel HTTPS or Tor v3 onion circuits.",
         "sec_threat_i2": "• <b>Protection against DPI fingerprinting:</b> VLESS Reality with XTLS Vision mimics authentic TLS certificates of popular CDNs, making traffic indistinguishable from normal HTTPS browsing.",
         "sec_threat_i3": "• <b>Protection against DNS and WebRTC leaks:</b> Internal DNS resolver routes all queries to <code>10.152.152.10:5300</code> inside Tor, completely bypassing ISP DNS servers.",
-        "nav_donate": "Donate (USDT)",
+        "nav_donate": "☕ Donate (USDT)",
         "footer_nav_donate": "Support Project",
         "donate_window_title": "Support Project Development (Donate USDT TRC20)",
         "donate_hero_tag": "Project Support",
@@ -325,7 +325,11 @@ const I18N = {
         "donate_src_un": "United Nations Security Council Consolidated Sanctions List",
         "donate_src_ofac": "Office of Foreign Assets Control (OFAC) — US Department of the Treasury",
         "donate_src_eu": "European Union Consolidated Financial Sanctions List",
-        "donate_src_local": "Local compliance lists published by financial regulators in your jurisdiction."
+        "donate_src_local": "Local compliance lists published by financial regulators in your jurisdiction.",
+        "sidebar_donate_title": "☕ Support (USDT TRC20)",
+        "sidebar_donate_btn": "Copy USDT Address",
+        "hero_donate_title": "Support Developer & Project",
+        "hero_donate_details": "Rules & QR Code ➔"
     },
     "ru": {
         "nav_overview": "Главная (Overview)",
@@ -617,7 +621,7 @@ const I18N = {
         "sec_threat_i1": "• <b>Защита от сниффинга провайдером (ISP):</b> 100% исходящего трафика инкапсулировано внутри WebTunnel HTTPS или Tor v3 onion цепочек.",
         "sec_threat_i2": "• <b>Защита от DPI-блокировок:</b> VLESS Reality с XTLS Vision полностью маскирует трафик под легитимные TLS-сертификаты крупных мировых CDN, делая его неотличимым от обычного веб-серфинга.",
         "sec_threat_i3": "• <b>Защита от утечек DNS и WebRTC:</b> Внутренний DNS-резолвер принудительно направляет все запросы на <code>10.152.152.10:5300</code> внутри Tor, полностью минуя DNS провайдера.",
-        "nav_donate": "Поддержка (USDT)",
+        "nav_donate": "☕ Донат (USDT)",
         "footer_nav_donate": "Поддержать проект",
         "donate_window_title": "Поддержка разработки проекта (Donate USDT TRC20)",
         "donate_hero_tag": "Поддержка проекта",
@@ -638,7 +642,11 @@ const I18N = {
         "donate_src_un": "Список санкций Совета Безопасности ООН",
         "donate_src_ofac": "Управление по контролю за иностранными активами (OFAC) — Министерство финансов США",
         "donate_src_eu": "Консолидированный список финансовых санкций Европейского Союза",
-        "donate_src_local": "Локальные списки от регуляторов вашей страны."
+        "donate_src_local": "Локальные списки от регуляторов вашей страны.",
+        "sidebar_donate_title": "☕ Поддержка (USDT TRC20)",
+        "sidebar_donate_btn": "Скопировать USDT",
+        "hero_donate_title": "Поддержка разработки проекта",
+        "hero_donate_details": "Правила и QR-код ➔"
     },
     "es": {
         "nav_overview": "Inicio (Overview)",
@@ -930,7 +938,7 @@ const I18N = {
         "sec_threat_i1": "• <b>Protección contra inspección del ISP:</b> El 100% del tráfico saliente está encapsulado dentro de WebTunnel HTTPS o circuitos onion de Tor v3.",
         "sec_threat_i2": "• <b>Protección contra huellas DPI:</b> VLESS Reality con XTLS Vision imita certificados TLS auténticos de CDNs populares, haciendo que el tráfico sea indistinguible de la navegación web normal.",
         "sec_threat_i3": "• <b>Protección contra fugas de DNS y WebRTC:</b> El resolver DNS interno redirige todas las consultas a <code>10.152.152.10:5300</code> dentro de Tor, eludiendo completamente los servidores DNS del proveedor.",
-        "nav_donate": "Donar (USDT)",
+        "nav_donate": "☕ Donar (USDT)",
         "footer_nav_donate": "Apoyar el proyecto",
         "donate_window_title": "Apoyo al Desarrollo del Proyecto (Donar USDT TRC20)",
         "donate_hero_tag": "Apoyo al Proyecto",
@@ -951,7 +959,11 @@ const I18N = {
         "donate_src_un": "Lista consolidada de sanciones del Consejo de Seguridad de la ONU",
         "donate_src_ofac": "Oficina de Control de Activos Extranjeros (OFAC) — Departamento del Tesoro de EE. UU.",
         "donate_src_eu": "Lista consolidada de sanciones financieras de la Unión Europea",
-        "donate_src_local": "Listas locales de los reguladores financieros de tu país."
+        "donate_src_local": "Listas locales de los reguladores financieros de tu país.",
+        "sidebar_donate_title": "☕ Donación (USDT TRC20)",
+        "sidebar_donate_btn": "Copiar USDT",
+        "hero_donate_title": "Apoyo al Desarrollo del Proyecto",
+        "hero_donate_details": "Reglas y QR ➔"
     },
     "zh": {
         "nav_overview": "总览 (Overview)",
@@ -1243,7 +1255,7 @@ const I18N = {
         "sec_threat_i1": "• <b>防范运营商 (ISP) 嗅探：</b> 100% 的出站流量均封装于 WebTunnel HTTPS 隧道或 Tor v3 洋葱加密链路中。",
         "sec_threat_i2": "• <b>防范深度数据包检测 (DPI)：</b> 搭载 XTLS Vision 的 VLESS Reality 将流量精确伪装成全球主流 CDN 的合法 TLS 流量，使其与普通网页浏览完全无法区分。",
         "sec_threat_i3": "• <b>防范 DNS 与 WebRTC 泄漏：</b> 内部 DNS 解析器强制将所有查询重定向至 <code>10.152.152.10:5300</code>（Tor 内部解析端口），完全绕过运营商 DNS 服务器。",
-        "nav_donate": "赞助 (USDT)",
+        "nav_donate": "☕ 赞助 (USDT)",
         "footer_nav_donate": "赞助支持项目",
         "donate_window_title": "赞助与支持开发者 (Donate USDT TRC20)",
         "donate_hero_tag": "项目支持",
@@ -1264,7 +1276,11 @@ const I18N = {
         "donate_src_un": "联合国安理会综合制裁清单 (UN Security Council)",
         "donate_src_ofac": "美国财政部海外资产控制办公室 (OFAC — US Treasury)",
         "donate_src_eu": "欧盟综合金融制裁清单 (European Union Financial Sanctions)",
-        "donate_src_local": "您所在国家及地区金融监管机构发布的本地制裁清单。"
+        "donate_src_local": "您所在国家及地区金融监管机构发布的本地制裁清单。",
+        "sidebar_donate_title": "☕ 赞助支持 (USDT TRC20)",
+        "sidebar_donate_btn": "复制 USDT 地址",
+        "hero_donate_title": "赞助与支持开发者",
+        "hero_donate_details": "规则与二维码 ➔"
     },
     "de": {
         "nav_overview": "Übersicht (Overview)",
@@ -1556,7 +1572,7 @@ const I18N = {
         "sec_threat_i1": "• <b>Schutz vor ISP-Überwachung:</b> 100% gekapselter Datenverkehr.",
         "sec_threat_i2": "• <b>DPI-Umgehung:</b> VLESS Reality imitiert echtes TLS.",
         "sec_threat_i3": "• <b>Keine DNS-Lecks:</b> DNS wird intern über Tor geroutet.",
-        "nav_donate": "Spenden (USDT)",
+        "nav_donate": "☕ Spenden (USDT)",
         "footer_nav_donate": "Projekt unterstützen",
         "donate_window_title": "Projektentwicklung unterstützen (Donate USDT TRC20)",
         "donate_hero_tag": "Projektunterstützung",
@@ -1577,7 +1593,11 @@ const I18N = {
         "donate_src_un": "Sanktionsliste des Sicherheitsrats der Vereinten Nationen",
         "donate_src_ofac": "Office of Foreign Assets Control (OFAC) — US-Finanzministerium",
         "donate_src_eu": "Konsolidierte Liste der Finanzsanktionen der Europäischen Union",
-        "donate_src_local": "Lokale Sanktionslisten der Aufsichtsbehörden Ihres Landes."
+        "donate_src_local": "Lokale Sanktionslisten der Aufsichtsbehörden Ihres Landes.",
+        "sidebar_donate_title": "☕ Spenden (USDT TRC20)",
+        "sidebar_donate_btn": "USDT kopieren",
+        "hero_donate_title": "Projektentwicklung unterstützen",
+        "hero_donate_details": "Regeln & QR ➔"
     },
     "fr": {
         "nav_overview": "Aperçu (Overview)",
@@ -1869,7 +1889,7 @@ const I18N = {
         "sec_threat_i1": "• <b>Protection contre l'espionnage ISP :</b> Trafic 100% encapsulé.",
         "sec_threat_i2": "• <b>Contournement DPI :</b> VLESS Reality imite des flux TLS légitimes.",
         "sec_threat_i3": "• <b>Protection contre les fuites DNS :</b> DNS routé en interne via Tor.",
-        "nav_donate": "Faire un don (USDT)",
+        "nav_donate": "☕ Faire un don (USDT)",
         "footer_nav_donate": "Soutenir le projet",
         "donate_window_title": "Soutenir le développement du projet (Donate USDT TRC20)",
         "donate_hero_tag": "Soutien au Projet",
@@ -1890,7 +1910,11 @@ const I18N = {
         "donate_src_un": "Liste récapitulative des sanctions du Conseil de sécurité de l'ONU",
         "donate_src_ofac": "Office of Foreign Assets Control (OFAC) — Trésor américain",
         "donate_src_eu": "Liste consolidée des sanctions financières de l'Union européenne",
-        "donate_src_local": "Listes locales des régulateurs financiers de votre pays."
+        "donate_src_local": "Listes locales des régulateurs financiers de votre pays.",
+        "sidebar_donate_title": "☕ Soutenir (USDT TRC20)",
+        "sidebar_donate_btn": "Copier USDT",
+        "hero_donate_title": "Soutenir le développement du projet",
+        "hero_donate_details": "Règles et QR ➔"
     },
     "pt": {
         "nav_overview": "Início (Overview)",
@@ -2182,7 +2206,7 @@ const I18N = {
         "sec_threat_i1": "• <b>Proteção contra espionagem do ISP:</b> Tráfego 100% encapsulado.",
         "sec_threat_i2": "• <b>Evasão de DPI:</b> VLESS Reality imita fluxos TLS autênticos.",
         "sec_threat_i3": "• <b>Proteção contra vazamento DNS:</b> Todo DNS é resolvido via Tor.",
-        "nav_donate": "Doar (USDT)",
+        "nav_donate": "☕ Doar (USDT)",
         "footer_nav_donate": "Apoiar o projeto",
         "donate_window_title": "Apoiar o Desenvolvimento do Projeto (Donate USDT TRC20)",
         "donate_hero_tag": "Apoio ao Projeto",
@@ -2203,7 +2227,11 @@ const I18N = {
         "donate_src_un": "Lista de sanções do Conselho de Segurança da ONU",
         "donate_src_ofac": "Gabinete de Controlo de Ativos Estrangeiros (OFAC) — Tesouro dos EUA",
         "donate_src_eu": "Lista consolidada de sanções financeiras da União Europeia",
-        "donate_src_local": "Listas locais dos reguladores financeiros do seu país."
+        "donate_src_local": "Listas locais dos reguladores financeiros do seu país.",
+        "sidebar_donate_title": "☕ Doação (USDT TRC20)",
+        "sidebar_donate_btn": "Copiar USDT",
+        "hero_donate_title": "Apoiar o Desenvolvimento do Projeto",
+        "hero_donate_details": "Regras e QR ➔"
     },
     "ja": {
         "nav_overview": "概要 (Overview)",
@@ -2495,7 +2523,7 @@ const I18N = {
         "sec_threat_i1": "• <b>プロバイダ (ISP) による盗聴防御:</b> すべてのアウトバウンド通信は WebTunnel HTTPS トンネルまたは Tor v3 Onion 回路内に100%カプセル化されます。",
         "sec_threat_i2": "• <b>DPI (深層パケット検査) 防御:</b> XTLS Vision を搭載した VLESS Reality により、正規の大手CDNのTLS証明書通信を精巧に擬態し、通常のWebトラフィックと区別不能にします。",
         "sec_threat_i3": "• <b>DNS および WebRTC リーク防御:</b> 内部DNSリゾルバがすべての名前解決リクエストを <code>10.152.152.10:5300</code>（Tor内部名前解決ポート）へ強制転送し、ISPのDNSを完全にバイパスします。",
-        "nav_donate": "寄付 (USDT)",
+        "nav_donate": "☕ 寄付 (USDT)",
         "footer_nav_donate": "プロジェクトを支援",
         "donate_window_title": "プロジェクト開発の支援 (Donate USDT TRC20)",
         "donate_hero_tag": "プロジェクト支援",
@@ -2516,7 +2544,11 @@ const I18N = {
         "donate_src_un": "国連安全保障理事会 統合制裁リスト (UN Sanctions)",
         "donate_src_ofac": "米国財務省 外国資産管理局 (OFAC Sanctions List)",
         "donate_src_eu": "EU (欧州連合) 統合金融制裁リスト",
-        "donate_src_local": "各国の金融規制当局が発行するローカル制裁リスト。"
+        "donate_src_local": "各国の金融規制当局が発行するローカル制裁リスト。",
+        "sidebar_donate_title": "☕ 開発支援 (USDT TRC20)",
+        "sidebar_donate_btn": "USDT アドレスをコピー",
+        "hero_donate_title": "プロジェクト開発の支援",
+        "hero_donate_details": "規則とQRコード ➔"
     },
     "tr": {
         "nav_overview": "Genel Bakış (Overview)",
@@ -2808,7 +2840,7 @@ const I18N = {
         "sec_threat_i1": "• <b>Protection against ISP sniffing:</b> 100% of outbound traffic is encapsulated inside WebTunnel HTTPS or Tor v3 onion circuits.",
         "sec_threat_i2": "• <b>Protection against DPI fingerprinting:</b> VLESS Reality with XTLS Vision mimics authentic TLS certificates of popular CDNs, making traffic indistinguishable from normal HTTPS browsing.",
         "sec_threat_i3": "• <b>Protection against DNS and WebRTC leaks:</b> Internal DNS resolver routes all queries to <code>10.152.152.10:5300</code> inside Tor, completely bypassing ISP DNS servers.",
-        "nav_donate": "Bağış (USDT)",
+        "nav_donate": "☕ Bağış (USDT)",
         "footer_nav_donate": "Projeyi Destekle",
         "donate_window_title": "Proje Geliştirmeyi Destekle (Donate USDT TRC20)",
         "donate_hero_tag": "Proje Desteği",
@@ -2829,7 +2861,11 @@ const I18N = {
         "donate_src_un": "BM Güvenlik Konseyi Yaptırımlar Listesi",
         "donate_src_ofac": "Yabancı Varlıklar Kontrol Ofisi (OFAC) — ABD Hazine Bakanlığı",
         "donate_src_eu": "Avrupa Birliği Konsolide Mali Yaptırımlar Listesi",
-        "donate_src_local": "Ülkenizin yetkili finansal kurumlarının yerel yaptırım listeleri."
+        "donate_src_local": "Ülkenizin yetkili finansal kurumlarının yerel yaptırım listeleri.",
+        "sidebar_donate_title": "☕ Bağış (USDT TRC20)",
+        "sidebar_donate_btn": "USDT Kopyala",
+        "hero_donate_title": "Proje Geliştirmeyi Destekleyin",
+        "hero_donate_details": "Kurallar ve QR ➔"
     },
     "ar": {
         "nav_overview": "نظرة عامة (Overview)",
@@ -3121,7 +3157,7 @@ const I18N = {
         "sec_threat_i1": "• <b>الحماية من تجسس مزود الإنترنت (ISP):</b> يتم تغليف وتشفير 100% من حركة المرور الصادرة داخل أنفاق WebTunnel HTTPS أو دوائر Tor v3 Onion.",
         "sec_threat_i2": "• <b>الحماية من الفحص العميق للحزم (DPI):</b> بفضل تقنية VLESS Reality المدعومة بـ XTLS Vision، يتم تمويه حركة البيانات لتتطابق تمامًا مع حركة مرور TLS لشهادات كبرى شبكات CDN العالمية، مما يجعل تمييزها أو حظرها مستحيلًا.",
         "sec_threat_i3": "• <b>منع تسريبات DNS و WebRTC:</b> يقوم خادم DNS الداخلي بتحويل جميع طلبات الاستعلام إجباريًا إلى <code>10.152.152.10:5300</code> داخل شبكة Tor، متجاوزًا خوادم DNS الخاصة بمزود الخدمة تمامًا.",
-        "nav_donate": "تبرع (USDT)",
+        "nav_donate": "☕ تبرع (USDT)",
         "footer_nav_donate": "دعم المشروع",
         "donate_window_title": "دعم وتطوير المشروع (Donate USDT TRC20)",
         "donate_hero_tag": "دعم المشروع",
@@ -3142,7 +3178,11 @@ const I18N = {
         "donate_src_un": "قائمة عقوبات مجلس الأمن التابع للأمم المتحدة",
         "donate_src_ofac": "مكتب مراقبة الأصول الأجنبية (OFAC) — وزارة الخزانة الأمريكية",
         "donate_src_eu": "القائمة الموحدة للعقوبات المالية الصادرة عن الاتحاد الأوروبي",
-        "donate_src_local": "القوائم واللوائح المحلية الصادرة عن الجهات الرقابية والمالية في بلدكم."
+        "donate_src_local": "القوائم واللوائح المحلية الصادرة عن الجهات الرقابية والمالية في بلدكم.",
+        "sidebar_donate_title": "☕ دعم المشروع (USDT TRC20)",
+        "sidebar_donate_btn": "نسخ عنوان USDT",
+        "hero_donate_title": "دعم وتطوير المشروع",
+        "hero_donate_details": "الضوابط ورمز QR ➔"
     }
 };
 
