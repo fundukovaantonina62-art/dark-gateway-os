@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dark Gateway OS — Специализированный автономный шлюз безопасности для абсолютной анонимности, мультипротокольной маршрутизации VLESS Reality и изоляции трафика.">
-    <title>Dark Gateway OS — Автономный Шлюз Безопасности и Анонимности</title>
+    <meta name="description" content="Dark Gateway OS — Specialized security gateway for ultimate privacy, VLESS Reality multi-layer routing, and zero digital footprint.">
+    <title>Dark Gateway OS — Autonomous Security Gateway</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,19 +17,19 @@
                 <span class="version-tag">v1.0 Alpha</span>
             </div>
             <nav class="system-nav">
-                <a href="index.html" class="nav-item active">Главная (Overview)</a>
-                <a href="about.html" class="nav-item">Назначение &amp; Цели</a>
-                <a href="guide.html" class="nav-item">Руководство &amp; Софт</a>
-                <a href="#download" class="nav-item">Скачать OVA</a>
+                <a href="index.html" class="nav-item active" data-i18n="nav_overview">Главная (Overview)</a>
+                <a href="about.html" class="nav-item" data-i18n="nav_mission">Назначение &amp; Цели</a>
+                <a href="guide.html" class="nav-item" data-i18n="nav_guide">Руководство &amp; Софт</a>
+                <a href="#download" class="nav-item" data-i18n="nav_download">Скачать OVA</a>
             </nav>
         </div>
         <div class="panel-right">
             <div class="status-indicator">
                 <span class="indicator-dot"></span>
-                <span class="indicator-text">TOR ROUTING: ACTIVE</span>
+                <span class="indicator-text" data-i18n="status_tor_active">TOR ROUTING: ACTIVE</span>
             </div>
-            <button class="btn-onion" onclick="copyOnion()" title="Нажмите для копирования официального .onion адреса">
-                <span class="onion-badge">ONION v3</span>
+            <button class="btn-onion" onclick="copyOnion()" title="Click to copy official .onion address">
+                <span class="onion-badge" data-i18n="onion_badge">ONION v3</span>
                 <span id="onion-text">tkefu5...mayid.onion</span>
             </button>
         </div>
@@ -90,27 +90,27 @@
                 </div>
                 <div class="window-content hero-content">
                     <div class="hero-header-line">
-                        <span class="tag-badge">SECURITY GATEWAY ARCHITECTURE</span>
-                        <span class="tag-meta">ZERO-TELEMETRY • ANTI-DPI • MULTI-LAYER EGRESS</span>
+                        <span class="tag-badge" data-i18n="hero_tag">SECURITY GATEWAY ARCHITECTURE</span>
+                        <span class="tag-meta" data-i18n="hero_meta">ZERO-TELEMETRY • ANTI-DPI • MULTI-LAYER EGRESS</span>
                     </div>
                     
-                    <h1 class="hero-headline">
+                    <h1 class="hero-headline" data-i18n-html="hero_title">
                         Герметичная изоляция трафика.<br>
                         Мультипротокольный VLESS выход.
                     </h1>
                     
-                    <p class="hero-lead">
+                    <p class="hero-lead" data-i18n-html="hero_lead">
                         <b>Dark Gateway OS</b> — автономный шлюз безопасности нового поколения на базе hardened Debian 13/Whonix. Разработан для строгой изоляции локальных рабочих станций, обхода глубокого анализа пакетов (DPI) и маршрутизации анонимных потоков через приватные выходные ноды VLESS Reality с нулевым цифровым следом.
                     </p>
 
                     <div class="hero-action-bar">
-                        <a href="#download" class="btn btn-primary">
+                        <a href="#download" class="btn btn-primary" data-i18n="btn_download_hero">
                             <span class="btn-bullet">▪</span> Скачать образ (1.0 GB OVA)
                         </a>
-                        <a href="about.html" class="btn btn-secondary">
+                        <a href="about.html" class="btn btn-secondary" data-i18n="btn_about_hero">
                             <span>Для чего &amp; Для кого</span>
                         </a>
-                        <a href="guide.html" class="btn btn-secondary">
+                        <a href="guide.html" class="btn btn-secondary" data-i18n="btn_guide_hero">
                             <span>Руководство &amp; Обзор программ</span>
                         </a>
                     </div>
@@ -143,23 +143,23 @@
                     <div class="cards-grid">
                         <a href="about.html" class="nav-card">
                             <div class="nav-card-icon">🎯</div>
-                            <h3>Назначение и Миссия</h3>
-                            <p>Для кого создана ОС, какие задачи решает, защита от цензуры, DPI и сопоставления сетевых профилей.</p>
-                            <span class="nav-card-link">Узнать больше ➔</span>
+                            <h3 data-i18n="card_mission_title">Назначение и Миссия</h3>
+                            <p data-i18n="card_mission_desc">Для кого создана ОС, какие задачи решает, защита от цензуры, DPI и сопоставления сетевых профилей.</p>
+                            <span class="nav-card-link" data-i18n="card_learn_more">Узнать больше ➔</span>
                         </a>
 
                         <a href="guide.html" class="nav-card">
                             <div class="nav-card-icon">📖</div>
-                            <h3>Руководство пользователя</h3>
-                            <p>Пошаговые инструкции по работе с Proxy Wizard, Firewall Control Center, Network GUI и приложениями с иллюстрациями.</p>
-                            <span class="nav-card-link">Открыть руководство ➔</span>
+                            <h3 data-i18n="card_guide_title">Руководство пользователя</h3>
+                            <p data-i18n="card_guide_desc">Пошаговые инструкции по работе с Proxy Wizard, Firewall Control Center, Network GUI и приложениями с иллюстрациями.</p>
+                            <span class="nav-card-link" data-i18n="card_open_guide">Открыть руководство ➔</span>
                         </a>
 
                         <a href="#download" class="nav-card">
                             <div class="nav-card-icon">📦</div>
-                            <h3>Скачать виртуальную машину</h3>
-                            <p>Официальный сжатый OVA-образ (1.0 GB), контрольные суммы SHA-256 и инструкция по развертыванию.</p>
-                            <span class="nav-card-link">Перейти к загрузке ➔</span>
+                            <h3 data-i18n="card_download_title">Скачать виртуальную машину</h3>
+                            <p data-i18n="card_download_desc">Официальный сжатый OVA-образ (1.0 GB), контрольные суммы SHA-256 и инструкция по развертыванию.</p>
+                            <span class="nav-card-link" data-i18n="card_goto_dl">Перейти к загрузке ➔</span>
                         </a>
                     </div>
                 </div>
@@ -175,49 +175,49 @@
                         <div class="feature-box">
                             <div class="box-header">
                                 <span class="box-icon">▪</span>
-                                <h3>Мультипротокольный прокси-выход</h3>
+                                <h3 data-i18n="feat_proxy_title">Мультипротокольный прокси-выход</h3>
                             </div>
-                            <p>Каскадное перенаправление луковых потоков в приватные ноды <b>VLESS Reality (XTLS Vision)</b> или <b>Shadowsocks</b> (<i>Trojan в разработке</i>). Устраняет блокировки Cloudflare/Google Captcha.</p>
+                            <p data-i18n-html="feat_proxy_desc">Каскадное перенаправление луковых потоков в приватные ноды <b>VLESS Reality (XTLS Vision)</b> или <b>Shadowsocks</b> (<i>Trojan в разработке</i>). Устраняет блокировки Cloudflare/Google Captcha.</p>
                         </div>
 
                         <div class="feature-box">
                             <div class="box-header">
                                 <span class="box-icon">▪</span>
-                                <h3>Zero-Leak Boot Isolation</h3>
+                                <h3 data-i18n="feat_boot_title">Zero-Leak Boot Isolation</h3>
                             </div>
-                            <p>При включении системы трафик заморожен (<code>DisableNetwork 1</code>). Доступ открывается только после осознанного выбора маршрутизации в мастере <b>Tor Connection Setup</b>.</p>
+                            <p data-i18n-html="feat_boot_desc">При включении системы трафик заморожен (<code>DisableNetwork 1</code>). Доступ открывается только после осознанного выбора маршрутизации в мастере <b>Tor Connection Setup</b>.</p>
                         </div>
 
                         <div class="feature-box">
                             <div class="box-header">
                                 <span class="box-icon">▪</span>
-                                <h3>Гранулярный nftables фаервол</h3>
+                                <h3 data-i18n="feat_fw_title">Гранулярный nftables фаервол</h3>
                             </div>
-                            <p>Управление доступом в сеть для каждого приложения в отдельности на уровне сокетов ядра с мгновенным сбросом активных соединений (<code>ss -K</code>).</p>
+                            <p data-i18n-html="feat_fw_desc">Управление доступом в сеть для каждого приложения в отдельности на уровне сокетов ядра с мгновенным сбросом активных соединений (<code>ss -K</code>).</p>
                         </div>
 
                         <div class="feature-box">
                             <div class="box-header">
                                 <span class="box-icon">▪</span>
-                                <h3>Стек на Pure C (GTK3)</h3>
+                                <h3 data-i18n="feat_c_title">Стек на Pure C (GTK3)</h3>
                             </div>
-                            <p>Все графические утилиты написаны на нативном C без тяжелых зависимостей Python и Bash. Моментальный старт и ультранизкое потребление памяти (~600 МБ RAM).</p>
+                            <p data-i18n-html="feat_c_desc">Все графические утилиты написаны на нативном C без тяжелых зависимостей Python и Bash. Моментальный старт и ультранизкое потребление памяти (~600 МБ RAM).</p>
                         </div>
 
                         <div class="feature-box">
                             <div class="box-header">
                                 <span class="box-icon">▪</span>
-                                <h3>Автоматический Anti-Forensics</h3>
+                                <h3 data-i18n="feat_wipe_title">Автоматический Anti-Forensics</h3>
                             </div>
-                            <p>Утилита <b>Wipe Privacy Traces</b> и служба <code>wipe-traces.service</code> автоматически стирают кэш браузера, сессии, историю команд и временные логи при завершении работы.</p>
+                            <p data-i18n-html="feat_wipe_desc">Утилита <b>Wipe Privacy Traces</b> и служба <code>wipe-traces.service</code> автоматически стирают кэш браузера, сессии, историю команд и временные логи при завершении работы.</p>
                         </div>
 
                         <div class="feature-box">
                             <div class="box-header">
                                 <span class="box-icon">▪</span>
-                                <h3>Приватные приложения</h3>
+                                <h3 data-i18n="feat_apps_title">Приватные приложения</h3>
                             </div>
-                            <p>Предустановленные Ungoogled Chromium с защитой от фингерпринтинга и Telegram Desktop в изолированной группе с авто-проксированием.</p>
+                            <p data-i18n-html="feat_apps_desc">Предустановленные Ungoogled Chromium с защитой от фингерпринтинга и Telegram Desktop в изолированной группе с авто-проксированием.</p>
                         </div>
                     </div>
                 </div>
@@ -226,84 +226,34 @@
             <!-- ARCHITECTURE BLUEPRINT -->
             <section class="window-frame" id="architecture">
                 <div class="window-titlebar">
-                    <span class="titlebar-text">Сетевая топология и маршрутизация трафика</span>
+                    <span class="titlebar-text" data-i18n="topo_title">Сетевая топология и маршрутизация трафика</span>
                 </div>
                 <div class="window-content">
                     <div class="topology-diagram">
                         <div class="topology-step">
                             <div class="step-badge">СЕГМЕНТ 1</div>
-                            <h4>Клиентские ОС</h4>
-                            <p>Debian / Tails / Windows<br>Без прямого выхода в WAN</p>
+                            <h4 data-i18n="topo_s1_title">Клиентские ОС</h4>
+                            <p data-i18n-html="topo_s1_desc">Debian / Tails / Windows<br>Без прямого выхода в WAN</p>
                         </div>
                         <div class="topology-divider">➔</div>
                         <div class="topology-step active">
                             <div class="step-badge">ШЛЮЗ БЕЗОПАСНОСТИ</div>
-                            <h4>Dark Gateway Core</h4>
-                            <p>nftables + Stream Isolation<br>eth1: 10.152.152.10</p>
+                            <h4 data-i18n="topo_s2_title">Dark Gateway Core</h4>
+                            <p data-i18n-html="topo_s2_desc">nftables + Stream Isolation<br>eth1: 10.152.152.10</p>
                         </div>
                         <div class="topology-divider">➔</div>
                         <div class="topology-step">
                             <div class="step-badge">АНОНИМНАЯ СЕТЬ</div>
-                            <h4>Tor Onion Overlay</h4>
-                            <p>3-хоповое шифрование<br>WebTunnel / obfs4 мосты</p>
+                            <h4 data-i18n="topo_s3_title">Tor Onion Overlay</h4>
+                            <p data-i18n-html="topo_s3_desc">3-хоповое шифрование<br>WebTunnel / obfs4 мосты</p>
                         </div>
                         <div class="topology-divider">➔</div>
                         <div class="topology-step active-green">
                             <div class="step-badge">ВЫХОДНОЙ УЗЕЛ</div>
-                            <h4>VLESS Reality Exit</h4>
-                            <p>Чистый приватный IP<br>Целевой интернет-ресурс</p>
+                            <h4 data-i18n="topo_s4_title">VLESS Reality Exit</h4>
+                            <p data-i18n-html="topo_s4_desc">Чистый приватный IP<br>Целевой интернет-ресурс</p>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            <!-- BENCHMARK COMPARISON -->
-            <section class="window-frame" id="comparison">
-                <div class="window-titlebar">
-                    <span class="titlebar-text">Сравнение: Dark Gateway OS vs Стандартные CLI-шлюзы</span>
-                </div>
-                <div class="window-content">
-                    <table class="benchmark-table">
-                        <thead>
-                            <tr>
-                                <th>Категория</th>
-                                <th>Стандартный CLI-шлюз</th>
-                                <th class="col-highlight">Dark Gateway OS</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Графический интерфейс</td>
-                                <td class="td-muted">Только консоль TTY (Text-mode)</td>
-                                <td class="td-accent">AwesomeWM + Dark Pastels GUI (Pure C)</td>
-                            </tr>
-                            <tr>
-                                <td>Мультипротокольные прокси</td>
-                                <td class="td-muted">Не поддерживаются из коробки</td>
-                                <td class="td-accent">VLESS Reality, Shadowsocks (Trojan в разработке)</td>
-                            </tr>
-                            <tr>
-                                <td>Защита от утечек при старте</td>
-                                <td class="td-muted">Сеть поднимается сразу (риск утечек)</td>
-                                <td class="td-accent">Tor Boot Isolation (строгая пауза до выбора режима)</td>
-                            </tr>
-                            <tr>
-                                <td>Гранулярный фаервол</td>
-                                <td class="td-muted">Ручное написание правил iptables</td>
-                                <td class="td-accent">Firewall Control Center (8 модулей сброса сокетов)</td>
-                            </tr>
-                            <tr>
-                                <td>Анти-форензика и стирание следов</td>
-                                <td class="td-muted">Ручная очистка истории</td>
-                                <td class="td-accent">Wipe Privacy Traces + авто-зачистка на выключении</td>
-                            </tr>
-                            <tr>
-                                <td>Потребление RAM и скорость старта</td>
-                                <td class="td-muted">~280 MB RAM (только CLI)</td>
-                                <td class="td-accent">~600 MB RAM (полноценный GUI, старт &lt; 5 сек)</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </section>
 
@@ -314,17 +264,17 @@
                 </div>
                 <div class="window-content download-box">
                     <div class="download-info">
-                        <h3>Dark Gateway OS — Virtual Appliance (OVA)</h3>
-                        <p>Универсальный готовый образ для VMware Fusion / Workstation, VirtualBox, KVM / QEMU и Proxmox VE.</p>
+                        <h3 data-i18n="dl_box_title">Dark Gateway OS — Virtual Appliance (OVA)</h3>
+                        <p data-i18n="dl_box_desc">Универсальный готовый образ для VMware Fusion / Workstation, VirtualBox, KVM / QEMU и Proxmox VE.</p>
                         
                         <div class="hash-field">
                             <span class="hash-type">SHA-256:</span>
                             <code class="hash-string" id="file-hash">6c4401a359592d5bd65cbf520b6462c48b51ce91ddc274282a02fd63af95106b</code>
-                            <button class="btn btn-mini" onclick="copyHash()">Копировать</button>
+                            <button class="btn btn-mini" onclick="copyHash()" data-i18n="copy_btn">Копировать</button>
                         </div>
                     </div>
                     <div class="download-buttons">
-                        <a href="https://github.com/fundukovaantonina62-art/dark-gateway-os/releases/download/v1.0.0-alpha/Dark_Gateway_OS.ova" class="btn btn-primary" id="btn-download-release">
+                        <a href="https://github.com/fundukovaantonina62-art/dark-gateway-os/releases/download/v1.0.0-alpha/Dark_Gateway_OS.ova" class="btn btn-primary" id="btn-download-release" data-i18n="btn_download_release">
                             <span class="btn-bullet">⬇</span> Скачать OVA с GitHub (1.0 GB)
                         </a>
                     </div>
@@ -336,11 +286,12 @@
     <!-- System Footer -->
     <footer class="system-footer">
         <div class="footer-inner">
-            <span>DARK GATEWAY OS • ZERO LOGS • ZERO COMPROMISES</span>
-            <span>HOSTED ON GITHUB PAGES &amp; TOR ONION NETWORK (.ONION v3)</span>
+            <span data-i18n="footer_text_1">DARK GATEWAY OS • ZERO LOGS • ZERO COMPROMISES</span>
+            <span data-i18n="footer_text_2">HOSTED ON GITHUB PAGES &amp; TOR ONION NETWORK (.ONION v3)</span>
         </div>
     </footer>
 
+    <script src="i18n.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
