@@ -1,0 +1,19 @@
+{
+  "name": "dark-gateway-os",
+  "version": "1.0.0",
+  "description": "Autonomous Security Gateway showcase and specification site",
+  "main": "index.html",
+  "scripts": {
+    "build:css": "tailwindcss -i css/input.css -o css/style.css --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fundukovaantonina62-art/dark-gateway-os.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

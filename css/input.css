@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --bg-desktop: #191a1d;
+    --bg-window: #222222;
+    --bg-header: #272727;
+    --bg-input: #171717;
+    --border-subtle: #2d2e32;
+    --border-medium: #38393e;
+    --text-primary: #f0f0f0;
+    --text-secondary: #aaaaaa;
+    --text-muted: #666666;
+    --accent-green: #8ab88c;
+    --accent-blue: #7ea4b8;
+    --accent-amber: #dca561;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-desktop);
+    color: var(--text-secondary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+code, pre, .font-mono {
+    font-family: 'JetBrains Mono', "DejaVu Sans Mono", monospace;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #171717;
+}
+::-webkit-scrollbar-thumb {
+    background: #333333;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #444444;
+}
+
+/* Modal / Lightbox for Image Zoom */
+.image-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.image-modal-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.image-modal-content {
+    max-width: 92vw;
+    max-height: 90vh;
+    border: 1px solid var(--border-medium);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+    background: #191a1d;
+    padding: 8px;
+}
+
+.image-modal-content img {
+    max-width: 100%;
+    max-height: 84vh;
+    display: block;
+    margin: 0 auto;
+}
+
+/* RTL Support */
+.rtl-layout {
+    direction: rtl;
+    text-align: right;
+}
+.rtl-layout .system-panel {
+    flex-direction: row-reverse;
+}
