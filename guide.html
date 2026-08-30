@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dark Gateway OS — Подробное иллюстрированное руководство пользователя по настройке и использованию всех встроенных программ.">
+    <title>Dark Gateway OS — Руководство пользователя и Обзор программ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top System Panel (AwesomeWM Style) -->
+    <header class="system-panel">
+        <div class="panel-left">
+            <div class="system-logo">
+                <span class="logo-glyph">◈</span>
+                <span class="logo-title">Dark Gateway</span>
+                <span class="version-tag">v1.0 Alpha</span>
+            </div>
+            <nav class="system-nav">
+                <a href="index.html" class="nav-item">Главная (Overview)</a>
+                <a href="about.html" class="nav-item">Назначение &amp; Цели</a>
+                <a href="guide.html" class="nav-item active">Руководство &amp; Софт</a>
+                <a href="index.html#download" class="nav-item">Скачать OVA</a>
+            </nav>
+        </div>
+        <div class="panel-right">
+            <div class="status-indicator">
+                <span class="indicator-dot"></span>
+                <span class="indicator-text">TOR ROUTING: ACTIVE</span>
+            </div>
+            <button class="btn-onion" onclick="copyOnion()" title="Нажмите для копирования .onion адреса">
+                <span class="onion-badge">ONION v3</span>
+                <span id="onion-text">tkefu5...mayid.onion</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="page-layout">
+        <!-- Main Content Area -->
+        <main class="main-viewport">
+            
+            <!-- HEADER HERO -->
+            <section class="window-frame">
+                <div class="window-titlebar">
+                    <span class="titlebar-text">System User Manual &amp; Application Guide — Руководство пользователя</span>
+                    <div class="window-controls">
+                        <span class="ctrl-btn">_</span>
+                        <span class="ctrl-btn">□</span>
+                        <span class="ctrl-btn">×</span>
+                    </div>
+                </div>
+                <div class="window-content article-body">
+                    <div class="hero-header-line">
+                        <span class="tag-badge">ДОКУМЕНТАЦИЯ И ИНСТРУКЦИИ</span>
+                        <span class="tag-meta">ПОШАГОВОЕ РУКОВОДСТВО • ВСЕ ПРОГРАММЫ И СЛУЖБЫ</span>
+                    </div>
+
+                    <h1 class="article-title">Как пользоваться Dark Gateway OS</h1>
+                    <p class="article-lead">
+                        Полная иллюстрированная инструкция по запуску, первоначальной настройке сети, управлению прокси-цепочками, работе с гранулярным фаерволом и встроенными приложениями.
+                    </p>
+
+                    <!-- Quick Navigation TOC -->
+                    <div class="guide-toc">
+                        <div class="toc-title">⚡ Быстрая навигация по разделам:</div>
+                        <div class="toc-grid">
+                            <a href="#step-first-boot" class="toc-link">1. Первый запуск &amp; Tor Setup</a>
+                            <a href="#step-network-config" class="toc-link">2. Сетевые адаптеры (Network GUI)</a>
+                            <a href="#step-proxy-wizard" class="toc-link">3. Диспетчер прокси (Proxy Wizard)</a>
+                            <a href="#step-firewall" class="toc-link">4. Фаервол (Firewall Center)</a>
+                            <a href="#step-apps" class="toc-link">5. Браузер &amp; Telegram</a>
+                            <a href="#step-anti-forensics" class="toc-link">6. Очистка следов (Wipe Traces)</a>
+                            <a href="#step-updates" class="toc-link">7. Менеджер обновлений</a>
+                            <a href="#step-monitoring" class="toc-link">8. Мониторинг &amp; Утилиты</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 1: FIRST BOOT & TOR SETUP -->
+            <section class="window-frame guide-section" id="step-first-boot">
+                <div class="window-titlebar">
+                    <span class="titlebar-text">Раздел 1: Первый запуск и подключение Tor (Tor Boot Isolation)</span>
+                </div>
+                <div class="window-content article-body">
+                    <div class="step-badge-large">ШАГ 1</div>
+                    <h2>Инициализация и запуск сети Tor</h2>
+                    
+                    <p>
+                        Для защиты от случайных утечек трафика в Dark Gateway OS реализован механизм <b>Tor Boot Pause</b>. При включении виртуальной машины сеть находится в замороженном состоянии (<code>DisableNetwork 1</code>).
+                    </p>
+                    <p>
+                        Сразу после входа в систему автоматически открывается окно <b>Tor Connection Setup</b>:
+                    </p>
+
+                    <div class="instruction-box">
+                        <h4>📋 Как выполнить подключение:</h4>
+                        <ol>
+                            <li><b>Прямое подключение (Direct Tor network connection):</b> выберите этот пункт, если в вашей сети узлы Tor не заблокированы провайдером.</li>
+                            <li><b>Подключение через мосты (Configure custom bridge):</b> выберите этот пункт и вставьте строку моста <b>WebTunnel</b> (<code>webtunnel 192.0.2.1:443 ... url=https://...</code>) или <b>obfs4</b> (<code>obfs4 192.0.2.2:443 ...</code>), если прямой доступ заблокирован.</li>
+                            <li>Нажмите кнопку <b>[Connect]</b>. Шлюз применит настройки и установит защищенный 3-хоповый канал.</li>
+                        </ol>
+                    </div>
+
+                    <div class="callout callout-info">
+                        💡 <b>Подсказка:</b> Статус соединения и процент построения цепочки всегда отображаются в правой панели мониторинга <b>Conky HUD</b>.
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: NETWORK ADAPTERS CONFIGURATION -->
+            <section class="window-frame guide-section" id="step-network-config">
+                <div class="window-titlebar">
+                    <span class="titlebar-text">Раздел 2: Конфигурация сетевых адаптеров (Network Adapters GUI)</span>
+                </div>
+                <div class="window-content article-body">
+                    <div class="step-badge-large">ШАГ 2</div>
+                    <h2>Настройка внешнего (WAN) и внутреннего (LAN) адаптеров</h2>
+
+                    <p>
+                        Приложение <b>Network Adapters Configuration</b> (горячая клавиша <code>Cmd+n</code> или через системное меню) позволяет гибко перенастраивать сетевые интерфейсы без необходимости редактировать текстовые конфиги.
+                    </p>
+
+                    <div class="guide-media-layout">
+                        <div class="guide-text">
+                            <h4>Адаптер 1: eth0 (Внешняя сеть WAN / NAT)</h4>
+                            <ul>
+                                <li><b>DHCP (Automatic IP):</b> автоматическое получение IP-адреса и шлюза от вашего роутера или гипервизора.</li>
+                                <li><b>Static IP (Manual):</b> ручной ввод IP-адреса, маски подсети и шлюза по умолчанию (например, <code>172.16.103.150</code> / <code>255.255.255.0</code> / <code>172.16.103.2</code>).</li>
+                            </ul>
+
+                            <h4>Адаптер 2: eth1 (Внутренняя сеть LAN для Workstation)</h4>
+                            <ul>
+                                <li><b>Gateway IP:</b> <code>10.152.152.10</code> (Маска: <code>255.255.192.0</code>).</li>
+                                <li><b>DHCP Server:</b> включение встроенного DHCP-сервера для автоматической раздачи IP подключенным рабочим станциям (пул: <code>10.152.152.50 - 10.152.152.150</code>).</li>
+                            </ul>
+                        </div>
+                        <div class="guide-img-container">
+                            <img src="img/network_config.png" alt="Окно Network Adapters Configuration" class="guide-img">
+                            <span class="caption">Network Adapters Configuration — атомарное управление eth0 и eth1</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: PROXY SETUP WIZARD -->
+            <section class="window-frame guide-section" id="step-proxy-wizard">
+                <div class="window-titlebar">
+                    <span class="titlebar-text">Раздел 3: Каскадные прокси-цепочки (Proxy Setup Wizard)</span>
+                </div>
+                <div class="window-content article-body">
+                    <div class="step-badge-large">ШАГ 3</div>
+                    <h2>Маршрутизация через Sing-Box (Порт 1080)</h2>
+
+                    <p>
+                        Для преодоления цензуры и обхода блокировок Cloudflare/Google Captcha в Dark Gateway OS интегрирован диспетчер <b>Sing-Box</b>, слушающий локальный порт <code>127.0.0.1:1080</code>.
+                    </p>
+
+                    <div class="guide-media-layout">
+                        <div class="guide-text">
+                            <h4>📋 Инструкция по настройке:</h4>
+                            <ol>
+                                <li>Откройте <b>Proxy Setup Wizard</b> нажатием <code>Cmd+p</code> или через меню <i>Applications ➔ Proxy Setup Wizard</i>.</li>
+                                <li>Скопируйте ключ вашего прокси-сервера (поддерживаются форматы <code>vless://...</code> с Reality/XTLS Vision и <code>ss://...</code> Shadowsocks).</li>
+                                <li>Вставьте ключ в текстовое поле и нажмите <b>[Apply &amp; Connect]</b>.</li>
+                                <li>Для возврата в режим чистого Tor нажмите <b>[Disconnect / Direct Tor]</b>.</li>
+                            </ol>
+
+                            <div class="callout callout-warning">
+                                ⚠️ <b>Примечание:</b> Протокол <b>Trojan</b> на данный момент не поддерживается в мастере Proxy Wizard. Поддержка запланирована в следующих релизах.
+                            </div>
+                        </div>
+                        <div class="guide-img-container">
+                            <img src="img/proxy_wizard.png" alt="Proxy Setup Wizard" class="guide-img">
+                            <span class="caption">Proxy Setup Wizard — быстрый импорт vless:// и ss:// ключей</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4: FIREWALL CONTROL CENTER -->
+            <section class="window-frame guide-section" id="step-firewall">
+                <div class="window-titlebar">
+                    <span class="titlebar-text">Раздел 4: Гранулярный фаервол (Firewall &amp; Security Control Center)</span>
+                </div>
+                <div class="window-content article-body">
+                    <div class="step-badge-large">ШАГ 4</div>
+                    <h2>Селективная изоляция приложений на уровне ядра</h2>
+
+                    <p>
+                        <b>Firewall Control Center</b> (горячая клавиша <code>Cmd+f</code>) — нативный C-интерфейс к фаерволу <code>nftables</code>, фильтрующий сокеты программ по специальным системным GID.
+                    </p>
+
+                    <div class="guide-media-layout">
+                        <div class="guide-text">
+                            <h4>Доступные модули контроля (8/8):</h4>
+                            <ul class="module-list">
+                                <li><b>1. Chromium Web Browser:</b> блокировка/разрешение сетевой активности браузера.</li>
+                                <li><b>2. Telegram Desktop:</b> изоляция трафика мессенджера Telegram.</li>
+                                <li><b>3. Sing-Box SOCKS Proxy (1080):</b> управление портом каскадного прокси.</li>
+                                <li><b>4. Onion Web Server (8080):</b> переключатель доступа к локальному скрытому веб-серверу.</li>
+                                <li><b>5. LAN Workstation Routing (eth1):</b> пропуск трафика клиентских виртуалок через Tor.</li>
+                                <li><b>6. System &amp; Tor Updates:</b> разрешение загрузки обновлений Debian и Tor.</li>
+                                <li><b>7. SSH Management (Port 22):</b> включение/отключение порта удаленного доступа.</li>
+                                <li><b>8. WAN Panic Killswitch:</b> аппаратный аварийный рубильник — мгновенный сброс всех пакетов на eth0.</li>
+                            </ul>
+                        </div>
+                        <div class="guide-img-container">
+                            <img src="img/firewall_center.png" alt="Firewall Control Center" class="guide-img">
+                            <span class="caption">Firewall & Security Control Center — управление 8 модулями изоляции</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 5: APPLICATIONS (CHROMIUM & TELEGRAM) -->
+            <section class="window-frame guide-section" id="step-apps">
+                <div class="window-titlebar">
+                    <span class="titlebar-text">Раздел 5: Приватный веб-серфинг и мессенджер</span>
+                </div>
+                <div class="window-content article-body">
+                    <div class="step-badge-large">ШАГ 5</div>
+                    <h2>Ungoogled Chromium и Telegram Desktop</h2>
+
+                    <div class="app-dual-grid">
+                        <!-- App 1: Chromium -->
+                        <div class="app-card">
+                            <h3>🌐 Ungoogled Chromium</h3>
+                            <p>
+                                Полностью дегуглифицированный Chromium с отключенной телеметрией. Автоматически настроен на прокси-порт <code>127.0.0.1:1080</code>, снабжен защитой от конфликтов SQLite-профилей и проверкой утечек WebRTC/DNS.
+                            </p>
+                            <img src="img/chromium_browserleaks.png" alt="Chromium на Browserleaks" class="app-img">
+                            <span class="caption">Проверка на BrowserLeaks: 0 утечек IP/DNS, анонимный выходной узел.</span>
+                        </div>
+
+                        <!-- App 2: Telegram -->
+                        <div class="app-card">
+                            <h3>💬 Telegram Desktop</h3>
+                            <p>
+                                Официальный клиент Telegram, работающий в изолированной группе безопасности. Встроенные преднастроенные профили прокси SOCKS5 (<code>127.0.0.1:1080</code> и <code>127.0.0.1:9050</code>) сохраняются между сессиями.
+                            </p>
+                            <img src="img/telegram_proxy.png" alt="Telegram Proxy Settings" class="app-img">
+                            <span class="caption">Окно настроек прокси в Telegram Desktop: статус Online.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 6: ANTI-FORENSICS & WIPE TRACES -->
+            <section class="window-frame guide-section" id="step-anti-forensics">
+                <div class="window-titlebar">
+                    <span class="titlebar-text">Раздел 6: Уничтожение следов сессии (Wipe Privacy Traces)</span>
+                </div>
+                <div class="window-content article-body">
+                    <div class="step-badge-large">ШАГ 6</div>
+                    <h2>Анти-криминалистическая зачистка (Anti-Forensics)</h2>
+
+                    <div class="guide-media-layout">
+                        <div class="guide-text">
+                            <p>
+                                Утилита <b>Wipe Privacy Traces</b> (<code>Cmd+Shift+k</code>) предназначена для моментального безвозвратного удаления цифровых следов:
+                            </p>
+                            <ul>
+                                <li>История посещений, кэш и cookies браузера Chromium.</li>
+                                <li>Активные сессии и временные медиафайлы Telegram.</li>
+                                <li>Сохраненные прокси-ключи и конфигурации VLESS/Shadowsocks.</li>
+                                <li>История команд оболочки Bash (<code>.bash_history</code>) и временные системные логи.</li>
+                            </ul>
+                            <p>
+                                При нажатии кнопки <b>[Wipe Everything]</b> очистка выполняется в фоновом режиме за доли секунды. Также зачистка автоматически вызывается службой <code>wipe-traces.service</code> при штатном выключении ОС.
+                            </p>
+                        </div>
+                        <div class="guide-img-container">
+                            <img src="img/wipe_traces.png" alt="Wipe Privacy Traces" class="guide-img">
+                            <span class="caption">Wipe Privacy Traces — стирание следов активности в 1 клик</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 7: SYSTEM UPDATE MANAGER -->
+            <section class="window-frame guide-section" id="step-updates">
+                <div class="window-titlebar">
+                    <span class="titlebar-text">Раздел 7: Безопасное обновление (System &amp; Tor Update Manager)</span>
+                </div>
+                <div class="window-content article-body">
+                    <div class="step-badge-large">ШАГ 7</div>
+                    <h2>Обновление пакетов и аварийное восстановление</h2>
+
+                    <div class="guide-media-layout">
+                        <div class="guide-text">
+                            <p>
+                                <b>System &amp; Tor Update Manager</b> обеспечивает неразрушающее обновление операционной системы:
+                            </p>
+                            <ul>
+                                <li><b>Standard Update:</b> загрузка пакетов безопасности Debian и бинарников Tor через защищенные репозитории с автобэкапом настроек AwesomeWM и тем оформления.</li>
+                                <li><b>Emergency Recovery:</b> восстановление сетевых конфигов и Tor в случае сбоя внешних репозиториев.</li>
+                                <li><b>Health &amp; Repair:</b> автоматический вызов скрипта аудита системы <code>health-check</code>.</li>
+                            </ul>
+                        </div>
+                        <div class="guide-img-container">
+                            <img src="img/update_manager.png" alt="System Update Manager" class="guide-img">
+                            <span class="caption">System & Tor Update Manager — безопасный апдейт компонентов</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 8: MONITORING & UTILITIES -->
+            <section class="window-frame guide-section" id="step-monitoring">
+                <div class="window-titlebar">
+                    <span class="titlebar-text">Раздел 8: Системный мониторинг и встроенные утилиты</span>
+                </div>
+                <div class="window-content article-body">
+                    <div class="step-badge-large">ШАГ 8</div>
+                    <h2>Обзор мониторов и вспомогательного софта</h2>
+
+                    <div class="utilities-grid">
+                        <!-- Conky HUD -->
+                        <div class="utility-card">
+                            <img src="img/conky_hud.png" alt="Conky HUD" class="util-img">
+                            <h4>Conky Real-time HUD</h4>
+                            <p>Живой сайдбар на рабочем столе: нагрузка CPU/RAM, пропускная способность eth0/eth1, статус демонов Tor/Sing-Box и список активных портов.</p>
+                        </div>
+
+                        <!-- Nyx Monitor -->
+                        <div class="utility-card">
+                            <img src="img/nyx_monitor.png" alt="Nyx Tor Monitor" class="util-img">
+                            <h4>Nyx — Tor Network Monitor</h4>
+                            <p>Консольный монитор сети Tor (запуск по <code>Cmd+m</code>): график пропускной способности, детальный просмотр цепочек (circuits) и журнал событий.</p>
+                        </div>
+
+                        <!-- Midnight Commander -->
+                        <div class="utility-card">
+                            <img src="img/midnight_commander.png" alt="Midnight Commander" class="util-img">
+                            <h4>Midnight Commander (mc)</h4>
+                            <p>Классический двухпанельный менеджер файлов для быстрой и безопасной навигации по файловой системе без запуска тяжелых графических оболочек.</p>
+                        </div>
+
+                        <!-- Terminal Console -->
+                        <div class="utility-card">
+                            <img src="img/terminal_console.png" alt="Terminal Console" class="util-img">
+                            <h4>Terminal Console (Bash)</h4>
+                            <p>Минималистичный терминал с цветовой палитрой Dark Pastels, оптимизированным шеллом Bash и быстрым доступом к утилитам командной строки.</p>
+                        </div>
+
+                        <!-- Mousepad -->
+                        <div class="utility-card">
+                            <img src="img/mousepad.png" alt="Mousepad Text Editor" class="util-img">
+                            <h4>Mousepad Text Editor</h4>
+                            <p>Быстрый и чистый текстовый редактор для редактирования заметок, ключей и конфигурационных файлов.</p>
+                        </div>
+
+                        <!-- Audio Control -->
+                        <div class="utility-card">
+                            <img src="img/audio_control.png" alt="Volume & Audio Control" class="util-img">
+                            <h4>Volume &amp; Audio Control</h4>
+                            <p>Нативный C/GTK3 регулятор громкости звука и уровня чувствительности микрофона с поддержкой мгновенного отключения (Mute).</p>
+                        </div>
+                    </div>
+
+                    <div class="cta-banner">
+                        <div>
+                            <h3>Готовы приступить к работе?</h3>
+                            <p>Скачайте официальный OVA-образ и разверните шлюз за считанные минуты.</p>
+                        </div>
+                        <div class="cta-btns">
+                            <a href="index.html" class="btn btn-secondary">На главную</a>
+                            <a href="index.html#download" class="btn btn-primary">Скачать Dark_Gateway_OS.ova (1.0 GB)</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- System Footer -->
+    <footer class="system-footer">
+        <div class="footer-inner">
+            <span>DARK GATEWAY OS • РУКОВОДСТВО ПОЛЬЗОВАТЕЛЯ И ОБЗОР СОФТА</span>
+            <span>HOSTED ON GITHUB PAGES &amp; TOR ONION NETWORK (.ONION v3)</span>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -6,31 +6,44 @@ function copyOnion() {
     const text = OFFICIAL_ONION;
     navigator.clipboard.writeText(text).then(() => {
         const btn = document.getElementById("onion-text");
-        const orig = btn.innerText;
-        btn.innerText = "Copied .onion!";
-        setTimeout(() => {
-            btn.innerText = orig;
-        }, 2500);
+        if (btn) {
+            const orig = btn.innerText;
+            btn.innerText = "Скопировано!";
+            setTimeout(() => {
+                btn.innerText = orig;
+            }, 2500);
+        }
+    }).catch(err => {
+        console.error("Clipboard copy failed", err);
     });
 }
 
 function copyHash() {
-    const hash = document.getElementById("file-hash").innerText;
+    const hashEl = document.getElementById("file-hash");
+    if (!hashEl) return;
+    const hash = hashEl.innerText;
     navigator.clipboard.writeText(hash).then(() => {
-        const btn = document.querySelector(".btn-copy");
-        btn.innerText = "Copied!";
-        setTimeout(() => {
-            btn.innerText = "Copy";
-        }, 2000);
+        const btn = event.target;
+        if (btn) {
+            const orig = btn.innerText;
+            btn.innerText = "Скопировано!";
+            setTimeout(() => {
+                btn.innerText = orig;
+            }, 2000);
+        }
+    }).catch(err => {
+        console.error("Clipboard copy failed", err);
     });
 }
 
-// Smooth scrolling for navigation anchors
+// Smooth scrolling for navigation anchors within same page
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const targetId = this.getAttribute('href');
+        if (targetId === "#") return;
+        const target = document.querySelector(targetId);
         if (target) {
+            e.preventDefault();
             target.scrollIntoView({
                 behavior: 'smooth'
             });

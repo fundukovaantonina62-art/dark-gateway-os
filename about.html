@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dark Gateway OS — Назначение, целевая аудитория и миссия автономного шлюза анонимизации.">
+    <title>Dark Gateway OS — Назначение и Цели системы</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top System Panel (AwesomeWM Style) -->
+    <header class="system-panel">
+        <div class="panel-left">
+            <div class="system-logo">
+                <span class="logo-glyph">◈</span>
+                <span class="logo-title">Dark Gateway</span>
+                <span class="version-tag">v1.0 Alpha</span>
+            </div>
+            <nav class="system-nav">
+                <a href="index.html" class="nav-item">Главная (Overview)</a>
+                <a href="about.html" class="nav-item active">Назначение &amp; Цели</a>
+                <a href="guide.html" class="nav-item">Руководство &amp; Софт</a>
+                <a href="index.html#download" class="nav-item">Скачать OVA</a>
+            </nav>
+        </div>
+        <div class="panel-right">
+            <div class="status-indicator">
+                <span class="indicator-dot"></span>
+                <span class="indicator-text">TOR ROUTING: ACTIVE</span>
+            </div>
+            <button class="btn-onion" onclick="copyOnion()" title="Нажмите для копирования .onion адреса">
+                <span class="onion-badge">ONION v3</span>
+                <span id="onion-text">tkefu5...mayid.onion</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="page-layout">
+        <!-- Main Content Area -->
+        <main class="main-viewport">
+            
+            <!-- SECTION 1: MISSION & PURPOSE -->
+            <section class="window-frame">
+                <div class="window-titlebar">
+                    <span class="titlebar-text">Mission Statement &amp; System Purpose — Для чего создана ОС</span>
+                    <div class="window-controls">
+                        <span class="ctrl-btn">_</span>
+                        <span class="ctrl-btn">□</span>
+                        <span class="ctrl-btn">×</span>
+                    </div>
+                </div>
+                <div class="window-content article-body">
+                    <div class="hero-header-line">
+                        <span class="tag-badge">ФИЛОСОФИЯ И МИССИЯ</span>
+                        <span class="tag-meta">ZERO-TELEMETRY • ANTI-DPI • HARDENED GATEWAY</span>
+                    </div>
+
+                    <h1 class="article-title">Для чего создана Dark Gateway OS?</h1>
+
+                    <p class="article-lead">
+                        Современный интернет перегружен системами глубокого анализа пакетов (DPI), цензурными фильтрами, сквозным трекингом цифровых отпечатков (fingerprinting) и методами деанонимизации на уровне провайдеров. Стандартные VPN-сервисы уязвимы к блокировкам по сигнатурам протоколов, а обычный браузерный трафик легко сопоставляется с реальным IP-адресом пользователя при малейшем сбое.
+                    </p>
+
+                    <p>
+                        <b>Dark Gateway OS</b> спроектирована как <b>непроницаемый изолированный шлюз безопасности</b>. Она берет на себя всю работу по шифрованию, маршрутизации и фильтрации трафика, полностью изолируя клиентские рабочие станции (Workstations) от прямого выхода в глобальную сеть.
+                    </p>
+
+                    <div class="info-grid three-col">
+                        <div class="info-card">
+                            <div class="card-icon">🛡️</div>
+                            <h4>Изоляция от утечек</h4>
+                            <p>Ни одно приложение на рабочей машине не сможет узнать реальный IP, MAC-адрес или физическое местоположение хоста.</p>
+                        </div>
+                        <div class="info-card">
+                            <div class="card-icon">⚡</div>
+                            <h4>Обход Deep Packet Inspection</h4>
+                            <p>Интеграция мостов WebTunnel (HTTPS-маскировка) и VLESS Reality позволяет пробивать даже самые жесткие корпоративные и государственные файрволы.</p>
+                        </div>
+                        <div class="info-card">
+                            <div class="card-icon">🚫</div>
+                            <h4>Анти-капча и чистый выход</h4>
+                            <p>Каскадное перенаправление луковых потоков через чистые приватные ноды решает проблему постоянных блокировок Cloudflare и Google Captcha.</p>
+                        </div>
+                    </div>
+
+                    <!-- Large Overview Showcase -->
+                    <div class="screenshot-showcase">
+                        <img src="img/overview_panorama.png" alt="Панорама рабочего стола Dark Gateway OS" class="showcase-img">
+                        <span class="caption">Панорама окружения Dark Gateway OS: нативные C/GTK3 утилиты, мониторинг Conky и тайловый менеджер AwesomeWM.</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: TARGET AUDIENCE -->
+            <section class="window-frame">
+                <div class="window-titlebar">
+                    <span class="titlebar-text">Target Audience — Для кого предназначена эта операционная система</span>
+                </div>
+                <div class="window-content article-body">
+                    <h2 class="section-heading">Для кого разработана Dark Gateway OS?</h2>
+                    
+                    <div class="audience-list">
+                        <div class="audience-item">
+                            <div class="aud-badge">01</div>
+                            <div class="aud-content">
+                                <h3>Журналисты, расследователи и правозащитники</h3>
+                                <p>Для безопасного взаимодействия с источниками, публикации материалов и расследований в условиях агрессивного мониторинга трафика и сетевого наблюдения.</p>
+                            </div>
+                        </div>
+
+                        <div class="audience-item">
+                            <div class="aud-badge">02</div>
+                            <div class="aud-content">
+                                <h3>Специалисты по информационной безопасности и исследователи</h3>
+                                <p>Для проведения безопасного OSINT-анализа, исследования вредоносного ПО (Malware Analysis) и изолированного тестирования без риска засветить реальную инфраструктуру.</p>
+                            </div>
+                        </div>
+
+                        <div class="audience-item">
+                            <div class="aud-badge">03</div>
+                            <div class="aud-content">
+                                <h3>Пользователи в регионах с тотальной цензурой</h3>
+                                <p>Для стабильного доступа к глобальному свободному интернету там, где заблокированы не только стандартные сайты, но и стандартные протоколы OpenVPN, WireGuard и публичные узлы Tor.</p>
+                            </div>
+                        </div>
+
+                        <div class="audience-item">
+                            <div class="aud-badge">04</div>
+                            <div class="aud-content">
+                                <h3>Разработчики и системные администраторы</h3>
+                                <p>Для организации надежного анонимного шлюза для виртуальных лабораторий, серверов тестирования и автоматизированных сред.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: CORE GOALS & USE CASES -->
+            <section class="window-frame">
+                <div class="window-titlebar">
+                    <span class="titlebar-text">Use Cases &amp; Practical Goals — Для каких целей и задач</span>
+                </div>
+                <div class="window-content article-body">
+                    <h2 class="section-heading">Практические сценарии применения</h2>
+
+                    <div class="usecase-grid">
+                        <div class="usecase-box">
+                            <h4>🔒 Сценарий А: Автономный сетевой шлюз (Dedicated Gateway)</h4>
+                            <p>Dark Gateway OS настраивается как шлюз по умолчанию для любых рабочих виртуальных машин (Whonix-Workstation, Tails, Debian, Windows). Любой сетевой пакет с клиентской ОС принудительно проходит через Tor и фаервол шлюза.</p>
+                        </div>
+
+                        <div class="usecase-box">
+                            <h4>🚀 Сценарий Б: Каскадный туннель Tor ➔ VLESS Reality</h4>
+                            <p>Шлюз позволяет соединить преимущества анонимной маршрутизации Tor с высокой скоростью и чистым IP-адресом протокола VLESS Reality, обеспечивая комфортный серфинг без капч и ограничений.</p>
+                        </div>
+
+                        <div class="usecase-box">
+                            <h4>🧹 Сценарий В: Работа с нулевым следом (Zero-Footprint Mode)</h4>
+                            <p>Благодаря интеграции <code>wipe-traces</code> и обнулению временных логов, вся сессионная активность стирается при выключении, защищая от криминалистического анализа накопителя.</p>
+                        </div>
+
+                        <div class="usecase-box">
+                            <h4>🛑 Сценарий Г: Селективная изоляция приложений</h4>
+                            <p>Через встроенный <b>Firewall Control Center</b> можно выборочно разрешать или моментально отключать интернет для браузера, мессенджера или системных служб в 1 клик.</p>
+                        </div>
+                    </div>
+
+                    <div class="screenshot-showcase">
+                        <img src="img/active_routing.png" alt="Активное каскадное проксирование в Dark Gateway OS" class="showcase-img">
+                        <span class="caption">Сквозная демонстрация: проверка отсутствия утечек через BrowserLeaks, рабочий прокси-канал Telegram и системный монитор.</span>
+                    </div>
+
+                    <div class="cta-banner">
+                        <div>
+                            <h3>Готовы развернуть безопасный шлюз?</h3>
+                            <p>Скачайте готовый преднастроенный OVA-образ и ознакомьтесь с подробным руководством.</p>
+                        </div>
+                        <div class="cta-btns">
+                            <a href="guide.html" class="btn btn-secondary">Читать руководство</a>
+                            <a href="index.html#download" class="btn btn-primary">Скачать OVA (1.0 GB)</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- System Footer -->
+    <footer class="system-footer">
+        <div class="footer-inner">
+            <span>DARK GATEWAY OS • НАЗНАЧЕНИЕ И ЦЕЛИ СИСТЕМЫ</span>
+            <span>HOSTED ON GITHUB PAGES &amp; TOR ONION NETWORK (.ONION v3)</span>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

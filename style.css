@@ -643,3 +643,441 @@ body {
         width: 100%;
     }
 }
+
+/* ==========================================================================
+   MULTI-PAGE & DOCUMENTATION STYLES (ABOUT & GUIDE)
+   ========================================================================== */
+
+/* Navigation Cards Grid */
+.nav-card {
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-subtle);
+    padding: 16px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+}
+
+.nav-card:hover {
+    border-color: var(--accent-green);
+    transform: translateY(-2px);
+    background-color: #1e1f22;
+}
+
+.nav-card-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.nav-card h3 {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.nav-card p {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 12px;
+    flex-grow: 1;
+}
+
+.nav-card-link {
+    font-size: 11px;
+    font-family: var(--font-mono);
+    color: var(--accent-green);
+    font-weight: bold;
+}
+
+/* Article & Guide Typography */
+.article-body {
+    padding: 24px 28px;
+}
+
+.article-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--text-primary);
+    margin: 12px 0 16px 0;
+    line-height: 1.3;
+}
+
+.article-lead {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+.section-heading {
+    font-size: 18px;
+    color: var(--text-primary);
+    margin: 20px 0 16px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 8px;
+}
+
+/* Guide TOC */
+.guide-toc {
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-subtle);
+    padding: 14px 18px;
+    margin-top: 16px;
+    border-left: 3px solid var(--accent-green);
+}
+
+.toc-title {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 8px 16px;
+}
+
+.toc-link {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.15s ease;
+}
+
+.toc-link:hover {
+    color: var(--accent-green);
+    text-decoration: underline;
+}
+
+/* Guide Steps & Badges */
+.guide-section {
+    margin-bottom: 20px;
+}
+
+.step-badge-large {
+    display: inline-block;
+    background-color: var(--bg-input);
+    border: 1px solid var(--accent-green);
+    color: var(--accent-green);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: bold;
+    padding: 2px 8px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.guide-section h2 {
+    font-size: 17px;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+/* Guide Media Layout (Text + Image Side by Side) */
+.guide-media-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 20px;
+    align-items: start;
+    margin-top: 14px;
+}
+
+@media (max-width: 900px) {
+    .guide-media-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.guide-text h4 {
+    font-size: 13px;
+    color: var(--text-primary);
+    margin: 12px 0 6px 0;
+}
+
+.guide-text ul, .guide-text ol {
+    margin-left: 18px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.guide-text li {
+    margin-bottom: 6px;
+}
+
+.module-list li {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+
+.guide-img-container {
+    background-color: #121315;
+    border: 1px solid var(--border-medium);
+    padding: 10px;
+    text-align: center;
+}
+
+.guide-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #333333;
+}
+
+.showcase-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid var(--border-medium);
+}
+
+.screenshot-showcase {
+    background-color: #121315;
+    border: 1px solid var(--border-medium);
+    padding: 12px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.caption {
+    display: block;
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* Instruction Box & Callouts */
+.instruction-box {
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-subtle);
+    padding: 14px 18px;
+    margin: 14px 0;
+}
+
+.instruction-box h4 {
+    font-size: 13px;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.instruction-box ol {
+    margin-left: 18px;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.callout {
+    padding: 10px 14px;
+    margin: 12px 0;
+    font-size: 12px;
+    line-height: 1.5;
+    border-left: 3px solid;
+}
+
+.callout-info {
+    background-color: #1a2228;
+    border-color: var(--accent-blue);
+    color: #c0d8e8;
+}
+
+.callout-warning {
+    background-color: #262018;
+    border-color: var(--accent-amber);
+    color: #e8d0b0;
+}
+
+/* App Dual Grid */
+.app-dual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 14px;
+}
+
+@media (max-width: 800px) {
+    .app-dual-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.app-card {
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-subtle);
+    padding: 16px;
+}
+
+.app-card h3 {
+    font-size: 14px;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.app-card p {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.app-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #333333;
+}
+
+/* Utilities Grid (6 items) */
+.utilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 14px;
+}
+
+.utility-card {
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-subtle);
+    padding: 14px;
+    text-align: center;
+}
+
+.util-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto;
+    border: 1px solid #333333;
+}
+
+.utility-card h4 {
+    font-size: 13px;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.utility-card p {
+    font-size: 11px;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* Audience List */
+.audience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.audience-item {
+    display: flex;
+    align-items: flex-start;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-subtle);
+    padding: 14px 18px;
+    gap: 16px;
+}
+
+.aud-badge {
+    font-family: var(--font-mono);
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--accent-green);
+    background-color: #121315;
+    padding: 4px 10px;
+    border: 1px solid var(--border-medium);
+}
+
+.aud-content h3 {
+    font-size: 14px;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.aud-content p {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Use Cases Grid */
+.usecase-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 16px 0;
+}
+
+@media (max-width: 800px) {
+    .usecase-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.usecase-box {
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-subtle);
+    padding: 16px;
+}
+
+.usecase-box h4 {
+    font-size: 13px;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.usecase-box p {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* CTA Banner */
+.cta-banner {
+    background-color: #181f1b;
+    border: 1px solid var(--accent-green);
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: 24px;
+}
+
+@media (max-width: 768px) {
+    .cta-banner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.cta-banner h3 {
+    font-size: 15px;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.cta-banner p {
+    font-size: 12px;
+    color: #b0d8be;
+}
+
+.cta-btns {
+    display: flex;
+    gap: 10px;
+}
+
