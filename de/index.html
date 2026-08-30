@@ -402,6 +402,39 @@
 
             <!-- DOWNLOAD BOX -->
             <section id="download" class="bg-dark-window border border-accent-green/60 rounded shadow-xl p-5 sm:p-7 space-y-4">
+
+                <!-- PRE-DOWNLOAD DEVELOPER SUPPORT & APPRECIATION -->
+                <div class="bg-[#1c1a16] border border-accent-amber/60 rounded-lg p-4 sm:p-5 space-y-3 shadow-lg">
+                    <div class="flex items-center justify-between gap-2 border-b border-dark-border/80 pb-2.5 flex-wrap">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl animate-pulse">☕</span>
+                            <h4 class="text-xs sm:text-sm font-bold text-gray-100" data-i18n="predl_donate_title">Gefällt Ihnen das Projekt? Unterstützen Sie den Entwickler vor dem Download!</h4>
+                        </div>
+                        <span class="text-[10px] font-mono text-accent-green bg-dark-input px-2 py-0.5 rounded border border-dark-border font-bold">USDT TRC20</span>
+                    </div>
+                    
+                    <p class="text-xs text-gray-300 leading-relaxed" data-i18n="predl_donate_desc">Dark Gateway OS ist 100% kostenlos und Open Source. Wenn Ihnen das System hilft oder Ihre Privatsphäre schützt, unterstützen Sie die Weiterentwicklung gerne mit einer USDT TRC20-Spende.</p>
+
+                    <!-- Quick Wallet Address Box -->
+                    <div class="bg-black/60 border border-dark-border p-3 rounded flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 font-mono text-xs">
+                        <div class="flex items-center gap-2 min-w-0 flex-1">
+                            <span class="text-accent-amber font-bold flex-shrink-0">TRC20:</span>
+                            <code class="text-accent-amber bg-dark-input px-2.5 py-1 rounded border border-dark-border select-all break-all text-[11px] font-semibold flex-1">
+                                TLzJkFEYnGcmot8QGY2ZcKQSNGWKVAXqch
+                            </code>
+                        </div>
+                        <div class="flex items-center gap-2 flex-shrink-0">
+                            <button onclick="copyDonate()" class="flex-1 sm:flex-none px-3.5 py-1.5 bg-dark-input hover:bg-dark-hover border border-dark-border hover:border-accent-amber rounded text-[11px] text-gray-200 font-bold transition flex items-center justify-center gap-1">
+                                <span>📋</span>
+                                <span data-i18n="donate_copy_btn">Adresse kopieren</span>
+                            </button>
+                            <a href="#donate" class="flex-1 sm:flex-none px-3.5 py-1.5 bg-accent-amber/20 hover:bg-accent-amber/30 border border-accent-amber text-accent-amber rounded text-[11px] font-bold transition flex items-center justify-center whitespace-nowrap">
+                                <span data-i18n="predl_donate_rules">QR-Code & Regeln ➔</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-dark-border pb-4">
                     <div>
                         <h3 class="text-base sm:text-lg font-bold text-gray-100" data-i18n="dl_box_title">Dark Gateway OS — Virtual Appliance (OVA)</h3>

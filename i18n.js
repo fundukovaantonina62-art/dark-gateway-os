@@ -329,7 +329,10 @@ const I18N = {
         "sidebar_donate_title": "☕ Support (USDT TRC20)",
         "sidebar_donate_btn": "Copy USDT Address",
         "hero_donate_title": "Support Developer & Project",
-        "hero_donate_details": "Rules & QR Code ➔"
+        "hero_donate_details": "Rules & QR Code ➔",
+        "predl_donate_title": "Enjoying the project? Please support the developer before downloading!",
+        "predl_donate_desc": "Dark Gateway OS is 100% free and open-source. If this system saves your time, protects your privacy, or assists your workflow, please consider a small USDT TRC20 contribution to support server hosting and future development.",
+        "predl_donate_rules": "QR Code & Rules ➔"
     },
     "ru": {
         "nav_overview": "Главная (Overview)",
@@ -646,7 +649,10 @@ const I18N = {
         "sidebar_donate_title": "☕ Поддержка (USDT TRC20)",
         "sidebar_donate_btn": "Скопировать USDT",
         "hero_donate_title": "Поддержка разработки проекта",
-        "hero_donate_details": "Правила и QR-код ➔"
+        "hero_donate_details": "Правила и QR-код ➔",
+        "predl_donate_title": "Нравится проект? Пожалуйста, поддержите разработчика перед загрузкой!",
+        "predl_donate_desc": "Dark Gateway OS полностью бесплатна и открыта. Если эта система экономит ваше время, защищает вашу приватность или помогает в работе — поддержите проект любой суммой в USDT TRC20 для оплаты серверов и разработки новых модулей.",
+        "predl_donate_rules": "QR-код и правила ➔"
     },
     "es": {
         "nav_overview": "Inicio (Overview)",
@@ -963,7 +969,10 @@ const I18N = {
         "sidebar_donate_title": "☕ Donación (USDT TRC20)",
         "sidebar_donate_btn": "Copiar USDT",
         "hero_donate_title": "Apoyo al Desarrollo del Proyecto",
-        "hero_donate_details": "Reglas y QR ➔"
+        "hero_donate_details": "Reglas y QR ➔",
+        "predl_donate_title": "¡Apoya al desarrollador antes de descargar!",
+        "predl_donate_desc": "Dark Gateway OS es 100% gratuito y de código abierto. Si este sistema te ahorra tiempo o protege tu privacidad, considera una pequeña contribución en USDT TRC20 para apoyar el proyecto.",
+        "predl_donate_rules": "Código QR y reglas ➔"
     },
     "zh": {
         "nav_overview": "总览 (Overview)",
@@ -1280,7 +1289,10 @@ const I18N = {
         "sidebar_donate_title": "☕ 赞助支持 (USDT TRC20)",
         "sidebar_donate_btn": "复制 USDT 地址",
         "hero_donate_title": "赞助与支持开发者",
-        "hero_donate_details": "规则与二维码 ➔"
+        "hero_donate_details": "规则与二维码 ➔",
+        "predl_donate_title": "喜欢这个项目吗？在下载前请支持开发者！",
+        "predl_donate_desc": "Dark Gateway OS 是完全免费且开源的。如果该系统节省了您的时间、守护了您的隐私安全，请考虑通过 USDT TRC20 进行小额赞助，以支持服务器维护与新功能研发。",
+        "predl_donate_rules": "二维码与合规规则 ➔"
     },
     "de": {
         "nav_overview": "Übersicht (Overview)",
@@ -1597,7 +1609,10 @@ const I18N = {
         "sidebar_donate_title": "☕ Spenden (USDT TRC20)",
         "sidebar_donate_btn": "USDT kopieren",
         "hero_donate_title": "Projektentwicklung unterstützen",
-        "hero_donate_details": "Regeln & QR ➔"
+        "hero_donate_details": "Regeln & QR ➔",
+        "predl_donate_title": "Gefällt Ihnen das Projekt? Unterstützen Sie den Entwickler vor dem Download!",
+        "predl_donate_desc": "Dark Gateway OS ist 100% kostenlos und Open Source. Wenn Ihnen das System hilft oder Ihre Privatsphäre schützt, unterstützen Sie die Weiterentwicklung gerne mit einer USDT TRC20-Spende.",
+        "predl_donate_rules": "QR-Code & Regeln ➔"
     },
     "fr": {
         "nav_overview": "Aperçu (Overview)",
@@ -1914,7 +1929,10 @@ const I18N = {
         "sidebar_donate_title": "☕ Soutenir (USDT TRC20)",
         "sidebar_donate_btn": "Copier USDT",
         "hero_donate_title": "Soutenir le développement du projet",
-        "hero_donate_details": "Règles et QR ➔"
+        "hero_donate_details": "Règles et QR ➔",
+        "predl_donate_title": "Vous appréciez le projet ? Soutenez le développeur avant de télécharger !",
+        "predl_donate_desc": "Dark Gateway OS est 100% gratuit et open-source. Si ce système vous aide ou protège votre vie privée, pensez à faire un don en USDT TRC20 pour soutenir l'hébergement et les futures mises à jour.",
+        "predl_donate_rules": "Code QR et règles ➔"
     },
     "pt": {
         "nav_overview": "Início (Overview)",
@@ -2231,7 +2249,10 @@ const I18N = {
         "sidebar_donate_title": "☕ Doação (USDT TRC20)",
         "sidebar_donate_btn": "Copiar USDT",
         "hero_donate_title": "Apoiar o Desenvolvimento do Projeto",
-        "hero_donate_details": "Regras e QR ➔"
+        "hero_donate_details": "Regras e QR ➔",
+        "predl_donate_title": "Gosta do projeto? Apoie o programador antes de transferir!",
+        "predl_donate_desc": "O Dark Gateway OS é 100% gratuito e de código aberto. Se este sistema poupa o seu tempo ou protege a sua privacidade, considere uma pequena contribuição em USDT TRC20.",
+        "predl_donate_rules": "Código QR e regras ➔"
     },
     "ja": {
         "nav_overview": "概要 (Overview)",
@@ -2548,7 +2569,10 @@ const I18N = {
         "sidebar_donate_title": "☕ 開発支援 (USDT TRC20)",
         "sidebar_donate_btn": "USDT アドレスをコピー",
         "hero_donate_title": "プロジェクト開発の支援",
-        "hero_donate_details": "規則とQRコード ➔"
+        "hero_donate_details": "規則とQRコード ➔",
+        "predl_donate_title": "プロジェクトを応援していただけますか？ダウンロード前に開発者を支援してください！",
+        "predl_donate_desc": "Dark Gateway OS は完全無料でオープンソースです。このシステムが役立ったりプライバシーを保護できたなら、サーバー維持と今後の開発のために USDT TRC20 での温かいご支援をお願いいたします。",
+        "predl_donate_rules": "QRコードと規則 ➔"
     },
     "tr": {
         "nav_overview": "Genel Bakış (Overview)",
@@ -2865,7 +2889,10 @@ const I18N = {
         "sidebar_donate_title": "☕ Bağış (USDT TRC20)",
         "sidebar_donate_btn": "USDT Kopyala",
         "hero_donate_title": "Proje Geliştirmeyi Destekleyin",
-        "hero_donate_details": "Kurallar ve QR ➔"
+        "hero_donate_details": "Kurallar ve QR ➔",
+        "predl_donate_title": "Projeyi beğendiniz mi? İndirmeden önce lütfen geliştiriciyi destekleyin!",
+        "predl_donate_desc": "Dark Gateway OS %100 ücretsiz ve açık kaynaklıdır. Bu sistem işinizi kolaylaştırıyor veya gizliliğinizi koruyorsa, sunucu giderleri ve geliştirmeler için USDT TRC20 ile bağış yapabilirsiniz.",
+        "predl_donate_rules": "QR Kod ve Kurallar ➔"
     },
     "ar": {
         "nav_overview": "نظرة عامة (Overview)",
@@ -3182,7 +3209,10 @@ const I18N = {
         "sidebar_donate_title": "☕ دعم المشروع (USDT TRC20)",
         "sidebar_donate_btn": "نسخ عنوان USDT",
         "hero_donate_title": "دعم وتطوير المشروع",
-        "hero_donate_details": "الضوابط ورمز QR ➔"
+        "hero_donate_details": "الضوابط ورمز QR ➔",
+        "predl_donate_title": "هل أعجبك المشروع؟ يرجى التكرم بدعم المطور قبل بدء التنزيل!",
+        "predl_donate_desc": "Dark Gateway OS هو نظام مجاني ومفتوح المصدر بنسبة 100%. إذا كان هذا النظام يوفر وقتكم أو يحمي خصوصيتكم، فنرجو التكرم بمساهمة بسيطة عبر USDT TRC20 لدعم تكاليف الخوادم والتحديثات القادمة.",
+        "predl_donate_rules": "رمز QR والضوابط ➔"
     }
 };
 
