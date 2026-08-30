@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dark Gateway OS — End User License Agreement, Risk Disclaimer, and Terms of Use.">
+    <title>Dark Gateway OS — License Agreement &amp; Disclaimer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            desktop: '#191a1d',
+                            window: '#222222',
+                            header: '#272727',
+                            input: '#171717',
+                            border: '#2e2e2e',
+                            hover: '#2d2e32',
+                            subtle: '#333338'
+                        },
+                        accent: {
+                            green: '#8ab88c',
+                            blue: '#7ea4b8',
+                            amber: '#dca561',
+                            purple: '#c678dd',
+                            red: '#e06c75'
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['"JetBrains Mono"', '"DejaVu Sans Mono"', '"SF Mono"', 'monospace'],
+                        sans: ['"Inter"', '"DejaVu Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark-desktop text-gray-300 font-sans min-h-screen flex flex-col antialiased selection:bg-[#363636] selection:text-white">
+
+    <!-- Top System Panel (AwesomeWM Style) -->
+    <header class="system-panel bg-dark-window border-b border-dark-border px-4 py-1.5 flex flex-wrap items-center justify-between gap-3 sticky top-0 z-50 text-xs shadow-md">
+        <div class="flex items-center gap-4 flex-wrap">
+            <a href="index.html" class="flex items-center gap-2 font-mono font-bold text-gray-100 hover:text-accent-green transition">
+                <span class="text-accent-green text-sm">◈</span>
+                <span class="tracking-wide">Dark Gateway</span>
+                <span class="bg-dark-input text-accent-blue border border-dark-border px-1.5 py-0.5 rounded text-[10px]">v1.0 Alpha</span>
+            </a>
+            <nav class="flex items-center gap-2 sm:gap-4 font-mono text-[11px]">
+                <a href="index.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_overview">Главная (Overview)</a>
+                <a href="about.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_mission">Назначение &amp; Цели</a>
+                <a href="guide.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_guide">Руководство &amp; Софт</a>
+                <a href="terms.html" class="text-accent-green border-b border-accent-green pb-0.5" data-i18n="nav_terms">Лицензия &amp; Отказ от ответственности</a>
+            </nav>
+        </div>
+
+        <div class="flex items-center gap-3 ml-auto flex-wrap">
+            <div id="lang-selector-widget" class="flex items-center gap-1.5 bg-dark-input border border-dark-border px-2 py-0.5 rounded text-[11px]">
+                <span class="text-xs">🌐</span>
+                <select id="lang-select" class="bg-transparent text-gray-200 outline-none cursor-pointer font-sans" onchange="setLanguage(this.value)">
+                    <option value="en">🇬🇧 English</option>
+                    <option value="ru" selected>🇷🇺 Русский</option>
+                    <option value="es">🇪🇸 Español</option>
+                    <option value="zh">🇨🇳 简体中文</option>
+                    <option value="de">🇩🇪 Deutsch</option>
+                    <option value="fr">🇫🇷 Français</option>
+                    <option value="pt">🇧🇷 Português</option>
+                    <option value="ja">🇯🇵 日本語</option>
+                    <option value="tr">🇹🇷 Türkçe</option>
+                    <option value="ar">🇸🇦 العربية</option>
+                </select>
+            </div>
+
+            <button onclick="copyOnion()" class="flex items-center gap-1.5 bg-dark-input hover:border-accent-green text-gray-300 border border-dark-border px-2 py-0.5 rounded font-mono text-[11px] transition shadow-sm" title="Click to copy official .onion address">
+                <span class="text-accent-amber font-bold text-[9px] uppercase tracking-wider bg-black/40 px-1 rounded" data-i18n="onion_badge">ONION v3</span>
+                <span id="onion-text" class="text-gray-400 font-mono text-[10px] hidden sm:inline">tkefu5...mayid.onion</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="w-full max-w-5xl mx-auto px-4 sm:px-6 py-8 space-y-6 flex-grow">
+        
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold flex items-center gap-2">
+                    <span class="text-accent-amber">⚖</span> End User License Agreement &amp; Legal Disclaimer
+                </span>
+            </div>
+
+            <div class="p-6 sm:p-8 space-y-6 text-sm text-gray-300 leading-relaxed">
+                
+                <!-- CRITICAL DISCLAIMER BANNER -->
+                <div class="p-4 sm:p-5 bg-[#2a1b1b] border-l-4 border-accent-red border-y border-r border-dark-border rounded space-y-2">
+                    <div class="font-bold text-accent-red flex items-center gap-2 text-base font-mono">
+                        <span>⚠️</span> ОТКАЗ ОТ ОТВЕТСТВЕННОСТИ И РАСПРЕДЕЛЕНИЕ РИСКОВ
+                    </div>
+                    <p class="text-xs sm:text-sm text-red-200">
+                        <b>ВСЕ РИСКИ ЗА ИСПОЛЬЗОВАНИЕ ДАННОГО ПРОГРАММНОГО ОБЕСПЕЧЕНИЯ В ЛЮБЫХ ЦЕЛЯХ НЕСУТ ИСКЛЮЧИТЕЛЬНО ПОЛЬЗОВАТЕЛИ.</b>
+                        Разработчики и дистрибьюторы Dark Gateway OS не несут ответственности за любые прямые, косвенные, случайные или преднамеренные последствия, финансовые или правовые риски, блокировки аккаунтов или потерю данных, возникшие в результате установки, эксплуатации или неправильной настройки данного программного обеспечения.
+                    </p>
+                </div>
+
+                <!-- SECTION 1: AS-IS WARRANTY -->
+                <div class="space-y-2">
+                    <h2 class="text-lg font-bold text-gray-100 font-mono border-b border-dark-border pb-1">1. Предоставление «Как есть» (NO WARRANTY / AS-IS)</h2>
+                    <p>
+                        Dark Gateway OS распространяется на условиях принципа <b>«КАК ЕСТЬ» (AS IS)</b>, без каких-либо явных или подразумеваемых гарантий, включая, но не ограничиваясь: гарантиями товарной пригодности, применимости для конкретных задач, безошибочной работы или абсолютной неуязвимости.
+                    </p>
+                    <p>
+                        Хотя система спроектирована с упором на максимальную защиту от утечек (Zero-Leak Boot Isolation, nftables stream isolation, VLESS Reality), ни одна операционная система в мире не может гарантировать 100% анонимность при компрометации оборудования пользователя, вредоносной активности на физическом хосте или ошибках человеческого фактора (OpSec).
+                    </p>
+                </div>
+
+                <!-- SECTION 2: USER RESPONSIBILITY -->
+                <div class="space-y-2">
+                    <h2 class="text-lg font-bold text-gray-100 font-mono border-b border-dark-border pb-1">2. Ответственность и соответствие законодательству</h2>
+                    <p>
+                        Пользователь обязуется использовать Dark Gateway OS исключительно в законных целях в соответствии с законодательством своей юрисдикции и юрисдикций транзитных сетевых узлов.
+                    </p>
+                    <p>
+                        Запрещается использовать систему для несанкционированного доступа к чужим компьютерным системам, осуществления кибератак (DDoS, брутфорс, сканирование уязвимостей), распространения вредоносного ПО или любых противоправных действий.
+                    </p>
+                </div>
+
+                <!-- SECTION 3: HYPERVISOR COMPATIBILITY & LANGUAGE -->
+                <div class="space-y-2">
+                    <h2 class="text-lg font-bold text-gray-100 font-mono border-b border-dark-border pb-1">3. Окружение развертывания и язык интерфейса</h2>
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded text-xs space-y-1.5">
+                        <div><b>• Язык интерфейса ОС:</b> Графический интерфейс системы, системные сообщения, терминал и утилиты управления разработаны и функционируют <b>исключительно на английском языке (English Only)</b>.</div>
+                        <div><b>• Среда виртуализации:</b> Система спроектирована, оптимизирована и <b>протестирована на гипервизорах VMware (VMware Fusion, VMware Workstation)</b>.</div>
+                        <div><b>• Совместимость с VirtualBox:</b> Образ OVA может быть импортирован в Oracle VirtualBox, однако <b>полноценное тестирование на VirtualBox не проводилось</b>. Пользователь несет самостоятельную ответственность за настройку виртуальных сетевых адаптеров в VirtualBox.</div>
+                    </div>
+                </div>
+
+                <!-- SECTION 4: OPEN SOURCE & LICENSING -->
+                <div class="space-y-2">
+                    <h2 class="text-lg font-bold text-gray-100 font-mono border-b border-dark-border pb-1">4. Лицензия компонентов (GPLv3 / MIT / BSD)</h2>
+                    <p>
+                        Dark Gateway OS базируется на компонентах свободного программного обеспечения Linux Kernel, Debian GNU/Linux, Whonix, AwesomeWM, Tor Project, Sing-Box и пользовательских утилитах, написанных на языке C (GTK3). Все оригинальные компоненты Dark Gateway OS лицензированы под свободной лицензией с открытым исходным кодом.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- System Footer -->
+    <footer class="bg-dark-window border-t border-dark-border px-4 py-4 text-center font-mono text-[11px] text-gray-500 space-y-1">
+        <div class="flex justify-center gap-4 text-gray-400 pb-1">
+            <a href="index.html" class="hover:text-gray-200">Главная</a>
+            <a href="about.html" class="hover:text-gray-200">Назначение</a>
+            <a href="guide.html" class="hover:text-gray-200">Руководство</a>
+            <a href="terms.html" class="text-accent-green">Лицензия &amp; Отказ от ответственности</a>
+            <a href="security.html" class="hover:text-gray-200">Безопасность</a>
+            <a href="sitemap.xml" class="hover:text-gray-200">Sitemap</a>
+        </div>
+        <div data-i18n="footer_text_1">DARK GATEWAY OS • ZERO LOGS • ZERO COMPROMISES</div>
+    </footer>
+
+    <script src="i18n.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

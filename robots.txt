@@ -1,0 +1,5 @@
+# Robots.txt for Dark Gateway OS (https://darkgateway.ftp.sh)
+User-agent: *
+Allow: /
+
+Sitemap: https://darkgateway.ftp.sh/sitemap.xml
