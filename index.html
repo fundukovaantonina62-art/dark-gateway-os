@@ -5,290 +5,342 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Dark Gateway OS — Specialized security gateway for ultimate privacy, VLESS Reality multi-layer routing, and zero digital footprint.">
     <title>Dark Gateway OS — Autonomous Security Gateway</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            desktop: '#191a1d',
+                            window: '#222222',
+                            header: '#272727',
+                            input: '#171717',
+                            border: '#2e2e2e',
+                            hover: '#2d2e32',
+                            subtle: '#333338'
+                        },
+                        accent: {
+                            green: '#8ab88c',
+                            blue: '#7ea4b8',
+                            amber: '#dca561',
+                            purple: '#c678dd',
+                            red: '#e06c75'
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['"JetBrains Mono"', '"DejaVu Sans Mono"', '"SF Mono"', 'monospace'],
+                        sans: ['"Inter"', '"DejaVu Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="bg-dark-desktop text-gray-300 font-sans min-h-screen flex flex-col antialiased selection:bg-[#363636] selection:text-white">
+
     <!-- Top System Panel (AwesomeWM Style) -->
-    <header class="system-panel">
-        <div class="panel-left">
-            <div class="system-logo">
-                <span class="logo-glyph">◈</span>
-                <span class="logo-title">Dark Gateway</span>
-                <span class="version-tag">v1.0 Alpha</span>
-            </div>
-            <nav class="system-nav">
-                <a href="index.html" class="nav-item active" data-i18n="nav_overview">Главная (Overview)</a>
-                <a href="about.html" class="nav-item" data-i18n="nav_mission">Назначение &amp; Цели</a>
-                <a href="guide.html" class="nav-item" data-i18n="nav_guide">Руководство &amp; Софт</a>
-                <a href="#download" class="nav-item" data-i18n="nav_download">Скачать OVA</a>
+    <header class="system-panel bg-dark-window border-b border-dark-border px-4 py-1.5 flex flex-wrap items-center justify-between gap-3 sticky top-0 z-50 text-xs shadow-md">
+        <div class="flex items-center gap-4 flex-wrap">
+            <a href="index.html" class="flex items-center gap-2 font-mono font-bold text-gray-100 hover:text-accent-green transition">
+                <span class="text-accent-green text-sm">◈</span>
+                <span class="tracking-wide">Dark Gateway</span>
+                <span class="bg-dark-input text-accent-blue border border-dark-border px-1.5 py-0.5 rounded text-[10px]">v1.0 Alpha</span>
+            </a>
+            <nav class="flex items-center gap-2 sm:gap-4 font-mono text-[11px]">
+                <a href="index.html" class="text-accent-green border-b border-accent-green pb-0.5" data-i18n="nav_overview">Главная (Overview)</a>
+                <a href="about.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_mission">Назначение &amp; Цели</a>
+                <a href="guide.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_guide">Руководство &amp; Софт</a>
+                <a href="#download" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_download">Скачать OVA</a>
             </nav>
         </div>
-        <div class="panel-right">
-            <div class="status-indicator">
-                <span class="indicator-dot"></span>
-                <span class="indicator-text" data-i18n="status_tor_active">TOR ROUTING: ACTIVE</span>
+
+        <div class="flex items-center gap-3 ml-auto flex-wrap">
+            <!-- Language Selector Widget -->
+            <div id="lang-selector-widget" class="flex items-center gap-1.5 bg-dark-input border border-dark-border px-2 py-0.5 rounded text-[11px]">
+                <span class="text-xs">🌐</span>
+                <select id="lang-select" class="bg-transparent text-gray-200 outline-none cursor-pointer font-sans" onchange="setLanguage(this.value)">
+                    <option value="en">🇬🇧 English</option>
+                    <option value="ru" selected>🇷🇺 Русский</option>
+                    <option value="es">🇪🇸 Español</option>
+                    <option value="zh">🇨🇳 简体中文</option>
+                    <option value="de">🇩🇪 Deutsch</option>
+                    <option value="fr">🇫🇷 Français</option>
+                    <option value="pt">🇧🇷 Português</option>
+                    <option value="ja">🇯🇵 日本語</option>
+                    <option value="tr">🇹🇷 Türkçe</option>
+                    <option value="ar">🇸🇦 العربية</option>
+                </select>
             </div>
-            <button class="btn-onion" onclick="copyOnion()" title="Click to copy official .onion address">
-                <span class="onion-badge" data-i18n="onion_badge">ONION v3</span>
-                <span id="onion-text">tkefu5...mayid.onion</span>
+
+            <div class="hidden md:flex items-center gap-1.5 font-mono text-[10px] text-accent-green bg-dark-input border border-dark-border px-2 py-0.5 rounded">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent-green animate-pulse"></span>
+                <span data-i18n="status_tor_active">TOR ROUTING: ACTIVE</span>
+            </div>
+
+            <button onclick="copyOnion()" class="flex items-center gap-1.5 bg-dark-input hover:border-accent-green text-gray-300 border border-dark-border px-2 py-0.5 rounded font-mono text-[11px] transition shadow-sm" title="Click to copy official .onion address">
+                <span class="text-accent-amber font-bold text-[9px] uppercase tracking-wider bg-black/40 px-1 rounded" data-i18n="onion_badge">ONION v3</span>
+                <span id="onion-text" class="text-gray-400 font-mono text-[10px] hidden sm:inline">tkefu5...mayid.onion</span>
             </button>
         </div>
     </header>
 
-    <div class="page-layout">
-        <!-- Sidebar HUD: System Telemetry Simulation -->
-        <aside class="sidebar-hud">
-            <div class="hud-panel">
-                <div class="hud-header">DARK GATEWAY TELEMETRY</div>
-                <div class="hud-content">
-                    <div class="hud-section">
-                        <div class="hud-label">SYSTEM METRICS</div>
-                        <div class="hud-row"><span>HOST:</span> <span class="val">host (6.12.105-amd64)</span></div>
-                        <div class="hud-row"><span>ARCH:</span> <span class="val">x86_64 Hardened Linux</span></div>
-                        <div class="hud-row"><span>RAM LOAD:</span> <span class="val-green">~600 MB / 2.0 GB (30%)</span></div>
-                        <div class="hud-row"><span>DISK USAGE:</span> <span class="val-green">2.2 GB / 98 GB (2%)</span></div>
+    <!-- Main Container -->
+    <div class="w-full max-w-7xl mx-auto px-3 sm:px-6 py-6 grid grid-cols-1 lg:grid-cols-4 gap-6 flex-grow">
+        
+        <!-- SIDEBAR HUD (Visible on Large Screens) -->
+        <aside class="lg:col-span-1 space-y-4">
+            <div class="bg-dark-window border border-dark-border rounded shadow-lg overflow-hidden font-mono text-[11px]">
+                <div class="bg-dark-header border-b border-dark-border px-3 py-1.5 flex items-center justify-between text-gray-200 font-bold tracking-wider">
+                    <span>⚡ TELEMETRY HUD</span>
+                    <span class="text-[9px] text-accent-green bg-dark-input px-1 rounded">LIVE</span>
+                </div>
+                <div class="p-3 space-y-3">
+                    <div class="space-y-1">
+                        <div class="text-[10px] text-gray-500 font-bold uppercase tracking-wider border-b border-dark-border pb-0.5">System Specs</div>
+                        <div class="flex justify-between"><span class="text-gray-400">HOST:</span><span class="text-gray-200">6.12.105-amd64</span></div>
+                        <div class="flex justify-between"><span class="text-gray-400">RAM USAGE:</span><span class="text-accent-green">~600 MB / 2 GB</span></div>
+                        <div class="flex justify-between"><span class="text-gray-400">DISK:</span><span class="text-accent-green">2.2 GB / 98 GB</span></div>
                     </div>
 
-                    <div class="hud-section">
-                        <div class="hud-label">NETWORK ADAPTERS</div>
-                        <div class="hud-row"><span>WAN (eth0):</span> <span class="val">172.16.103.167 (DHCP)</span></div>
-                        <div class="hud-row"><span>LAN (eth1):</span> <span class="val">10.152.152.10 (Gateway)</span></div>
-                        <div class="hud-row"><span>ISOLATION:</span> <span class="val-green">STRICT (Zero Leaks)</span></div>
+                    <div class="space-y-1">
+                        <div class="text-[10px] text-gray-500 font-bold uppercase tracking-wider border-b border-dark-border pb-0.5">Network Adapters</div>
+                        <div class="flex justify-between"><span class="text-gray-400">WAN (eth0):</span><span class="text-gray-200">DHCP / Static</span></div>
+                        <div class="flex justify-between"><span class="text-gray-400">LAN (eth1):</span><span class="text-accent-blue">10.152.152.10</span></div>
+                        <div class="flex justify-between"><span class="text-gray-400">LEAK STATUS:</span><span class="text-accent-green font-bold">0 LEAKS</span></div>
                     </div>
 
-                    <div class="hud-section">
-                        <div class="hud-label">ROUTING &amp; EGRESS</div>
-                        <div class="hud-row"><span>TOR DAEMON:</span> <span class="val-green">Active (100% Circuit)</span></div>
-                        <div class="hud-row"><span>TOR BRIDGES:</span> <span class="val-green">WebTunnel / obfs4</span></div>
-                        <div class="hud-row"><span>PROXY EGRESS:</span> <span class="val-green">Sing-Box :1080 (VLESS)</span></div>
-                        <div class="hud-row"><span>FIREWALL:</span> <span class="val-green">nftables GID Filter</span></div>
-                        <div class="hud-row"><span>ANTI-FORENSICS:</span> <span class="val-green">wipe-traces.service</span></div>
-                    </div>
-
-                    <div class="hud-section">
-                        <div class="hud-label">ACTIVE PORTS</div>
-                        <div class="hud-row"><span>TOR SOCKS5:</span> <span class="val">127.0.0.1:9050</span></div>
-                        <div class="hud-row"><span>LAN TRANSPORT:</span> <span class="val">10.152.152.10:9040</span></div>
-                        <div class="hud-row"><span>LAN DNS PORT:</span> <span class="val">10.152.152.10:5300</span></div>
-                        <div class="hud-row"><span>DISPATCHER:</span> <span class="val">127.0.0.1:1080</span></div>
+                    <div class="space-y-1">
+                        <div class="text-[10px] text-gray-500 font-bold uppercase tracking-wider border-b border-dark-border pb-0.5">Routing &amp; Egress</div>
+                        <div class="flex justify-between"><span class="text-gray-400">TOR DAEMON:</span><span class="text-accent-green">100% Circuit</span></div>
+                        <div class="flex justify-between"><span class="text-gray-400">BRIDGES:</span><span class="text-accent-green">WebTunnel/obfs4</span></div>
+                        <div class="flex justify-between"><span class="text-gray-400">SING-BOX:</span><span class="text-accent-amber">Port :1080</span></div>
+                        <div class="flex justify-between"><span class="text-gray-400">FIREWALL:</span><span class="text-accent-green">nftables active</span></div>
                     </div>
                 </div>
             </div>
+
+            <!-- Quick Links in Sidebar -->
+            <div class="bg-dark-window border border-dark-border rounded p-3 space-y-2 font-mono text-xs">
+                <div class="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Quick Navigation</div>
+                <a href="about.html" class="block p-2 bg-dark-input hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition flex items-center justify-between">
+                    <span>🎯 Mission &amp; Purpose</span>
+                    <span>➔</span>
+                </a>
+                <a href="guide.html" class="block p-2 bg-dark-input hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition flex items-center justify-between">
+                    <span>📖 User Manual &amp; Apps</span>
+                    <span>➔</span>
+                </a>
+            </div>
         </aside>
 
-        <!-- Main Content Area -->
-        <main class="main-viewport">
-            <!-- HERO SECTION -->
-            <section class="window-frame" id="overview">
-                <div class="window-titlebar">
-                    <span class="titlebar-text">Dark Gateway OS — Autonomous Security Gateway</span>
-                    <div class="window-controls">
-                        <span class="ctrl-btn">_</span>
-                        <span class="ctrl-btn">□</span>
-                        <span class="ctrl-btn">×</span>
+        <!-- MAIN VIEWPORT -->
+        <main class="lg:col-span-3 space-y-6">
+
+            <!-- HERO WINDOW -->
+            <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden">
+                <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                    <span class="font-mono text-xs text-gray-200 font-bold flex items-center gap-2">
+                        <span class="text-accent-green">▪</span> Dark Gateway OS — Autonomous Security Gateway
+                    </span>
+                    <div class="flex items-center gap-1.5 font-mono text-xs text-gray-500">
+                        <span class="px-1.5 py-0.5 bg-dark-input rounded hover:text-gray-300 cursor-default">_</span>
+                        <span class="px-1.5 py-0.5 bg-dark-input rounded hover:text-gray-300 cursor-default">□</span>
+                        <span class="px-1.5 py-0.5 bg-dark-input rounded hover:text-gray-300 cursor-default">×</span>
                     </div>
                 </div>
-                <div class="window-content hero-content">
-                    <div class="hero-header-line">
-                        <span class="tag-badge" data-i18n="hero_tag">SECURITY GATEWAY ARCHITECTURE</span>
-                        <span class="tag-meta" data-i18n="hero_meta">ZERO-TELEMETRY • ANTI-DPI • MULTI-LAYER EGRESS</span>
+
+                <div class="p-5 sm:p-7 space-y-5">
+                    <div class="flex items-center gap-2 flex-wrap text-xs">
+                        <span class="bg-dark-input border border-accent-green text-accent-green px-2.5 py-0.5 rounded font-mono font-bold" data-i18n="hero_tag">SECURITY GATEWAY ARCHITECTURE</span>
+                        <span class="text-gray-500 font-mono text-[11px]" data-i18n="hero_meta">ZERO-TELEMETRY • ANTI-DPI • MULTI-LAYER EGRESS</span>
                     </div>
-                    
-                    <h1 class="hero-headline" data-i18n-html="hero_title">
+
+                    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-100 leading-tight" data-i18n-html="hero_title">
                         Герметичная изоляция трафика.<br>
-                        Мультипротокольный VLESS выход.
+                        <span class="text-accent-green">Мультипротокольный VLESS выход.</span>
                     </h1>
-                    
-                    <p class="hero-lead" data-i18n-html="hero_lead">
+
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed" data-i18n-html="hero_lead">
                         <b>Dark Gateway OS</b> — автономный шлюз безопасности нового поколения на базе hardened Debian 13/Whonix. Разработан для строгой изоляции локальных рабочих станций, обхода глубокого анализа пакетов (DPI) и маршрутизации анонимных потоков через приватные выходные ноды VLESS Reality с нулевым цифровым следом.
                     </p>
 
-                    <div class="hero-action-bar">
-                        <a href="#download" class="btn btn-primary" data-i18n="btn_download_hero">
-                            <span class="btn-bullet">▪</span> Скачать образ (1.0 GB OVA)
+                    <div class="flex flex-wrap items-center gap-3 pt-2">
+                        <a href="#download" class="px-4 py-2.5 bg-accent-green hover:bg-[#9ac79c] text-dark-desktop font-mono font-bold text-xs rounded transition flex items-center gap-2 shadow-md" data-i18n="btn_download_hero">
+                            <span>⬇</span> Скачать образ (1.0 GB OVA)
                         </a>
-                        <a href="about.html" class="btn btn-secondary" data-i18n="btn_about_hero">
-                            <span>Для чего &amp; Для кого</span>
+                        <a href="about.html" class="px-4 py-2.5 bg-dark-input hover:bg-dark-hover border border-dark-border text-gray-200 font-mono text-xs rounded transition" data-i18n="btn_about_hero">
+                            Для чего &amp; Для кого
                         </a>
-                        <a href="guide.html" class="btn btn-secondary" data-i18n="btn_guide_hero">
-                            <span>Руководство &amp; Обзор программ</span>
+                        <a href="guide.html" class="px-4 py-2.5 bg-dark-input hover:bg-dark-hover border border-dark-border text-gray-200 font-mono text-xs rounded transition" data-i18n="btn_guide_hero">
+                            Руководство &amp; Обзор программ
                         </a>
                     </div>
 
-                    <!-- Embedded Terminal Console Simulation -->
-                    <div class="terminal-widget">
-                        <div class="term-titlebar">
+                    <!-- TERMINAL SIMULATION -->
+                    <div class="bg-black/60 border border-dark-border rounded overflow-hidden font-mono text-xs shadow-inner">
+                        <div class="bg-[#151515] border-b border-dark-border px-3 py-1.5 flex justify-between items-center text-[10px] text-gray-400">
                             <span>user@dark-gateway: ~ (Terminal Console)</span>
-                            <span>DejaVu Sans Mono 7.5pt</span>
+                            <span>DejaVu Sans Mono</span>
                         </div>
-                        <div class="term-screen">
-                            <div class="t-line"><span class="t-prefix">[INIT]</span> Dark Gateway OS v1.0 Alpha initializing system modules... <span class="t-green">[OK]</span></div>
-                            <div class="t-line"><span class="t-prefix">[FIREWALL]</span> nftables: Enforcing strict stream isolation on eth1 (LAN)... <span class="t-green">[ACTIVE]</span></div>
-                            <div class="t-line"><span class="t-prefix">[TOR]</span> Bootstrapping circuit over WebTunnel/obfs4 bridge transport... <span class="t-green">[100% DONE]</span></div>
-                            <div class="t-line"><span class="t-prefix">[PROXY]</span> Sing-Box Client: Routing 127.0.0.1:1080 ➔ VLESS Reality Vision ➔ Egress Node</div>
-                            <div class="t-line"><span class="t-prefix">[CLEAN]</span> wipe-traces.service registered on shutdown.target. Zero disk retention.</div>
-                            <div class="t-line t-cmd"><span class="t-user">user@gateway:~$</span> health-check</div>
-                            <div class="t-line t-res">➔ AUDIT RESULT: <span class="t-green">100% HEALTHY - ALL SECURITY CHECKS PASSED (6/6)</span></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- EXPLORE SECTIONS CARDS -->
-            <section class="window-frame">
-                <div class="window-titlebar">
-                    <span class="titlebar-text">Навигация по разделам документации и системы</span>
-                </div>
-                <div class="window-content">
-                    <div class="cards-grid">
-                        <a href="about.html" class="nav-card">
-                            <div class="nav-card-icon">🎯</div>
-                            <h3 data-i18n="card_mission_title">Назначение и Миссия</h3>
-                            <p data-i18n="card_mission_desc">Для кого создана ОС, какие задачи решает, защита от цензуры, DPI и сопоставления сетевых профилей.</p>
-                            <span class="nav-card-link" data-i18n="card_learn_more">Узнать больше ➔</span>
-                        </a>
-
-                        <a href="guide.html" class="nav-card">
-                            <div class="nav-card-icon">📖</div>
-                            <h3 data-i18n="card_guide_title">Руководство пользователя</h3>
-                            <p data-i18n="card_guide_desc">Пошаговые инструкции по работе с Proxy Wizard, Firewall Control Center, Network GUI и приложениями с иллюстрациями.</p>
-                            <span class="nav-card-link" data-i18n="card_open_guide">Открыть руководство ➔</span>
-                        </a>
-
-                        <a href="#download" class="nav-card">
-                            <div class="nav-card-icon">📦</div>
-                            <h3 data-i18n="card_download_title">Скачать виртуальную машину</h3>
-                            <p data-i18n="card_download_desc">Официальный сжатый OVA-образ (1.0 GB), контрольные суммы SHA-256 и инструкция по развертыванию.</p>
-                            <span class="nav-card-link" data-i18n="card_goto_dl">Перейти к загрузке ➔</span>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- CORE CAPABILITIES (FEATURES) -->
-            <section class="window-frame" id="features">
-                <div class="window-titlebar">
-                    <span class="titlebar-text">System Capabilities &amp; Architecture Pillars</span>
-                </div>
-                <div class="window-content">
-                    <div class="cards-grid">
-                        <div class="feature-box">
-                            <div class="box-header">
-                                <span class="box-icon">▪</span>
-                                <h3 data-i18n="feat_proxy_title">Мультипротокольный прокси-выход</h3>
-                            </div>
-                            <p data-i18n-html="feat_proxy_desc">Каскадное перенаправление луковых потоков в приватные ноды <b>VLESS Reality (XTLS Vision)</b> или <b>Shadowsocks</b> (<i>Trojan в разработке</i>). Устраняет блокировки Cloudflare/Google Captcha.</p>
-                        </div>
-
-                        <div class="feature-box">
-                            <div class="box-header">
-                                <span class="box-icon">▪</span>
-                                <h3 data-i18n="feat_boot_title">Zero-Leak Boot Isolation</h3>
-                            </div>
-                            <p data-i18n-html="feat_boot_desc">При включении системы трафик заморожен (<code>DisableNetwork 1</code>). Доступ открывается только после осознанного выбора маршрутизации в мастере <b>Tor Connection Setup</b>.</p>
-                        </div>
-
-                        <div class="feature-box">
-                            <div class="box-header">
-                                <span class="box-icon">▪</span>
-                                <h3 data-i18n="feat_fw_title">Гранулярный nftables фаервол</h3>
-                            </div>
-                            <p data-i18n-html="feat_fw_desc">Управление доступом в сеть для каждого приложения в отдельности на уровне сокетов ядра с мгновенным сбросом активных соединений (<code>ss -K</code>).</p>
-                        </div>
-
-                        <div class="feature-box">
-                            <div class="box-header">
-                                <span class="box-icon">▪</span>
-                                <h3 data-i18n="feat_c_title">Стек на Pure C (GTK3)</h3>
-                            </div>
-                            <p data-i18n-html="feat_c_desc">Все графические утилиты написаны на нативном C без тяжелых зависимостей Python и Bash. Моментальный старт и ультранизкое потребление памяти (~600 МБ RAM).</p>
-                        </div>
-
-                        <div class="feature-box">
-                            <div class="box-header">
-                                <span class="box-icon">▪</span>
-                                <h3 data-i18n="feat_wipe_title">Автоматический Anti-Forensics</h3>
-                            </div>
-                            <p data-i18n-html="feat_wipe_desc">Утилита <b>Wipe Privacy Traces</b> и служба <code>wipe-traces.service</code> автоматически стирают кэш браузера, сессии, историю команд и временные логи при завершении работы.</p>
-                        </div>
-
-                        <div class="feature-box">
-                            <div class="box-header">
-                                <span class="box-icon">▪</span>
-                                <h3 data-i18n="feat_apps_title">Приватные приложения</h3>
-                            </div>
-                            <p data-i18n-html="feat_apps_desc">Предустановленные Ungoogled Chromium с защитой от фингерпринтинга и Telegram Desktop в изолированной группе с авто-проксированием.</p>
+                        <div class="p-3.5 space-y-1.5 text-[11px] leading-relaxed">
+                            <div class="text-gray-300"><span class="text-accent-blue">[INIT]</span> Dark Gateway OS v1.0 Alpha initializing system modules... <span class="text-accent-green">[OK]</span></div>
+                            <div class="text-gray-300"><span class="text-accent-blue">[FIREWALL]</span> nftables: Enforcing strict stream isolation on eth1 (LAN)... <span class="text-accent-green">[ACTIVE]</span></div>
+                            <div class="text-gray-300"><span class="text-accent-blue">[TOR]</span> Bootstrapping circuit over WebTunnel/obfs4 bridge transport... <span class="text-accent-green">[100% DONE]</span></div>
+                            <div class="text-gray-300"><span class="text-accent-blue">[PROXY]</span> Sing-Box Client: Routing 127.0.0.1:1080 ➔ VLESS Reality Vision ➔ Egress Node</div>
+                            <div class="text-gray-300"><span class="text-accent-blue">[CLEAN]</span> wipe-traces.service registered on shutdown.target. Zero disk retention.</div>
+                            <div class="text-accent-green pt-1"><span class="text-gray-400">user@gateway:~$</span> health-check</div>
+                            <div class="text-gray-300">➔ AUDIT RESULT: <span class="text-accent-green font-bold">100% HEALTHY - ALL SECURITY CHECKS PASSED (6/6)</span></div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- ARCHITECTURE BLUEPRINT -->
-            <section class="window-frame" id="architecture">
-                <div class="window-titlebar">
-                    <span class="titlebar-text" data-i18n="topo_title">Сетевая топология и маршрутизация трафика</span>
+            <!-- EXPLORE CARDS GRID -->
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <a href="about.html" class="block p-4 bg-dark-window hover:bg-dark-hover border border-dark-border hover:border-accent-green rounded transition group shadow-md">
+                    <div class="text-2xl mb-2">🎯</div>
+                    <h3 class="font-bold text-gray-100 text-sm group-hover:text-accent-green transition" data-i18n="card_mission_title">Назначение и Миссия</h3>
+                    <p class="text-xs text-gray-400 mt-1 leading-relaxed" data-i18n="card_mission_desc">Для кого создана ОС, какие задачи решает, защита от цензуры, DPI и сопоставления сетевых профилей.</p>
+                    <span class="inline-block mt-3 text-[11px] font-mono text-accent-green font-bold" data-i18n="card_learn_more">Узнать больше ➔</span>
+                </a>
+
+                <a href="guide.html" class="block p-4 bg-dark-window hover:bg-dark-hover border border-dark-border hover:border-accent-green rounded transition group shadow-md">
+                    <div class="text-2xl mb-2">📖</div>
+                    <h3 class="font-bold text-gray-100 text-sm group-hover:text-accent-green transition" data-i18n="card_guide_title">Руководство пользователя</h3>
+                    <p class="text-xs text-gray-400 mt-1 leading-relaxed" data-i18n="card_guide_desc">Пошаговые инструкции по работе с Proxy Wizard, Firewall Control Center, Network GUI и приложениями с иллюстрациями.</p>
+                    <span class="inline-block mt-3 text-[11px] font-mono text-accent-green font-bold" data-i18n="card_open_guide">Открыть руководство ➔</span>
+                </a>
+
+                <a href="#download" class="block p-4 bg-dark-window hover:bg-dark-hover border border-dark-border hover:border-accent-green rounded transition group shadow-md">
+                    <div class="text-2xl mb-2">📦</div>
+                    <h3 class="font-bold text-gray-100 text-sm group-hover:text-accent-green transition" data-i18n="card_download_title">Скачать виртуальную машину</h3>
+                    <p class="text-xs text-gray-400 mt-1 leading-relaxed" data-i18n="card_download_desc">Официальный сжатый OVA-образ (1.0 GB), контрольные суммы SHA-256 и инструкция по развертыванию.</p>
+                    <span class="inline-block mt-3 text-[11px] font-mono text-accent-green font-bold" data-i18n="card_goto_dl">Перейти к загрузке ➔</span>
+                </a>
+            </section>
+
+            <!-- CORE FEATURES GRID -->
+            <section class="bg-dark-window border border-dark-border rounded shadow-lg p-5 sm:p-6 space-y-4">
+                <div class="border-b border-dark-border pb-3 flex items-center justify-between">
+                    <h2 class="font-bold text-gray-100 text-sm sm:text-base tracking-wide font-mono">⚡ SYSTEM CAPABILITIES &amp; PILLARS</h2>
                 </div>
-                <div class="window-content">
-                    <div class="topology-diagram">
-                        <div class="topology-step">
-                            <div class="step-badge">СЕГМЕНТ 1</div>
-                            <h4 data-i18n="topo_s1_title">Клиентские ОС</h4>
-                            <p data-i18n-html="topo_s1_desc">Debian / Tails / Windows<br>Без прямого выхода в WAN</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded space-y-1.5">
+                        <div class="font-bold text-gray-100 text-xs flex items-center gap-2">
+                            <span class="text-accent-green font-bold">▪</span>
+                            <span data-i18n="feat_proxy_title">Мультипротокольный прокси-выход</span>
                         </div>
-                        <div class="topology-divider">➔</div>
-                        <div class="topology-step active">
-                            <div class="step-badge">ШЛЮЗ БЕЗОПАСНОСТИ</div>
-                            <h4 data-i18n="topo_s2_title">Dark Gateway Core</h4>
-                            <p data-i18n-html="topo_s2_desc">nftables + Stream Isolation<br>eth1: 10.152.152.10</p>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="feat_proxy_desc">Каскадное перенаправление луковых потоков в приватные ноды <b>VLESS Reality (XTLS Vision)</b> или <b>Shadowsocks</b> (<i>Trojan в разработке</i>). Устраняет блокировки Cloudflare/Google Captcha.</p>
+                    </div>
+
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded space-y-1.5">
+                        <div class="font-bold text-gray-100 text-xs flex items-center gap-2">
+                            <span class="text-accent-green font-bold">▪</span>
+                            <span data-i18n="feat_boot_title">Zero-Leak Boot Isolation</span>
                         </div>
-                        <div class="topology-divider">➔</div>
-                        <div class="topology-step">
-                            <div class="step-badge">АНОНИМНАЯ СЕТЬ</div>
-                            <h4 data-i18n="topo_s3_title">Tor Onion Overlay</h4>
-                            <p data-i18n-html="topo_s3_desc">3-хоповое шифрование<br>WebTunnel / obfs4 мосты</p>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="feat_boot_desc">При включении системы трафик заморожен (<code>DisableNetwork 1</code>). Доступ открывается только после осознанного выбора маршрутизации в мастере <b>Tor Connection Setup</b>.</p>
+                    </div>
+
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded space-y-1.5">
+                        <div class="font-bold text-gray-100 text-xs flex items-center gap-2">
+                            <span class="text-accent-green font-bold">▪</span>
+                            <span data-i18n="feat_fw_title">Гранулярный nftables фаервол</span>
                         </div>
-                        <div class="topology-divider">➔</div>
-                        <div class="topology-step active-green">
-                            <div class="step-badge">ВЫХОДНОЙ УЗЕЛ</div>
-                            <h4 data-i18n="topo_s4_title">VLESS Reality Exit</h4>
-                            <p data-i18n-html="topo_s4_desc">Чистый приватный IP<br>Целевой интернет-ресурс</p>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="feat_fw_desc">Управление доступом в сеть для каждого приложения в отдельности на уровне сокетов ядра с мгновенным сбросом активных соединений (<code>ss -K</code>).</p>
+                    </div>
+
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded space-y-1.5">
+                        <div class="font-bold text-gray-100 text-xs flex items-center gap-2">
+                            <span class="text-accent-green font-bold">▪</span>
+                            <span data-i18n="feat_c_title">Стек на Pure C (GTK3)</span>
                         </div>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="feat_c_desc">Все графические утилиты написаны на нативном C без тяжелых зависимостей Python и Bash. Моментальный старт и ультранизкое потребление памяти (~600 МБ RAM).</p>
+                    </div>
+
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded space-y-1.5">
+                        <div class="font-bold text-gray-100 text-xs flex items-center gap-2">
+                            <span class="text-accent-green font-bold">▪</span>
+                            <span data-i18n="feat_wipe_title">Автоматический Anti-Forensics</span>
+                        </div>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="feat_wipe_desc">Утилита <b>Wipe Privacy Traces</b> и служба <code>wipe-traces.service</code> автоматически стирают кэш браузера, сессии, историю команд и временные логи при завершении работы.</p>
+                    </div>
+
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded space-y-1.5">
+                        <div class="font-bold text-gray-100 text-xs flex items-center gap-2">
+                            <span class="text-accent-green font-bold">▪</span>
+                            <span data-i18n="feat_apps_title">Приватные приложения</span>
+                        </div>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="feat_apps_desc">Предустановленные Ungoogled Chromium с защитой от фингерпринтинга и Telegram Desktop в изолированной группе с авто-проксированием.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- APPLIANCE DOWNLOAD & SECURITY -->
-            <section class="window-frame" id="download">
-                <div class="window-titlebar">
-                    <span class="titlebar-text">Загрузка виртуального образа и верификация (OVA)</span>
+            <!-- NETWORK TOPOLOGY -->
+            <section class="bg-dark-window border border-dark-border rounded shadow-lg p-5 sm:p-6 space-y-4">
+                <div class="border-b border-dark-border pb-3">
+                    <h2 class="font-bold text-gray-100 text-sm sm:text-base tracking-wide font-mono" data-i18n="topo_title">Сетевая топология и маршрутизация трафика</h2>
                 </div>
-                <div class="window-content download-box">
-                    <div class="download-info">
-                        <h3 data-i18n="dl_box_title">Dark Gateway OS — Virtual Appliance (OVA)</h3>
-                        <p data-i18n="dl_box_desc">Универсальный готовый образ для VMware Fusion / Workstation, VirtualBox, KVM / QEMU и Proxmox VE.</p>
-                        
-                        <div class="hash-field">
-                            <span class="hash-type">SHA-256:</span>
-                            <code class="hash-string" id="file-hash">6c4401a359592d5bd65cbf520b6462c48b51ce91ddc274282a02fd63af95106b</code>
-                            <button class="btn btn-mini" onclick="copyHash()" data-i18n="copy_btn">Копировать</button>
-                        </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-center text-xs font-mono">
+                    <div class="p-3 bg-dark-input border border-dark-border rounded space-y-1">
+                        <div class="text-[10px] text-gray-500 font-bold">СЕГМЕНТ 1</div>
+                        <div class="font-bold text-gray-200" data-i18n="topo_s1_title">Клиентские ОС</div>
+                        <div class="text-[11px] text-gray-400" data-i18n-html="topo_s1_desc">Debian / Tails / Windows<br>Без прямого выхода в WAN</div>
                     </div>
-                    <div class="download-buttons">
-                        <a href="https://github.com/fundukovaantonina62-art/dark-gateway-os/releases/download/v1.0.0-alpha/Dark_Gateway_OS.ova" class="btn btn-primary" id="btn-download-release" data-i18n="btn_download_release">
-                            <span class="btn-bullet">⬇</span> Скачать OVA с GitHub (1.0 GB)
-                        </a>
+
+                    <div class="p-3 bg-dark-input border border-accent-blue rounded space-y-1">
+                        <div class="text-[10px] text-accent-blue font-bold">ШЛЮЗ БЕЗОПАСНОСТИ</div>
+                        <div class="font-bold text-gray-200" data-i18n="topo_s2_title">Dark Gateway Core</div>
+                        <div class="text-[11px] text-gray-400" data-i18n-html="topo_s2_desc">nftables + Stream Isolation<br>eth1: 10.152.152.10</div>
+                    </div>
+
+                    <div class="p-3 bg-dark-input border border-dark-border rounded space-y-1">
+                        <div class="text-[10px] text-gray-500 font-bold">АНОНИМНАЯ СЕТЬ</div>
+                        <div class="font-bold text-gray-200" data-i18n="topo_s3_title">Tor Onion Overlay</div>
+                        <div class="text-[11px] text-gray-400" data-i18n-html="topo_s3_desc">3-хоповое шифрование<br>WebTunnel / obfs4 мосты</div>
+                    </div>
+
+                    <div class="p-3 bg-dark-input border border-accent-green rounded space-y-1">
+                        <div class="text-[10px] text-accent-green font-bold">ВЫХОДНОЙ УЗЕЛ</div>
+                        <div class="font-bold text-gray-200" data-i18n="topo_s4_title">VLESS Reality Exit</div>
+                        <div class="text-[11px] text-gray-400" data-i18n-html="topo_s4_desc">Чистый приватный IP<br>Целевой интернет-ресурс</div>
                     </div>
                 </div>
             </section>
+
+            <!-- DOWNLOAD BOX -->
+            <section id="download" class="bg-dark-window border border-accent-green/60 rounded shadow-xl p-5 sm:p-7 space-y-4">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-dark-border pb-4">
+                    <div>
+                        <h3 class="text-base sm:text-lg font-bold text-gray-100" data-i18n="dl_box_title">Dark Gateway OS — Virtual Appliance (OVA)</h3>
+                        <p class="text-xs text-gray-400 mt-1" data-i18n="dl_box_desc">Универсальный готовый образ для VMware Fusion / Workstation, VirtualBox, KVM / QEMU и Proxmox VE.</p>
+                    </div>
+                    <a href="https://github.com/fundukovaantonina62-art/dark-gateway-os/releases/download/v1.0.0-alpha/Dark_Gateway_OS.ova" class="px-5 py-3 bg-accent-green hover:bg-[#9ac79c] text-dark-desktop font-mono font-bold text-xs rounded transition whitespace-nowrap shadow-md flex items-center gap-2" data-i18n="btn_download_release">
+                        <span>⬇</span> Скачать OVA с GitHub (1.0 GB)
+                    </a>
+                </div>
+
+                <div class="bg-dark-input border border-dark-border p-3 rounded flex flex-col sm:flex-row sm:items-center justify-between gap-2 font-mono text-xs">
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <span class="text-gray-500 font-bold">SHA-256:</span>
+                        <code id="file-hash" class="text-accent-green text-[11px] break-all">6c4401a359592d5bd65cbf520b6462c48b51ce91ddc274282a02fd63af95106b</code>
+                    </div>
+                    <button onclick="copyHash()" class="px-2.5 py-1 bg-dark-hover hover:bg-dark-subtle border border-dark-border rounded text-[11px] text-gray-300 transition self-start sm:self-auto" data-i18n="copy_btn">Копировать</button>
+                </div>
+            </section>
+
         </main>
     </div>
 
     <!-- System Footer -->
-    <footer class="system-footer">
-        <div class="footer-inner">
-            <span data-i18n="footer_text_1">DARK GATEWAY OS • ZERO LOGS • ZERO COMPROMISES</span>
-            <span data-i18n="footer_text_2">HOSTED ON GITHUB PAGES &amp; TOR ONION NETWORK (.ONION v3)</span>
-        </div>
+    <footer class="bg-dark-window border-t border-dark-border px-4 py-4 text-center font-mono text-[11px] text-gray-500 space-y-1">
+        <div data-i18n="footer_text_1">DARK GATEWAY OS • ZERO LOGS • ZERO COMPROMISES</div>
+        <div data-i18n="footer_text_2">HOSTED ON GITHUB PAGES &amp; TOR ONION NETWORK (.ONION v3)</div>
     </footer>
 
     <script src="i18n.js"></script>
