@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dark Gateway OS — Step-by-step user manual and application guide with screenshots.">
+    <title data-i18n="guide_window_title">ユーザーマニュアルとアプリ操作ガイド</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            desktop: '#191a1d',
+                            window: '#222222',
+                            header: '#272727',
+                            input: '#171717',
+                            border: '#2e2e2e',
+                            hover: '#2d2e32',
+                            subtle: '#333338'
+                        },
+                        accent: {
+                            green: '#8ab88c',
+                            blue: '#7ea4b8',
+                            amber: '#dca561',
+                            purple: '#c678dd',
+                            red: '#e06c75'
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['"JetBrains Mono"', '"DejaVu Sans Mono"', '"SF Mono"', 'monospace'],
+                        sans: ['"Inter"', '"DejaVu Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-dark-desktop text-gray-300 font-sans min-h-screen flex flex-col antialiased selection:bg-[#363636] selection:text-white">
+
+    <!-- Top System Panel (AwesomeWM Style) -->
+    <header class="system-panel bg-dark-window border-b border-dark-border px-4 py-1.5 flex flex-wrap items-center justify-between gap-3 sticky top-0 z-50 text-xs shadow-md">
+        <div class="flex items-center gap-4 flex-wrap">
+            <a href="index.html" class="flex items-center gap-2 font-mono font-bold text-gray-100 hover:text-accent-green transition">
+                <span class="text-accent-green text-sm">◈</span>
+                <span class="tracking-wide">Dark Gateway</span>
+                <span class="bg-dark-input text-accent-blue border border-dark-border px-1.5 py-0.5 rounded text-[10px]">v1.0 Alpha</span>
+            </a>
+            <nav class="flex items-center gap-2 sm:gap-4 font-mono text-[11px]">
+                <a href="index.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_overview">概要 (Overview)</a>
+                <a href="about.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_mission">使命と目的</a>
+                <a href="guide.html" class="text-accent-green border-b border-accent-green pb-0.5" data-i18n="nav_guide">マニュアル＆アプリ</a>
+                <a href="terms.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_terms">利用規約と免責</a>
+                <a href="security.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_security">セキュリティ</a>
+            </nav>
+        </div>
+
+        <div class="flex items-center gap-3 ml-auto flex-wrap">
+            <div id="lang-selector-widget" class="flex items-center gap-1.5 bg-dark-input border border-dark-border px-2 py-0.5 rounded text-[11px]">
+                <span class="text-xs">🌐</span>
+                <select id="lang-select" class="bg-transparent text-gray-200 outline-none cursor-pointer font-sans" onchange="switchLanguage(this.value, 'guide.html')">
+                    <option value="en">🇬🇧 English</option>
+                    <option value="ru">🇷🇺 Русский</option>
+                    <option value="es">🇪🇸 Español</option>
+                    <option value="zh">🇨🇳 简体中文</option>
+                    <option value="de">🇩🇪 Deutsch</option>
+                    <option value="fr">🇫🇷 Français</option>
+                    <option value="pt">🇵🇹 Português</option>
+                    <option value="ja" selected>🇯🇵 日本語</option>
+                    <option value="tr">🇹🇷 Türkçe</option>
+                    <option value="ar">🇸🇦 العربية</option>
+                </select>
+            </div>
+
+            <button onclick="copyOnion()" class="flex items-center gap-1.5 bg-dark-input hover:border-accent-green text-gray-300 border border-dark-border px-2 py-0.5 rounded font-mono text-[11px] transition shadow-sm" title="Click to copy official .onion address">
+                <span class="text-accent-amber font-bold text-[9px] uppercase tracking-wider bg-black/40 px-1 rounded" data-i18n="onion_badge">ONION v3</span>
+                <span id="onion-text" class="text-gray-400 font-mono text-[10px] hidden sm:inline">tkefu5...mayid.onion</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="w-full max-w-6xl mx-auto px-4 sm:px-6 py-8 space-y-8 flex-grow">
+
+        <!-- HEADER HERO -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold flex items-center gap-2">
+                    <span class="text-accent-green">▪</span> <span data-i18n="guide_window_title">ユーザーマニュアルとアプリ操作ガイド</span>
+                </span>
+            </div>
+
+            <div class="p-6 sm:p-8 space-y-5">
+                <div class="flex items-center gap-2 flex-wrap text-xs">
+                    <span class="bg-dark-input border border-accent-green text-accent-green px-2.5 py-0.5 rounded font-mono font-bold" data-i18n="guide_hero_tag">公式ドキュメントとマニュアル</span>
+                    <span class="text-gray-500 font-mono text-[11px]" data-i18n="guide_hero_meta">画像付きステップバイステップ手順 • 全内蔵ツール解説</span>
+                </div>
+
+                <h1 class="text-2xl sm:text-3xl font-bold text-gray-100" data-i18n="guide_title">Dark Gateway OS の使い方</h1>
+                <p class="text-gray-300 text-sm sm:text-base leading-relaxed" data-i18n="guide_lead">初回起動時のTor接続設定、ネットワークアダプタ構成、多階層プロキシ連携、きめ細かなファイアウォール制御、内蔵ツールの活用法を網羅した詳細ガイドです。</p>
+
+                <!-- Quick Navigation TOC -->
+                <div class="bg-dark-input border-l-4 border-accent-green border-y border-r border-dark-border p-4 rounded space-y-2.5">
+                    <div class="font-mono font-bold text-xs text-gray-200 tracking-wider" data-i18n="guide_toc_title">⚡ クイックセクションナビゲーション:</div>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-mono">
+                        <a href="#step-first-boot" class="p-2 bg-dark-window hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition" data-i18n="toc_s1">1. 起動とTor接続</a>
+                        <a href="#step-network-config" class="p-2 bg-dark-window hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition" data-i18n="toc_s2">2. ネットワーク設定</a>
+                        <a href="#step-proxy-wizard" class="p-2 bg-dark-window hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition" data-i18n="toc_s3">3. プロキシ設定</a>
+                        <a href="#step-firewall" class="p-2 bg-dark-window hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition" data-i18n="toc_s4">4. ファイアウォール</a>
+                        <a href="#step-apps" class="p-2 bg-dark-window hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition" data-i18n="toc_s5">5. ブラウザ＆通信</a>
+                        <a href="#step-anti-forensics" class="p-2 bg-dark-window hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition" data-i18n="toc_s6">6. 痕跡消去</a>
+                        <a href="#step-updates" class="p-2 bg-dark-window hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition" data-i18n="toc_s7">7. システム更新</a>
+                        <a href="#step-monitoring" class="p-2 bg-dark-window hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition" data-i18n="toc_s8">8. 監視HUD</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1: FIRST BOOT & TOR SETUP -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden" id="step-first-boot">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold" data-i18n="guide_step1_window">ステップ 1：起動時ネットワーク遮断とTor接続</span>
+                <span class="font-mono text-[10px] text-accent-green bg-dark-input px-2 py-0.5 rounded border border-dark-border">01</span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-4">
+                <span class="inline-block px-2.5 py-0.5 bg-dark-input border border-accent-green text-accent-green font-mono font-bold text-xs rounded" data-i18n="guide_step1_badge">ステップ 1</span>
+                <h2 class="text-xl font-bold text-gray-100" data-i18n="guide_step1_title">ステップ 1：初回起動とTorゲートウェイ接続 (Boot Isolation)</h2>
+                
+                <p class="text-xs sm:text-sm text-gray-300 leading-relaxed" data-i18n-html="guide_step1_desc">データ漏洩を防ぐため、起動時は通信が完全停止（<code>DisableNetwork 1</code>）しています。<b>Tor Connection Setup</b> ウィンドウでダイレクト接続または <b>WebTunnel</b> / <b>obfs4</b> ブリッジを指定し、<b>[Connect]</b> をクリックしてください。</p>
+
+                <div class="p-4 bg-dark-input border border-dark-border rounded space-y-2 text-xs">
+                    <div class="font-bold text-gray-200" data-i18n="guide_step1_modes_title">📋 接続モードの選択:</div>
+                    <ul class="space-y-1 text-gray-400 ml-1">
+                        <li data-i18n-html="guide_step1_mode1">• <b>Direct Tor:</b> Torネットワークへの直接接続（検閲のない通常のネットワーク環境向け）。</li>
+                        <li data-i18n-html="guide_step1_mode2">• <b>Configure custom bridge:</b> <code>webtunnel</code> や <code>obfs4</code> などのHTTPSブリッジを使用して厳しいDPI検閲を突破。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: NETWORK ADAPTERS CONFIGURATION -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden" id="step-network-config">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold" data-i18n="guide_step2_window">ステップ 2：ネットワークアダプタ設定 GUI</span>
+                <span class="font-mono text-[10px] text-accent-green bg-dark-input px-2 py-0.5 rounded border border-dark-border">02</span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6">
+                <span class="inline-block px-2.5 py-0.5 bg-dark-input border border-accent-green text-accent-green font-mono font-bold text-xs rounded" data-i18n="guide_step2_badge">ステップ 2</span>
+                <h2 class="text-xl font-bold text-gray-100" data-i18n="guide_step2_title">ステップ 2：ネットワークアダプタの構成 (Network GUI)</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+                    <div class="space-y-3 text-xs sm:text-sm text-gray-300">
+                        <p data-i18n="guide_step2_desc">ショートカット Cmd+n で外部 WAN eth0 (DHCP/固定IP) および内部 LAN eth1 ゲートウェイ (10.152.152.10, DHCP内蔵) を設定します。</p>
+                        <div class="space-y-2 pt-1 text-xs">
+                            <div class="p-3 bg-dark-input border border-dark-border rounded">
+                                <div class="font-bold text-gray-200" data-i18n="guide_step2_a1_title">アダプタ 1: eth0 (外部 WAN / インターネット)</div>
+                                <div class="text-gray-400 mt-1" data-i18n="guide_step2_a1_desc">DHCPによる自動IP取得、または手動による固定IPおよびデフォルトゲートウェイの設定。</div>
+                            </div>
+                            <div class="p-3 bg-dark-input border border-dark-border rounded">
+                                <div class="font-bold text-gray-200" data-i18n="guide_step2_a2_title">アダプタ 2: eth1 (内部 LAN ゲートウェイ)</div>
+                                <div class="text-gray-400 mt-1" data-i18n-html="guide_step2_a2_desc">ゲートウェイIP <code>10.152.152.10</code>、サブネットマスク <code>255.255.192.0</code>、接続端末へIPを配布する内蔵DHCPプール。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
+                        <img src="../img/network_config.png" alt="Network Adapters GUI" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <span class="text-[11px] text-gray-500 font-mono italic" data-i18n="guide_step2_caption">ネットワークアダプタ設定ツール (Cmd+n)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: PROXY SETUP WIZARD -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden" id="step-proxy-wizard">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold" data-i18n="guide_step3_window">ステップ 3：マルチプロトコルプロキシウィザード (ポート 1080)</span>
+                <span class="font-mono text-[10px] text-accent-green bg-dark-input px-2 py-0.5 rounded border border-dark-border">03</span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6">
+                <span class="inline-block px-2.5 py-0.5 bg-dark-input border border-accent-green text-accent-green font-mono font-bold text-xs rounded" data-i18n="guide_step3_badge">ステップ 3</span>
+                <h2 class="text-xl font-bold text-gray-100" data-i18n="guide_step3_title">ステップ 3：多階層プロキシ連携 (Proxy Setup Wizard)</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+                    <div class="space-y-3 text-xs sm:text-sm text-gray-300">
+                        <p data-i18n="guide_step3_desc">Proxy Wizard (Cmd+p) で vless:// Reality や ss:// Shadowsocks の接続リンクをインポートし、高速な専用出口ノードを設定します。</p>
+                        <div class="p-3.5 bg-[#262018] border-l-4 border-accent-amber border-y border-r border-dark-border rounded text-xs text-[#e8d0b0] space-y-1">
+                            <div class="font-bold" data-i18n="guide_step3_trojan_note_title">⚠️ Trojanプロトコルの対応状況について:</div>
+                            <div data-i18n="guide_step3_trojan_note_desc">Trojanプロトコルは現在開発およびテスト中であり、Proxy Wizard ではまだ利用できません。今後のアップデートで正式対応予定です。</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
+                        <img src="../img/proxy_wizard.png" alt="Proxy Setup Wizard" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <span class="text-[11px] text-gray-500 font-mono italic" data-i18n="guide_step3_caption">プロキシ設定ウィザード Proxy Wizard (Cmd+p)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: FIREWALL CONTROL CENTER -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden" id="step-firewall">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold" data-i18n="guide_step4_window">ステップ 4：きめ細かな nftables ファイアウォール管理センター</span>
+                <span class="font-mono text-[10px] text-accent-green bg-dark-input px-2 py-0.5 rounded border border-dark-border">04</span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6">
+                <span class="inline-block px-2.5 py-0.5 bg-dark-input border border-accent-green text-accent-green font-mono font-bold text-xs rounded" data-i18n="guide_step4_badge">ステップ 4</span>
+                <h2 class="text-xl font-bold text-gray-100" data-i18n="guide_step4_title">ステップ 4：きめ細かなファイアウォール (Firewall Control Center)</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+                    <div class="space-y-3 text-xs text-gray-300">
+                        <p data-i18n="guide_step4_desc">Cmd+f で8つの独立した nftables モジュールを制御し、Chromium、Telegram、システム更新の通信許可/切断や緊急 Killswitch を操作します。</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] font-mono">
+                            <div class="p-2 bg-dark-input border border-dark-border rounded" data-i18n="g_mod1">1. Chromium ウェブブラウザ</div>
+                            <div class="p-2 bg-dark-input border border-dark-border rounded" data-i18n="g_mod2">2. Telegram デスクトップクライアント</div>
+                            <div class="p-2 bg-dark-input border border-dark-border rounded" data-i18n="g_mod3">3. Sing-Box SOCKS (1080)</div>
+                            <div class="p-2 bg-dark-input border border-dark-border rounded" data-i18n="g_mod4">4. Onion Web サーバ (8080)</div>
+                            <div class="p-2 bg-dark-input border border-dark-border rounded" data-i18n="g_mod5">5. LAN クライアント通信 (eth1)</div>
+                            <div class="p-2 bg-dark-input border border-dark-border rounded" data-i18n="g_mod6">6. システム＆Torセキュリティ更新</div>
+                            <div class="p-2 bg-dark-input border border-dark-border rounded" data-i18n="g_mod7">7. SSH リモート管理 (22)</div>
+                            <div class="p-2 bg-dark-input border border-accent-red text-accent-red rounded font-bold" data-i18n="g_mod8">8. WAN 緊急遮断 Killswitch</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
+                        <img src="../img/firewall_center.png" alt="Firewall Control Center" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <span class="text-[11px] text-gray-500 font-mono italic" data-i18n="guide_step4_caption">ファイアウォール＆セキュリティ管理センター (Cmd+f)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: APPLICATIONS -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden" id="step-apps">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold" data-i18n="guide_step5_window">ステップ 5：プライバシー強化ブラウザとメッセンジャー</span>
+                <span class="font-mono text-[10px] text-accent-green bg-dark-input px-2 py-0.5 rounded border border-dark-border">05</span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6">
+                <span class="inline-block px-2.5 py-0.5 bg-dark-input border border-accent-green text-accent-green font-mono font-bold text-xs rounded" data-i18n="guide_step5_badge">ステップ 5</span>
+                <h2 class="text-xl font-bold text-gray-100" data-i18n="guide_step5_title">ステップ 5：プライベートなウェブ閲覧と安全な通信</h2>
+                <p class="text-xs sm:text-sm text-gray-300" data-i18n="guide_step5_desc">Chromium は SOCKS5 127.0.0.1:1080 経由で設定済みで、WebRTC/DNS リークはゼロです。Telegram は専用の隔離グループで常時プロキシ接続されます。</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-4 bg-dark-input border border-dark-border rounded space-y-3">
+                        <h3 class="font-bold text-gray-100 text-sm" data-i18n="guide_step5_app1_title">🌐 Ungoogled Chromium</h3>
+                        <img src="../img/chromium_browserleaks.png" alt="Chromium Browserleaks" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <span class="block text-[11px] text-gray-500 font-mono italic text-center" data-i18n="guide_step5_app1_cap">BrowserLeaks 診断：DNS/WebRTC リーク 0件、出口IPは完全に匿名化。</span>
+                    </div>
+
+                    <div class="p-4 bg-dark-input border border-dark-border rounded space-y-3">
+                        <h3 class="font-bold text-gray-100 text-sm" data-i18n="guide_step5_app2_title">💬 Telegram Desktop</h3>
+                        <img src="../img/telegram_proxy.png" alt="Telegram Proxy Settings" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <span class="block text-[11px] text-gray-500 font-mono italic text-center" data-i18n="guide_step5_app2_cap">事前構成された永続 SOCKS5 プロキシプロファイル：オンライン接続中。</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: ANTI-FORENSICS -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden" id="step-anti-forensics">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold" data-i18n="guide_step6_window">ステップ 6：アンチフォレンジック痕跡消去ツール</span>
+                <span class="font-mono text-[10px] text-accent-green bg-dark-input px-2 py-0.5 rounded border border-dark-border">06</span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6">
+                <span class="inline-block px-2.5 py-0.5 bg-dark-input border border-accent-green text-accent-green font-mono font-bold text-xs rounded" data-i18n="guide_step6_badge">ステップ 6</span>
+                <h2 class="text-xl font-bold text-gray-100" data-i18n="guide_step6_title">ステップ 6：セッション痕跡の完全消去 (Wipe Privacy Traces)</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+                    <div class="space-y-3 text-xs sm:text-sm text-gray-300">
+                        <p data-i18n="guide_step6_desc">ショートカット Cmd+Shift+k を押すだけで、ブラウザ履歴、Cookie、Telegram のセッション、Bash 履歴を瞬時に消去します（シャットダウン時にも自動実行）。</p>
+                        <div class="p-3 bg-dark-input border border-dark-border rounded text-xs text-gray-400 space-y-1">
+                            <div data-i18n="guide_step6_i1">✓ Chromium のブラウザキャッシュ、Cookie、閲覧履歴</div>
+                            <div data-i18n="guide_step6_i2">✓ Telegram のログインセッションおよびダウンロード済みファイル</div>
+                            <div data-i18n="guide_step6_i3">✓ 保存された VLESS および Shadowsocks プロキシ設定情報</div>
+                            <div data-i18n="guide_step6_i4">✓ ターミナルのコマンド実行履歴および一時システムログ</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
+                        <img src="../img/wipe_traces.png" alt="Wipe Privacy Traces" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <span class="text-[11px] text-gray-500 font-mono italic" data-i18n="guide_step6_caption">痕跡消去ツール Wipe Privacy Traces (Cmd+Shift+k)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: SYSTEM UPDATES -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden" id="step-updates">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold" data-i18n="guide_step7_window">ステップ 7：システムとTorの安全なアップデート</span>
+                <span class="font-mono text-[10px] text-accent-green bg-dark-input px-2 py-0.5 rounded border border-dark-border">07</span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6">
+                <span class="inline-block px-2.5 py-0.5 bg-dark-input border border-accent-green text-accent-green font-mono font-bold text-xs rounded" data-i18n="guide_step7_badge">ステップ 7</span>
+                <h2 class="text-xl font-bold text-gray-100" data-i18n="guide_step7_title">ステップ 7：安全なシステム更新 (Update Manager)</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+                    <div class="space-y-3 text-xs sm:text-sm text-gray-300">
+                        <p data-i18n="guide_step7_desc">AwesomeWM の設定バックアップと health-check 診断を自動実行しながら、Debian と Tor のセキュリティパッケージを安全にアップデートします。</p>
+                    </div>
+
+                    <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
+                        <img src="../img/update_manager.png" alt="System Update Manager" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <span class="text-[11px] text-gray-500 font-mono italic" data-i18n="guide_step7_caption">システム更新マネージャ</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: MONITORING & UTILITIES -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden" id="step-monitoring">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold" data-i18n="guide_step8_window">ステップ 8：システム監視と内蔵ユーティリティ</span>
+                <span class="font-mono text-[10px] text-accent-green bg-dark-input px-2 py-0.5 rounded border border-dark-border">08</span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6">
+                <span class="inline-block px-2.5 py-0.5 bg-dark-input border border-accent-green text-accent-green font-mono font-bold text-xs rounded" data-i18n="guide_step8_badge">ステップ 8</span>
+                <h2 class="text-xl font-bold text-gray-100" data-i18n="guide_step8_title">ステップ 8：システムモニタリングと内蔵ツール群</h2>
+                <p class="text-xs sm:text-sm text-gray-300" data-i18n="guide_step8_desc">Conky リアルタイム HUD、Nyx Tor モニタ (Cmd+m)、Midnight Commander、Bash ターミナル、Mousepad テキストエディタ、音量調整ツールを完備。</p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded text-center space-y-2">
+                        <img src="../img/conky_hud.png" alt="Conky HUD" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border">
+                        <h4 class="font-bold text-gray-100 text-xs" data-i18n="g_util1_title">Conky リアルタイム HUD</h4>
+                        <p class="text-[11px] text-gray-400 text-left" data-i18n="g_util1_desc">サイドバーHUD：CPU/メモリ負荷、eth0/eth1 帯域幅、待機ポートを常時表示。</p>
+                    </div>
+
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded text-center space-y-2">
+                        <img src="../img/nyx_monitor.png" alt="Nyx Monitor" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border">
+                        <h4 class="font-bold text-gray-100 text-xs" data-i18n="g_util2_title">Nyx — Tor ネットワークモニタ</h4>
+                        <p class="text-[11px] text-gray-400 text-left" data-i18n="g_util2_desc">リアルタイム帯域幅グラフとサーキット閲覧機能を備えた Tor 監視ツール (Cmd+m)。</p>
+                    </div>
+
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded text-center space-y-2">
+                        <img src="../img/midnight_commander.png" alt="Midnight Commander" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border">
+                        <h4 class="font-bold text-gray-100 text-xs" data-i18n="g_util3_title">Midnight Commander (mc)</h4>
+                        <p class="text-[11px] text-gray-400 text-left" data-i18n="g_util3_desc">Dark Pastels カラーを採用した定番の2画面ファイルマネージャ。</p>
+                    </div>
+
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded text-center space-y-2">
+                        <img src="../img/terminal_console.png" alt="Terminal Console" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border">
+                        <h4 class="font-bold text-gray-100 text-xs" data-i18n="g_util4_title">Terminal ターミナルコンソール</h4>
+                        <p class="text-[11px] text-gray-400 text-left" data-i18n="g_util4_desc">デスクトップショートカットとシームレスに連携する軽量 Bash ターミナル。</p>
+                    </div>
+
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded text-center space-y-2">
+                        <img src="../img/mousepad.png" alt="Mousepad" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border">
+                        <h4 class="font-bold text-gray-100 text-xs" data-i18n="g_util5_title">Mousepad テキストエディタ</h4>
+                        <p class="text-[11px] text-gray-400 text-left" data-i18n="g_util5_desc">設定ファイルや秘密鍵の編集に適した軽量・高速な GTK3 エディタ。</p>
+                    </div>
+
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded text-center space-y-2">
+                        <img src="../img/audio_control.png" alt="Audio Control" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border">
+                        <h4 class="font-bold text-gray-100 text-xs" data-i18n="g_util6_title">音量・オーディオコントロール</h4>
+                        <p class="text-[11px] text-gray-400 text-left" data-i18n="g_util6_desc">音量およびマイク感度を素早く調整できるネイティブ C/GTK3 ウィジェット。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- System Footer -->
+    <footer class="bg-dark-window border-t border-dark-border px-4 py-4 text-center font-mono text-[11px] text-gray-500 space-y-1">
+        <div class="flex justify-center gap-4 text-gray-400 pb-1 flex-wrap">
+            <a href="index.html" class="hover:text-gray-200" data-i18n="footer_nav_main">ホーム</a>
+            <a href="about.html" class="hover:text-gray-200" data-i18n="footer_nav_about">使命と目的</a>
+            <a href="guide.html" class="hover:text-gray-200" data-i18n="footer_nav_guide">マニュアル</a>
+            <a href="terms.html" class="hover:text-gray-200" data-i18n="footer_nav_terms">利用規約と免責事項</a>
+            <a href="security.html" class="hover:text-gray-200" data-i18n="footer_nav_sec">セキュリティ</a>
+            <a href="sitemap.xml" class="hover:text-gray-200" data-i18n="footer_nav_sitemap">サイトマップ</a>
+        </div>
+        <div data-i18n="footer_text_1">DARK GATEWAY OS • ログゼロ • 妥協ゼロ</div>
+        <div data-i18n="footer_text_2">GITHUB PAGES 及び TOR ONION ネットワーク (.ONION v3) でホスト</div>
+    </footer>
+
+        <script src="../js/app.js"></script>
+</body>
+</html>

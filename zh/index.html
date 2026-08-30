@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dark Gateway OS — Specialized security gateway for ultimate privacy, VLESS Reality multi-layer routing, and zero digital footprint.">
+    <title data-i18n="hero_window_title">Dark Gateway OS — 自主安全网关</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            desktop: '#191a1d',
+                            window: '#222222',
+                            header: '#272727',
+                            input: '#171717',
+                            border: '#2e2e2e',
+                            hover: '#2d2e32',
+                            subtle: '#333338'
+                        },
+                        accent: {
+                            green: '#8ab88c',
+                            blue: '#7ea4b8',
+                            amber: '#dca561',
+                            purple: '#c678dd',
+                            red: '#e06c75'
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['"JetBrains Mono"', '"DejaVu Sans Mono"', '"SF Mono"', 'monospace'],
+                        sans: ['"Inter"', '"DejaVu Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-dark-desktop text-gray-300 font-sans min-h-screen flex flex-col antialiased selection:bg-[#363636] selection:text-white">
+
+    <!-- Top System Panel (AwesomeWM Style) -->
+    <header class="system-panel bg-dark-window border-b border-dark-border px-4 py-1.5 flex flex-wrap items-center justify-between gap-3 sticky top-0 z-50 text-xs shadow-md">
+        <div class="flex items-center gap-4 flex-wrap">
+            <a href="index.html" class="flex items-center gap-2 font-mono font-bold text-gray-100 hover:text-accent-green transition">
+                <span class="text-accent-green text-sm">◈</span>
+                <span class="tracking-wide">Dark Gateway</span>
+                <span class="bg-dark-input text-accent-blue border border-dark-border px-1.5 py-0.5 rounded text-[10px]">v1.0 Alpha</span>
+            </a>
+            <nav class="flex items-center gap-2 sm:gap-4 font-mono text-[11px]">
+                <a href="index.html" class="text-accent-green border-b border-accent-green pb-0.5" data-i18n="nav_overview">总览 (Overview)</a>
+                <a href="about.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_mission">使命与目标</a>
+                <a href="guide.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_guide">使用手册与应用</a>
+                <a href="terms.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_terms">条款与免责声明</a>
+                <a href="security.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_security">安全架构</a>
+            </nav>
+        </div>
+
+        <div class="flex items-center gap-3 ml-auto flex-wrap">
+            <!-- Language Selector Widget -->
+            <div id="lang-selector-widget" class="flex items-center gap-1.5 bg-dark-input border border-dark-border px-2 py-0.5 rounded text-[11px]">
+                <span class="text-xs">🌐</span>
+                <select id="lang-select" class="bg-transparent text-gray-200 outline-none cursor-pointer font-sans" onchange="switchLanguage(this.value, 'index.html')">
+                    <option value="en">🇬🇧 English</option>
+                    <option value="ru">🇷🇺 Русский</option>
+                    <option value="es">🇪🇸 Español</option>
+                    <option value="zh" selected>🇨🇳 简体中文</option>
+                    <option value="de">🇩🇪 Deutsch</option>
+                    <option value="fr">🇫🇷 Français</option>
+                    <option value="pt">🇵🇹 Português</option>
+                    <option value="ja">🇯🇵 日本語</option>
+                    <option value="tr">🇹🇷 Türkçe</option>
+                    <option value="ar">🇸🇦 العربية</option>
+                </select>
+            </div>
+
+            <div class="hidden md:flex items-center gap-1.5 font-mono text-[10px] text-accent-green bg-dark-input border border-dark-border px-2 py-0.5 rounded">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent-green animate-pulse"></span>
+                <span data-i18n="status_tor_active">TOR 路由：运行中</span>
+            </div>
+
+            <button onclick="copyOnion()" class="flex items-center gap-1.5 bg-dark-input hover:border-accent-green text-gray-300 border border-dark-border px-2 py-0.5 rounded font-mono text-[11px] transition shadow-sm" title="Click to copy official .onion address">
+                <span class="text-accent-amber font-bold text-[9px] uppercase tracking-wider bg-black/40 px-1 rounded" data-i18n="onion_badge">ONION v3</span>
+                <span id="onion-text" class="text-gray-400 font-mono text-[10px] hidden sm:inline">tkefu5...mayid.onion</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="w-full max-w-7xl mx-auto px-3 sm:px-6 py-6 grid grid-cols-1 lg:grid-cols-4 gap-6 flex-grow">
+        
+        <!-- SIDEBAR HUD -->
+        <aside class="lg:col-span-1 space-y-4">
+            <div class="bg-dark-window border border-dark-border rounded shadow-lg overflow-hidden font-mono text-[11px]">
+                <div class="bg-dark-header border-b border-dark-border px-3 py-1.5 flex items-center justify-between text-gray-200 font-bold tracking-wider">
+                    <span data-i18n="sidebar_telemetry_title">⚡ 系统遥测 HUD</span>
+                    <span class="text-[9px] text-accent-green bg-dark-input px-1 rounded" data-i18n="sidebar_telemetry_live">实时 (LIVE)</span>
+                </div>
+                <div class="p-3 space-y-3">
+                    <div class="space-y-1">
+                        <div class="text-[10px] text-gray-500 font-bold uppercase tracking-wider border-b border-dark-border pb-0.5" data-i18n="sidebar_sys_specs">系统配置规格</div>
+                        <div class="flex justify-between"><span class="text-gray-400" data-i18n="sidebar_host">主机内核：</span><span class="text-gray-200">6.12.105-amd64</span></div>
+                        <div class="flex justify-between"><span class="text-gray-400" data-i18n="sidebar_ram">内存占用：</span><span class="text-accent-green">~600 MB / 2 GB</span></div>
+                        <div class="flex justify-between"><span class="text-gray-400" data-i18n="sidebar_disk">存储空间：</span><span class="text-accent-green">2.2 GB / 98 GB</span></div>
+                    </div>
+
+                    <div class="space-y-1">
+                        <div class="text-[10px] text-gray-500 font-bold uppercase tracking-wider border-b border-dark-border pb-0.5" data-i18n="sidebar_net_adapters">网络适配器</div>
+                        <div class="flex justify-between"><span class="text-gray-400" data-i18n="sidebar_wan">WAN 外网 (eth0)：</span><span class="text-gray-200">DHCP / Static</span></div>
+                        <div class="flex justify-between"><span class="text-gray-400" data-i18n="sidebar_lan">LAN 内网 (eth1)：</span><span class="text-accent-blue">10.152.152.10</span></div>
+                        <div class="flex justify-between"><span class="text-gray-400" data-i18n="sidebar_leak_status">泄漏状态：</span><span class="text-accent-green font-bold" data-i18n="sidebar_leak_val">0 泄漏 (严格隔离)</span></div>
+                    </div>
+
+                    <div class="space-y-1">
+                        <div class="text-[10px] text-gray-500 font-bold uppercase tracking-wider border-b border-dark-border pb-0.5" data-i18n="sidebar_env">运行环境</div>
+                        <div class="flex justify-between"><span class="text-gray-400" data-i18n="sidebar_hypervisor">虚拟机引擎：</span><span class="text-accent-green font-bold" data-i18n="sidebar_hypervisor_val">已在 VMware 完整测试</span></div>
+                        <div class="flex justify-between"><span class="text-gray-400" data-i18n="sidebar_os_lang">系统界面语言：</span><span class="text-accent-amber font-bold" data-i18n="sidebar_os_lang_val">仅限英语 (English Only)</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Links in Sidebar -->
+            <div class="bg-dark-window border border-dark-border rounded p-3 space-y-2 font-mono text-xs">
+                <div class="text-[10px] text-gray-500 font-bold uppercase tracking-wider" data-i18n="sidebar_quick_nav">快速导航</div>
+                <a href="about.html" class="block p-2 bg-dark-input hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition flex items-center justify-between">
+                    <span data-i18n="sidebar_link_mission">🎯 使命与宗旨</span>
+                    <span>➔</span>
+                </a>
+                <a href="guide.html" class="block p-2 bg-dark-input hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition flex items-center justify-between">
+                    <span data-i18n="sidebar_link_guide">📖 手册与应用</span>
+                    <span>➔</span>
+                </a>
+                <a href="terms.html" class="block p-2 bg-dark-input hover:bg-dark-hover border border-dark-border rounded text-accent-amber hover:text-gray-200 transition flex items-center justify-between">
+                    <span data-i18n="sidebar_link_terms">⚖ 条款与免责声明</span>
+                    <span>➔</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- MAIN VIEWPORT -->
+        <main class="lg:col-span-3 space-y-6">
+
+            <!-- HERO WINDOW -->
+            <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden">
+                <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                    <span class="font-mono text-xs text-gray-200 font-bold flex items-center gap-2">
+                        <span class="text-accent-green">▪</span> <span data-i18n="hero_window_title">Dark Gateway OS — 自主安全网关</span>
+                    </span>
+                    <div class="flex items-center gap-1.5 font-mono text-xs text-gray-500">
+                        <span class="px-1.5 py-0.5 bg-dark-input rounded">_</span>
+                        <span class="px-1.5 py-0.5 bg-dark-input rounded">□</span>
+                        <span class="px-1.5 py-0.5 bg-dark-input rounded">×</span>
+                    </div>
+                </div>
+
+                <div class="p-5 sm:p-7 space-y-5">
+                    <div class="flex items-center gap-2 flex-wrap text-xs">
+                        <span class="bg-dark-input border border-accent-green text-accent-green px-2.5 py-0.5 rounded font-mono font-bold" data-i18n="hero_tag">安全网关架构</span>
+                        <span class="text-gray-500 font-mono text-[11px]" data-i18n="hero_meta">零遥测 • 抗 DPI 审查 • 多层 VLESS 出口</span>
+                    </div>
+
+                    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-100 leading-tight" data-i18n-html="hero_title">严密流量隔离。<br><span class="text-accent-green">多层协议 VLESS 出口。</span></h1>
+
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed" data-i18n-html="hero_lead"><b>Dark Gateway OS</b> 是基于强化版 Debian 13/Whonix 构建的下一代自主安全网关。旨在严格隔离工作站网络流量，突破深度数据包检测（DPI），并通过私有 VLESS Reality 节点进行无痕匿名路由。</p>
+
+                    <div class="flex flex-wrap items-center gap-3 pt-2">
+                        <a href="#download" class="px-4 py-2.5 bg-accent-green hover:bg-[#9ac79c] text-dark-desktop font-mono font-bold text-xs rounded transition flex items-center gap-2 shadow-md">
+                            <span>⬇</span> <span data-i18n="btn_download_hero">下载虚拟设备 (1.0 GB OVA)</span>
+                        </a>
+                        <a href="about.html" class="px-4 py-2.5 bg-dark-input hover:bg-dark-hover border border-dark-border text-gray-200 font-mono text-xs rounded transition" data-i18n="btn_about_hero">使命与受众</a>
+                        <a href="guide.html" class="px-4 py-2.5 bg-dark-input hover:bg-dark-hover border border-dark-border text-gray-200 font-mono text-xs rounded transition" data-i18n="btn_guide_hero">使用手册与应用列表</a>
+                    </div>
+
+                    <!-- TERMINAL SIMULATION -->
+                    <div class="bg-black/70 border border-dark-border rounded shadow-2xl overflow-hidden font-mono text-xs">
+                        <div class="bg-[#151515] border-b border-dark-border px-3.5 py-1.5 flex justify-between items-center text-[10px] text-gray-400 select-none">
+                            <div class="flex items-center gap-2">
+                                <div class="flex gap-1.5">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#e06c75]/80 inline-block"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#dca561]/80 inline-block"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#8ab88c]/80 inline-block"></span>
+                                </div>
+                                <span class="text-gray-300 font-bold ml-1" data-i18n="term_title">user@dark-gateway: ~ (交互式终端控制台)</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-accent-green text-[9px] flex items-center gap-1 font-bold bg-dark-input border border-dark-border px-2 py-0.5 rounded">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-accent-green animate-pulse inline-block"></span> <span data-i18n="term_live">实时 (LIVE)</span>
+                                </span>
+                                <span>DejaVu Sans Mono 7.5pt</span>
+                            </div>
+                        </div>
+                        <div id="term-screen" class="p-4 space-y-1.5 text-[11.5px] leading-relaxed min-h-[220px] max-h-[300px] overflow-y-auto font-mono text-gray-300 bg-[#0d0e11]/90">
+                            <!-- Live Animated Commands Stream -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EXPLORE CARDS GRID -->
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <a href="about.html" class="block p-4 bg-dark-window hover:bg-dark-hover border border-dark-border hover:border-accent-green rounded transition group shadow-md">
+                    <div class="text-2xl mb-2">🎯</div>
+                    <h3 class="font-bold text-gray-100 text-sm group-hover:text-accent-green transition" data-i18n="card_mission_title">使命与目标</h3>
+                    <p class="text-xs text-gray-400 mt-1 leading-relaxed" data-i18n="card_mission_desc">系统创建宗旨、核心应用场景、审查规避、DPI 防御与流量关联防护。</p>
+                    <span class="inline-block mt-3 text-[11px] font-mono text-accent-green font-bold" data-i18n="card_learn_more">了解更多 ➔</span>
+                </a>
+
+                <a href="guide.html" class="block p-4 bg-dark-window hover:bg-dark-hover border border-dark-border hover:border-accent-green rounded transition group shadow-md">
+                    <div class="text-2xl mb-2">📖</div>
+                    <h3 class="font-bold text-gray-100 text-sm group-hover:text-accent-green transition" data-i18n="card_guide_title">用户使用手册</h3>
+                    <p class="text-xs text-gray-400 mt-1 leading-relaxed" data-i18n="card_guide_desc">图文详细教程：Proxy Wizard、Firewall Control Center、Network GUI 及内置隐私工具。</p>
+                    <span class="inline-block mt-3 text-[11px] font-mono text-accent-green font-bold" data-i18n="card_open_guide">打开手册 ➔</span>
+                </a>
+
+                <a href="#download" class="block p-4 bg-dark-window hover:bg-dark-hover border border-dark-border hover:border-accent-green rounded transition group shadow-md">
+                    <div class="text-2xl mb-2">📦</div>
+                    <h3 class="font-bold text-gray-100 text-sm group-hover:text-accent-green transition" data-i18n="card_download_title">下载虚拟机镜像</h3>
+                    <p class="text-xs text-gray-400 mt-1 leading-relaxed" data-i18n="card_download_desc">官方高压缩 OVA 镜像（1.0 GB）、SHA-256 校验和及虚拟机部署指南。</p>
+                    <span class="inline-block mt-3 text-[11px] font-mono text-accent-green font-bold" data-i18n="card_goto_dl">前往下载 ➔</span>
+                </a>
+            </section>
+
+            <!-- CORE FEATURES GRID -->
+            <section class="bg-dark-window border border-dark-border rounded shadow-lg p-5 sm:p-6 space-y-4">
+                <div class="border-b border-dark-border pb-3 flex items-center justify-between">
+                    <h2 class="font-bold text-gray-100 text-sm sm:text-base tracking-wide font-mono" data-i18n="feat_header">⚡ 系统核心特性与架构支柱</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded space-y-1.5">
+                        <div class="font-bold text-gray-100 text-xs flex items-center gap-2">
+                            <span class="text-accent-green font-bold">▪</span>
+                            <span data-i18n="feat_proxy_title">多协议代理出口</span>
+                        </div>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="feat_proxy_desc">将 Tor 链路级联至私有 <b>VLESS Reality (XTLS Vision)</b> 或 <b>Shadowsocks</b> 节点（<i>Trojan 正在开发中</i>），彻底解决 Cloudflare 和 Google Captcha 验证码困扰。</p>
+                    </div>
+
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded space-y-1.5">
+                        <div class="font-bold text-gray-100 text-xs flex items-center gap-2">
+                            <span class="text-accent-green font-bold">▪</span>
+                            <span data-i18n="feat_boot_title">开机零泄漏隔离</span>
+                        </div>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="feat_boot_desc">开机时网络完全冻结（<code>DisableNetwork 1</code>）。在 <b>Tor Connection Setup</b> 中显式选择前，杜绝任何未加密流量泄漏。</p>
+                    </div>
+
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded space-y-1.5">
+                        <div class="font-bold text-gray-100 text-xs flex items-center gap-2">
+                            <span class="text-accent-green font-bold">▪</span>
+                            <span data-i18n="feat_fw_title">细粒度 nftables 防火墙</span>
+                        </div>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="feat_fw_desc">基于内核套接字 GID 对应用程序实施精确访问控制，并能即时重置活跃连接（<code>ss -K</code>）。</p>
+                    </div>
+
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded space-y-1.5">
+                        <div class="font-bold text-gray-100 text-xs flex items-center gap-2">
+                            <span class="text-accent-green font-bold">▪</span>
+                            <span data-i18n="feat_c_title">纯 C 语言 (GTK3) 原生构建</span>
+                        </div>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="feat_c_desc">所有 GUI 管理工具均由原生 C 编写，无 Python/Bash 开销，毫秒级响应且空闲内存占用仅约 600 MB。</p>
+                    </div>
+
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded space-y-1.5">
+                        <div class="font-bold text-gray-100 text-xs flex items-center gap-2">
+                            <span class="text-accent-green font-bold">▪</span>
+                            <span data-i18n="feat_wipe_title">自动化反取证清理</span>
+                        </div>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="feat_wipe_desc">Wipe Privacy Traces 与 <code>wipe-traces.service</code> 在关机时自动粉碎浏览器缓存、Telegram 会话及临时日志。</p>
+                    </div>
+
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded space-y-1.5">
+                        <div class="font-bold text-gray-100 text-xs flex items-center gap-2">
+                            <span class="text-accent-green font-bold">▪</span>
+                            <span data-i18n="feat_apps_title">隐私增强预置应用</span>
+                        </div>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="feat_apps_desc">防指纹追踪的 Ungoogled Chromium 及带有持久化代理配置的隔离 Telegram Desktop。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: ADVANTAGES OVER ALTERNATIVES -->
+            <section class="bg-dark-window border border-dark-border rounded shadow-lg p-5 sm:p-6 space-y-4">
+                <div class="border-b border-dark-border pb-3">
+                    <h2 class="font-bold text-gray-100 text-sm sm:text-base tracking-wide font-mono" data-i18n="sec_compare_title">相比同类系统 (Whonix, Tails) 的技术优势</h2>
+                    <p class="text-xs text-gray-400 mt-1" data-i18n="sec_compare_desc">Dark Gateway OS 与 Whonix Gateway、Tails OS 及传统 VPN 路由器的详细架构对比。</p>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs font-mono border-collapse">
+                        <thead>
+                            <tr class="bg-dark-input text-gray-300 border-b border-dark-border">
+                                <th class="p-2.5" data-i18n="th_criterion">架构设计指标</th>
+                                <th class="p-2.5 text-accent-green font-bold" data-i18n="th_dg">Dark Gateway OS</th>
+                                <th class="p-2.5 text-gray-400" data-i18n="th_whonix">Whonix Gateway</th>
+                                <th class="p-2.5 text-gray-400" data-i18n="th_tails">Tails OS</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-dark-border text-gray-300">
+                            <tr class="hover:bg-dark-hover/50">
+                                <td class="p-2.5 font-bold" data-i18n="comp_f1_title">Pure C / GTK3 原生技术栈</td>
+                                <td class="p-2.5 text-accent-green font-bold" data-i18n="comp_f1_dg">✓ Pure C (0毫秒延迟)</td>
+                                <td class="p-2.5 text-gray-500" data-i18n="comp_f1_whonix">Python / Bash GUI</td>
+                                <td class="p-2.5 text-gray-500" data-i18n="comp_f1_tails">GNOME / Python</td>
+                            </tr>
+                            <tr class="hover:bg-dark-hover/50">
+                                <td class="p-2.5 font-bold" data-i18n="comp_f2_title">空闲内存 RAM 占用</td>
+                                <td class="p-2.5 text-accent-green font-bold" data-i18n="comp_f2_dg">~600 MB RAM</td>
+                                <td class="p-2.5 text-gray-400" data-i18n="comp_f2_whonix">~1.2 GB - 1.8 GB</td>
+                                <td class="p-2.5 text-gray-400" data-i18n="comp_f2_tails">~1.5 GB+</td>
+                            </tr>
+                            <tr class="hover:bg-dark-hover/50">
+                                <td class="p-2.5 font-bold" data-i18n="comp_f3_title">高压缩 OVA 镜像体积</td>
+                                <td class="p-2.5 text-accent-green font-bold" data-i18n="comp_f3_dg">1.0 GB OVA (2.9 GB VMDK)</td>
+                                <td class="p-2.5 text-gray-400" data-i18n="comp_f3_whonix">3.5 GB - 5.0 GB</td>
+                                <td class="p-2.5 text-gray-400" data-i18n="comp_f3_tails">1.3 GB (Live ISO)</td>
+                            </tr>
+                            <tr class="hover:bg-dark-hover/50">
+                                <td class="p-2.5 font-bold" data-i18n="comp_f4_title">VLESS Reality 级联出口</td>
+                                <td class="p-2.5 text-accent-green font-bold" data-i18n="comp_f4_dg">✓ 内置 (Sing-Box :1080)</td>
+                                <td class="p-2.5 text-gray-500" data-i18n="comp_f4_whonix">✗ 仅限 Tor 出口节点</td>
+                                <td class="p-2.5 text-gray-500" data-i18n="comp_f4_tails">✗ 仅限 Tor 出口节点</td>
+                            </tr>
+                            <tr class="hover:bg-dark-hover/50">
+                                <td class="p-2.5 font-bold" data-i18n="comp_f5_title">开机零泄漏隔离</td>
+                                <td class="p-2.5 text-accent-green font-bold" data-i18n="comp_f5_dg">✓ DisableNetwork 1</td>
+                                <td class="p-2.5 text-gray-400" data-i18n="comp_f5_whonix">✓ Anon-Connection</td>
+                                <td class="p-2.5 text-gray-400" data-i18n="comp_f5_tails">✓ Tor Connection</td>
+                            </tr>
+                            <tr class="hover:bg-dark-hover/50">
+                                <td class="p-2.5 font-bold" data-i18n="comp_f6_title">8模块套接字防火墙 (ss -K)</td>
+                                <td class="p-2.5 text-accent-green font-bold" data-i18n="comp_f6_dg">✓ 原生 C 控制中心</td>
+                                <td class="p-2.5 text-gray-500" data-i18n="comp_f6_whonix">✗ 单一 iptables</td>
+                                <td class="p-2.5 text-gray-500" data-i18n="comp_f6_tails">✗ 单一 iptables</td>
+                            </tr>
+                            <tr class="hover:bg-dark-hover/50">
+                                <td class="p-2.5 font-bold" data-i18n="comp_f7_title">关机自动痕迹清理</td>
+                                <td class="p-2.5 text-accent-green font-bold" data-i18n="comp_f7_dg">✓ wipe-traces.service</td>
+                                <td class="p-2.5 text-gray-500" data-i18n="comp_f7_whonix">✗ 手动清理</td>
+                                <td class="p-2.5 text-accent-green" data-i18n="comp_f7_tails">✓ 内存擦除 (Live)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- SECTION: SYSTEM REQUIREMENTS & VIRTUALIZATION -->
+            <section class="bg-dark-window border border-dark-border rounded shadow-lg p-5 sm:p-6 space-y-4">
+                <div class="border-b border-dark-border pb-3">
+                    <h2 class="font-bold text-gray-100 text-sm sm:text-base tracking-wide font-mono" data-i18n="sec_req_title">运行要求与虚拟化平台</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono">
+                    <div class="p-4 bg-dark-input border border-dark-border rounded space-y-2">
+                        <div class="font-bold text-accent-green border-b border-dark-border pb-1" data-i18n="req_min_title">⚡ 最低系统要求</div>
+                        <ul class="space-y-1 text-gray-300">
+                            <li data-i18n-html="req_min_cpu">• <b>处理器：</b> 1–2 vCPU (支持 VT-x/AMD-V 的 x86_64)</li>
+                            <li data-i18n-html="req_min_ram">• <b>运行内存：</b> 2 GB RAM (空闲占用约 600 MB)</li>
+                            <li data-i18n-html="req_min_disk">• <b>存储空间：</b> 15 GB 可用磁盘空间</li>
+                            <li data-i18n-html="req_min_net">• <b>网络适配器：</b> 2张虚拟网卡 (WAN NAT + LAN Host-Only)</li>
+                        </ul>
+                    </div>
+
+                    <div class="p-4 bg-dark-input border border-dark-border rounded space-y-2">
+                        <div class="font-bold text-accent-blue border-b border-dark-border pb-1" data-i18n="req_rec_title">🚀 推荐硬件配置</div>
+                        <ul class="space-y-1 text-gray-300">
+                            <li data-i18n-html="req_rec_cpu">• <b>处理器：</b> 2–4 vCPU</li>
+                            <li data-i18n-html="req_rec_ram">• <b>运行内存：</b> 4 GB RAM</li>
+                            <li data-i18n-html="req_rec_disk">• <b>存储空间：</b> 30 GB NVMe / SSD</li>
+                            <li data-i18n-html="req_rec_net">• <b>网络适配器：</b> 千兆 WAN 桥接 + 隔离 LAN 虚拟交换机</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- HYPERVISOR & LANGUAGE CALLOUT BOXES -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
+                    <div class="p-4 bg-dark-input border-l-4 border-accent-green border-y border-r border-dark-border rounded space-y-1.5">
+                        <div class="font-bold text-gray-100 text-xs font-mono" data-i18n="vmware_tested_title">专为 VMware 设计并完成完整测试</div>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="vmware_tested_desc">系统针对 VMware Fusion 及 VMware Workstation 深度优化，导入 OVA 即可完美开箱即用。</p>
+                    </div>
+
+                    <div class="p-4 bg-dark-input border-l-4 border-accent-amber border-y border-r border-dark-border rounded space-y-1.5">
+                        <div class="font-bold text-gray-100 text-xs font-mono" data-i18n="vbox_notice_title">关于 VirtualBox 兼容性说明</div>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="vbox_notice_desc">OVA 镜像可导入 Oracle VirtualBox 运行，但尚未经过官方严格测试；虚拟网络适配器需由用户手动确认配置。</p>
+                    </div>
+                </div>
+
+                <!-- LANGUAGE NOTICE -->
+                <div class="p-3 bg-[#1e232b] border border-accent-blue/40 rounded flex items-center gap-3 text-xs">
+                    <span class="text-accent-blue text-base">ℹ️</span>
+                    <span class="text-gray-300 font-mono" data-i18n-html="os_lang_notice_full"><b>操作系统界面语言：</b> 虚拟机的图形桌面、终端、系统消息及控制工具<b>仅支持英文界面 (English Only)</b>。</span>
+                </div>
+            </section>
+
+            <!-- CRITICAL LEGAL DISCLAIMER -->
+            <section class="p-5 sm:p-6 bg-[#2a1b1b] border-l-4 border-accent-red border-y border-r border-dark-border rounded space-y-2">
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                    <h3 class="font-bold text-accent-red text-sm font-mono flex items-center gap-2">
+                        <span>⚠️</span> <span data-i18n="disclaimer_title">免责声明与风险告知</span>
+                    </h3>
+                    <a href="terms.html" class="text-[11px] font-mono text-accent-amber underline hover:text-white" data-i18n="disclaimer_read_eula">阅读最终用户许可协议 (EULA) ➔</a>
+                </div>
+                <p class="text-xs text-red-200 leading-relaxed" data-i18n-html="disclaimer_lead"><b>用户对其将本软件用于任何目的所产生的一切风险承担全部责任。</b> 开发者对使用 Dark Gateway OS 所造成的任何直接、间接、财务或法律后果不承担任何责任。</p>
+            </section>
+
+            <!-- DOWNLOAD BOX -->
+            <section id="download" class="bg-dark-window border border-accent-green/60 rounded shadow-xl p-5 sm:p-7 space-y-4">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-dark-border pb-4">
+                    <div>
+                        <h3 class="text-base sm:text-lg font-bold text-gray-100" data-i18n="dl_box_title">Dark Gateway OS — 虚拟设备镜像 (OVA)</h3>
+                        <p class="text-xs text-gray-400 mt-1" data-i18n="dl_box_desc">即开即用的通用虚拟机镜像，兼容 VMware Fusion / Workstation、VirtualBox、KVM / QEMU 及 Proxmox VE。</p>
+                    </div>
+                    <a href="https://github.com/fundukovaantonina62-art/dark-gateway-os/releases/download/v1.0.0-alpha/Dark_Gateway_OS.ova" class="px-5 py-3 bg-accent-green hover:bg-[#9ac79c] text-dark-desktop font-mono font-bold text-xs rounded transition whitespace-nowrap shadow-md flex items-center gap-2">
+                        <span>⬇</span> <span data-i18n="btn_download_release">从 GitHub Releases 下载 OVA (1.0 GB)</span>
+                    </a>
+                </div>
+
+                <div class="bg-dark-input border border-dark-border p-3 rounded flex flex-col sm:flex-row sm:items-center justify-between gap-2 font-mono text-xs">
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <span class="text-gray-500 font-bold">SHA-256:</span>
+                        <code id="file-hash" class="text-accent-green text-[11px] break-all">6c4401a359592d5bd65cbf520b6462c48b51ce91ddc274282a02fd63af95106b</code>
+                    </div>
+                    <button onclick="copyHash()" class="px-2.5 py-1 bg-dark-hover hover:bg-dark-subtle border border-dark-border rounded text-[11px] text-gray-300 transition self-start sm:self-auto" data-i18n="copy_btn">复制</button>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- System Footer -->
+    <footer class="bg-dark-window border-t border-dark-border px-4 py-4 text-center font-mono text-[11px] text-gray-500 space-y-1">
+        <div class="flex justify-center gap-4 text-gray-400 pb-1 flex-wrap">
+            <a href="index.html" class="hover:text-gray-200" data-i18n="footer_nav_main">首页</a>
+            <a href="about.html" class="hover:text-gray-200" data-i18n="footer_nav_about">使命</a>
+            <a href="guide.html" class="hover:text-gray-200" data-i18n="footer_nav_guide">手册</a>
+            <a href="terms.html" class="hover:text-gray-200" data-i18n="footer_nav_terms">条款与免责</a>
+            <a href="security.html" class="hover:text-gray-200" data-i18n="footer_nav_sec">安全</a>
+            <a href="sitemap.xml" class="hover:text-gray-200" data-i18n="footer_nav_sitemap">网站地图</a>
+        </div>
+        <div data-i18n="footer_text_1">DARK GATEWAY OS • 零日志 • 零妥协</div>
+        <div data-i18n="footer_text_2">托管于 GITHUB PAGES 与 TOR ONION 网络 (.ONION v3)</div>
+    </footer>
+
+        <script src="../js/app.js"></script>
+</body>
+</html>

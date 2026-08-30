@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Dark Gateway OS — End User License Agreement, Risk Disclaimer, and Terms of Use.">
-    <title data-i18n="terms_window_title">Dark Gateway OS — License Agreement &amp; Disclaimer</title>
+    <title data-i18n="terms_window_title">End User License Agreement & Legal Disclaimer</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -38,8 +38,7 @@
             }
         }
     </script>
-    <link rel="stylesheet" href="style.css">
-    <script src="i18n.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="bg-dark-desktop text-gray-300 font-sans min-h-screen flex flex-col antialiased selection:bg-[#363636] selection:text-white">
 
@@ -53,24 +52,24 @@
             </a>
             <nav class="flex items-center gap-2 sm:gap-4 font-mono text-[11px]">
                 <a href="index.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_overview">Overview</a>
-                <a href="about.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_mission">Mission &amp; Purpose</a>
-                <a href="guide.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_guide">Manual &amp; Apps</a>
-                <a href="terms.html" class="text-accent-green border-b border-accent-green pb-0.5" data-i18n="nav_terms">License &amp; Disclaimer</a>
-                <a href="security.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_security">Security</a>
+                <a href="about.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_mission">Mission & Goals</a>
+                <a href="guide.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_guide">User Manual & Apps</a>
+                <a href="terms.html" class="text-accent-green border-b border-accent-green pb-0.5" data-i18n="nav_terms">License & Disclaimer</a>
+                <a href="security.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_security">Security Policy</a>
             </nav>
         </div>
 
         <div class="flex items-center gap-3 ml-auto flex-wrap">
             <div id="lang-selector-widget" class="flex items-center gap-1.5 bg-dark-input border border-dark-border px-2 py-0.5 rounded text-[11px]">
                 <span class="text-xs">🌐</span>
-                <select id="lang-select" class="bg-transparent text-gray-200 outline-none cursor-pointer font-sans" onchange="setLanguage(this.value)">
+                <select id="lang-select" class="bg-transparent text-gray-200 outline-none cursor-pointer font-sans" onchange="switchLanguage(this.value, 'terms.html')">
                     <option value="en" selected>🇬🇧 English</option>
                     <option value="ru">🇷🇺 Русский</option>
                     <option value="es">🇪🇸 Español</option>
                     <option value="zh">🇨🇳 简体中文</option>
                     <option value="de">🇩🇪 Deutsch</option>
                     <option value="fr">🇫🇷 Français</option>
-                    <option value="pt">🇧🇷 Português</option>
+                    <option value="pt">🇵🇹 Português</option>
                     <option value="ja">🇯🇵 日本語</option>
                     <option value="tr">🇹🇷 Türkçe</option>
                     <option value="ar">🇸🇦 العربية</option>
@@ -90,7 +89,7 @@
         <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden">
             <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
                 <span class="font-mono text-xs text-gray-200 font-bold flex items-center gap-2">
-                    <span class="text-accent-amber">⚖</span> <span data-i18n="terms_window_title">End User License Agreement &amp; Legal Disclaimer</span>
+                    <span class="text-accent-amber">⚖</span> <span data-i18n="terms_window_title">End User License Agreement & Legal Disclaimer</span>
                 </span>
             </div>
 
@@ -99,51 +98,39 @@
                 <!-- CRITICAL DISCLAIMER BANNER -->
                 <div class="p-4 sm:p-5 bg-[#2a1b1b] border-l-4 border-accent-red border-y border-r border-dark-border rounded space-y-2">
                     <div class="font-bold text-accent-red flex items-center gap-2 text-base font-mono">
-                        <span>⚠️</span> <span data-i18n="terms_banner_title">LEGAL DISCLAIMER &amp; ASSUMPTION OF RISK</span>
+                        <span>⚠️</span> <span data-i18n="terms_banner_title">LEGAL DISCLAIMER & RISK ASSUMPTION</span>
                     </div>
-                    <p class="text-xs sm:text-sm text-red-200" data-i18n-html="terms_banner_desc">
-                        <b>ALL RISKS ASSOCIATED WITH THE USE OF THIS SOFTWARE FOR ANY PURPOSE REST EXCLUSIVELY WITH THE END USER.</b> The developers and distributors of Dark Gateway OS assume no responsibility or liability for any direct, indirect, incidental, or intentional consequences, financial or legal risks, account bans, or data loss arising from the installation, operation, or misconfiguration of this software.
-                    </p>
+                    <p class="text-xs sm:text-sm text-red-200" data-i18n-html="terms_banner_desc"><b>ALL RISKS ASSOCIATED WITH THE USE OF THIS SOFTWARE FOR ANY PURPOSE REST SOLELY WITH THE END USER.</b> The developers and distributors of Dark Gateway OS assume no liability for any direct, indirect, incidental, or intentional consequences, financial or legal risks, account suspensions, or data loss resulting from the installation, operation, or misconfiguration of this software.</p>
                 </div>
 
                 <!-- SECTION 1: AS-IS WARRANTY -->
                 <div class="space-y-2">
                     <h2 class="text-lg font-bold text-gray-100 font-mono border-b border-dark-border pb-1" data-i18n="terms_s1_title">1. Provision 'As Is' (NO WARRANTY / AS-IS)</h2>
-                    <p data-i18n-html="terms_s1_p1">
-                        Dark Gateway OS is distributed under the <b>'AS IS'</b> principle, without warranties of any kind, either express or implied, including, but not limited to, warranties of merchantability, fitness for a particular purpose, error-free operation, or absolute invulnerability.
-                    </p>
-                    <p data-i18n="terms_s1_p2">
-                        While the system is designed with a focus on maximum leak prevention (Zero-Leak Boot Isolation, nftables stream isolation, VLESS Reality), no operating system in the world can guarantee 100% anonymity if host hardware is compromised, malware exists on the host machine, or due to operational security (OpSec) errors by the user.
-                    </p>
+                    <p data-i18n-html="terms_s1_p1">Dark Gateway OS is distributed under the <b>'AS IS'</b> principle, without warranties of any kind, either express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, bug-free operation, or absolute invulnerability.</p>
+                    <p data-i18n="terms_s1_p2">While the system is architected for maximum leak defense (Zero-Leak Boot Isolation, nftables stream isolation, VLESS Reality), no operating system in the world can guarantee 100% anonymity if the physical host hardware is compromised, compromised by malware on the host OS, or in cases of user operational security (OpSec) errors.</p>
                 </div>
 
                 <!-- SECTION 2: USER RESPONSIBILITY -->
                 <div class="space-y-2">
-                    <h2 class="text-lg font-bold text-gray-100 font-mono border-b border-dark-border pb-1" data-i18n="terms_s2_title">2. User Responsibility &amp; Legal Compliance</h2>
-                    <p data-i18n="terms_s2_p1">
-                        The user agrees to use Dark Gateway OS strictly for lawful purposes in accordance with the legislation of their jurisdiction and the jurisdictions of transit network nodes.
-                    </p>
-                    <p data-i18n="terms_s2_p2">
-                        It is strictly prohibited to use the system for unauthorized access to computer systems, cyberattacks (DDoS, brute-force, vulnerability scanning), malware distribution, or any unlawful activities.
-                    </p>
+                    <h2 class="text-lg font-bold text-gray-100 font-mono border-b border-dark-border pb-1" data-i18n="terms_s2_title">2. User Responsibility and Legal Compliance</h2>
+                    <p data-i18n="terms_s2_p1">The user agrees to use Dark Gateway OS strictly for lawful purposes in accordance with the legislation of their jurisdiction and the jurisdictions of transit network nodes.</p>
+                    <p data-i18n="terms_s2_p2">It is strictly forbidden to use the system for unauthorized access to computer systems, cyberattacks (DDoS, brute-force, vulnerability scanning), distribution of malware, or any unlawful activities.</p>
                 </div>
 
                 <!-- SECTION 3: HYPERVISOR COMPATIBILITY & LANGUAGE -->
                 <div class="space-y-2">
-                    <h2 class="text-lg font-bold text-gray-100 font-mono border-b border-dark-border pb-1" data-i18n="terms_s3_title">3. Deployment Environment &amp; Interface Language</h2>
+                    <h2 class="text-lg font-bold text-gray-100 font-mono border-b border-dark-border pb-1" data-i18n="terms_s3_title">3. Deployment Environment & Interface Language</h2>
                     <div class="p-3.5 bg-dark-input border border-dark-border rounded text-xs space-y-1.5">
-                        <div data-i18n-html="terms_s3_item1">• <b>OS Interface Language:</b> The system graphical desktop, terminal, system prompts, and management utilities are designed and function <b>strictly in English (English Only)</b>.</div>
+                        <div data-i18n-html="terms_s3_item1">• <b>OS Interface Language:</b> The system graphical desktop, terminal, system messages, and control utilities are designed and function <b>strictly in English (English Only)</b>.</div>
                         <div data-i18n-html="terms_s3_item2">• <b>Virtualization Environment:</b> The system is designed, optimized, and <b>thoroughly tested on VMware hypervisors (VMware Fusion, VMware Workstation)</b>.</div>
-                        <div data-i18n-html="terms_s3_item3">• <b>VirtualBox Compatibility:</b> The OVA appliance can be imported into Oracle VirtualBox, but <b>official full-scale testing on VirtualBox has not been performed</b>. The user assumes full responsibility for configuring virtual network adapters in VirtualBox.</div>
+                        <div data-i18n-html="terms_s3_item3">• <b>VirtualBox Compatibility:</b> The OVA appliance can be imported into Oracle VirtualBox, but <b>official testing on VirtualBox has not been conducted</b>. The user assumes full responsibility for configuring virtual network adapters in VirtualBox.</div>
                     </div>
                 </div>
 
                 <!-- SECTION 4: OPEN SOURCE & LICENSING -->
                 <div class="space-y-2">
-                    <h2 class="text-lg font-bold text-gray-100 font-mono border-b border-dark-border pb-1" data-i18n="terms_s4_title">4. Open Source Licenses (GPLv3 / MIT / BSD)</h2>
-                    <p data-i18n="terms_s4_p1">
-                        Dark Gateway OS is built upon free and open-source software components including the Linux Kernel, Debian GNU/Linux, Whonix, AwesomeWM, Tor Project, Sing-Box, and custom utilities written in C (GTK3). All original Dark Gateway OS utilities are licensed under free open-source licenses.
-                    </p>
+                    <h2 class="text-lg font-bold text-gray-100 font-mono border-b border-dark-border pb-1" data-i18n="terms_s4_title">4. Component Licensing (GPLv3 / MIT / BSD)</h2>
+                    <p data-i18n="terms_s4_p1">Dark Gateway OS is built on free open-source components from the Linux Kernel, Debian GNU/Linux, Whonix, AwesomeWM, Tor Project, Sing-Box, and custom utilities written in C (GTK3). All original Dark Gateway OS utilities are licensed under free open-source licenses.</p>
                 </div>
 
             </div>
@@ -157,13 +144,13 @@
             <a href="index.html" class="hover:text-gray-200" data-i18n="footer_nav_main">Home</a>
             <a href="about.html" class="hover:text-gray-200" data-i18n="footer_nav_about">Mission</a>
             <a href="guide.html" class="hover:text-gray-200" data-i18n="footer_nav_guide">Manual</a>
-            <a href="terms.html" class="hover:text-gray-200" data-i18n="footer_nav_terms">License &amp; Disclaimer</a>
+            <a href="terms.html" class="hover:text-gray-200" data-i18n="footer_nav_terms">License & Disclaimer</a>
             <a href="security.html" class="hover:text-gray-200" data-i18n="footer_nav_sec">Security</a>
             <a href="sitemap.xml" class="hover:text-gray-200" data-i18n="footer_nav_sitemap">Sitemap</a>
         </div>
         <div data-i18n="footer_text_1">DARK GATEWAY OS • ZERO LOGS • ZERO COMPROMISES</div>
     </footer>
 
-        <script src="app.js"></script>
+        <script src="../js/app.js"></script>
 </body>
 </html>

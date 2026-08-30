@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dark Gateway OS — Step-by-step user manual and application guide with screenshots.">
+    <title data-i18n="guide_window_title">Manual de Usuario y Catálogo de Aplicaciones</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            desktop: '#191a1d',
+                            window: '#222222',
+                            header: '#272727',
+                            input: '#171717',
+                            border: '#2e2e2e',
+                            hover: '#2d2e32',
+                            subtle: '#333338'
+                        },
+                        accent: {
+                            green: '#8ab88c',
+                            blue: '#7ea4b8',
+                            amber: '#dca561',
+                            purple: '#c678dd',
+                            red: '#e06c75'
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['"JetBrains Mono"', '"DejaVu Sans Mono"', '"SF Mono"', 'monospace'],
+                        sans: ['"Inter"', '"DejaVu Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-dark-desktop text-gray-300 font-sans min-h-screen flex flex-col antialiased selection:bg-[#363636] selection:text-white">
+
+    <!-- Top System Panel (AwesomeWM Style) -->
+    <header class="system-panel bg-dark-window border-b border-dark-border px-4 py-1.5 flex flex-wrap items-center justify-between gap-3 sticky top-0 z-50 text-xs shadow-md">
+        <div class="flex items-center gap-4 flex-wrap">
+            <a href="index.html" class="flex items-center gap-2 font-mono font-bold text-gray-100 hover:text-accent-green transition">
+                <span class="text-accent-green text-sm">◈</span>
+                <span class="tracking-wide">Dark Gateway</span>
+                <span class="bg-dark-input text-accent-blue border border-dark-border px-1.5 py-0.5 rounded text-[10px]">v1.0 Alpha</span>
+            </a>
+            <nav class="flex items-center gap-2 sm:gap-4 font-mono text-[11px]">
+                <a href="index.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_overview">Inicio (Overview)</a>
+                <a href="about.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_mission">Misión & Objetivos</a>
+                <a href="guide.html" class="text-accent-green border-b border-accent-green pb-0.5" data-i18n="nav_guide">Manual & Apps</a>
+                <a href="terms.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_terms">Licencia & Descargo</a>
+                <a href="security.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_security">Seguridad</a>
+            </nav>
+        </div>
+
+        <div class="flex items-center gap-3 ml-auto flex-wrap">
+            <div id="lang-selector-widget" class="flex items-center gap-1.5 bg-dark-input border border-dark-border px-2 py-0.5 rounded text-[11px]">
+                <span class="text-xs">🌐</span>
+                <select id="lang-select" class="bg-transparent text-gray-200 outline-none cursor-pointer font-sans" onchange="switchLanguage(this.value, 'guide.html')">
+                    <option value="en">🇬🇧 English</option>
+                    <option value="ru">🇷🇺 Русский</option>
+                    <option value="es" selected>🇪🇸 Español</option>
+                    <option value="zh">🇨🇳 简体中文</option>
+                    <option value="de">🇩🇪 Deutsch</option>
+                    <option value="fr">🇫🇷 Français</option>
+                    <option value="pt">🇵🇹 Português</option>
+                    <option value="ja">🇯🇵 日本語</option>
+                    <option value="tr">🇹🇷 Türkçe</option>
+                    <option value="ar">🇸🇦 العربية</option>
+                </select>
+            </div>
+
+            <button onclick="copyOnion()" class="flex items-center gap-1.5 bg-dark-input hover:border-accent-green text-gray-300 border border-dark-border px-2 py-0.5 rounded font-mono text-[11px] transition shadow-sm" title="Click to copy official .onion address">
+                <span class="text-accent-amber font-bold text-[9px] uppercase tracking-wider bg-black/40 px-1 rounded" data-i18n="onion_badge">ONION v3</span>
+                <span id="onion-text" class="text-gray-400 font-mono text-[10px] hidden sm:inline">tkefu5...mayid.onion</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="w-full max-w-6xl mx-auto px-4 sm:px-6 py-8 space-y-8 flex-grow">
+
+        <!-- HEADER HERO -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold flex items-center gap-2">
+                    <span class="text-accent-green">▪</span> <span data-i18n="guide_window_title">Manual de Usuario y Catálogo de Aplicaciones</span>
+                </span>
+            </div>
+
+            <div class="p-6 sm:p-8 space-y-5">
+                <div class="flex items-center gap-2 flex-wrap text-xs">
+                    <span class="bg-dark-input border border-accent-green text-accent-green px-2.5 py-0.5 rounded font-mono font-bold" data-i18n="guide_hero_tag">DOCUMENTACIÓN Y MANUAL</span>
+                    <span class="text-gray-500 font-mono text-[11px]" data-i18n="guide_hero_meta">GUÍA PASO A PASO • TODAS LAS UTILIDADES Y SERVICIOS</span>
+                </div>
+
+                <h1 class="text-2xl sm:text-3xl font-bold text-gray-100" data-i18n="guide_title">Cómo Utilizar Dark Gateway OS</h1>
+                <p class="text-gray-300 text-sm sm:text-base leading-relaxed" data-i18n="guide_lead">Guía ilustrada completa sobre el primer arranque, configuración de red, proxy en cascada, cortafuegos granular y aplicaciones integradas.</p>
+
+                <!-- Quick Navigation TOC -->
+                <div class="bg-dark-input border-l-4 border-accent-green border-y border-r border-dark-border p-4 rounded space-y-2.5">
+                    <div class="font-mono font-bold text-xs text-gray-200 tracking-wider" data-i18n="guide_toc_title">⚡ NAVEGACIÓN RÁPIDA POR SECCIONES:</div>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-mono">
+                        <a href="#step-first-boot" class="p-2 bg-dark-window hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition" data-i18n="toc_s1">1. Arranque y Tor</a>
+                        <a href="#step-network-config" class="p-2 bg-dark-window hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition" data-i18n="toc_s2">2. Adaptadores de Red</a>
+                        <a href="#step-proxy-wizard" class="p-2 bg-dark-window hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition" data-i18n="toc_s3">3. Asistente Proxy</a>
+                        <a href="#step-firewall" class="p-2 bg-dark-window hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition" data-i18n="toc_s4">4. Centro de Firewall</a>
+                        <a href="#step-apps" class="p-2 bg-dark-window hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition" data-i18n="toc_s5">5. Navegador y Telegram</a>
+                        <a href="#step-anti-forensics" class="p-2 bg-dark-window hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition" data-i18n="toc_s6">6. Borrado de Rastros</a>
+                        <a href="#step-updates" class="p-2 bg-dark-window hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition" data-i18n="toc_s7">7. Actualizaciones del SO</a>
+                        <a href="#step-monitoring" class="p-2 bg-dark-window hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition" data-i18n="toc_s8">8. Monitorización HUD</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1: FIRST BOOT & TOR SETUP -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden" id="step-first-boot">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold" data-i18n="guide_step1_window">Paso 1: Aislamiento en Arranque y Conexión Tor</span>
+                <span class="font-mono text-[10px] text-accent-green bg-dark-input px-2 py-0.5 rounded border border-dark-border">01</span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-4">
+                <span class="inline-block px-2.5 py-0.5 bg-dark-input border border-accent-green text-accent-green font-mono font-bold text-xs rounded" data-i18n="guide_step1_badge">PASO 1</span>
+                <h2 class="text-xl font-bold text-gray-100" data-i18n="guide_step1_title">Paso 1: Primer Arranque y Configuración de Tor (Boot Isolation)</h2>
+                
+                <p class="text-xs sm:text-sm text-gray-300 leading-relaxed" data-i18n-html="guide_step1_desc">Al arrancar la red está congelada (<code>DisableNetwork 1</code>) para prevenir fugas accidentales. Elija Tor directo o pegue un puente <b>WebTunnel</b> / <b>obfs4</b> en Tor Connection Setup y haga clic en <b>[Connect]</b>.</p>
+
+                <div class="p-4 bg-dark-input border border-dark-border rounded space-y-2 text-xs">
+                    <div class="font-bold text-gray-200" data-i18n="guide_step1_modes_title">📋 Modos de Conexión:</div>
+                    <ul class="space-y-1 text-gray-400 ml-1">
+                        <li data-i18n-html="guide_step1_mode1">• <b>Direct Tor:</b> Conexión directa a la red Tor (adecuada para redes sin censura).</li>
+                        <li data-i18n-html="guide_step1_mode2">• <b>Configure custom bridge:</b> Uso de puentes HTTPS <code>webtunnel</code> u <code>obfs4</code> para eludir bloqueos DPI estrictos.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: NETWORK ADAPTERS CONFIGURATION -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden" id="step-network-config">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold" data-i18n="guide_step2_window">Paso 2: Configurador Gráfico de Red</span>
+                <span class="font-mono text-[10px] text-accent-green bg-dark-input px-2 py-0.5 rounded border border-dark-border">02</span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6">
+                <span class="inline-block px-2.5 py-0.5 bg-dark-input border border-accent-green text-accent-green font-mono font-bold text-xs rounded" data-i18n="guide_step2_badge">PASO 2</span>
+                <h2 class="text-xl font-bold text-gray-100" data-i18n="guide_step2_title">Paso 2: Configuración de Adaptadores de Red (Network GUI)</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+                    <div class="space-y-3 text-xs sm:text-sm text-gray-300">
+                        <p data-i18n="guide_step2_desc">Configure WAN eth0 (DHCP o IP Estática) y el gateway LAN eth1 (10.152.152.10) con servidor DHCP mediante Cmd+n.</p>
+                        <div class="space-y-2 pt-1 text-xs">
+                            <div class="p-3 bg-dark-input border border-dark-border rounded">
+                                <div class="font-bold text-gray-200" data-i18n="guide_step2_a1_title">Adaptador 1: eth0 (WAN Externa / Internet)</div>
+                                <div class="text-gray-400 mt-1" data-i18n="guide_step2_a1_desc">Configuración automática DHCP o IP estática y puerta de enlace manual.</div>
+                            </div>
+                            <div class="p-3 bg-dark-input border border-dark-border rounded">
+                                <div class="font-bold text-gray-200" data-i18n="guide_step2_a2_title">Adaptador 2: eth1 (Puerta de Enlace LAN)</div>
+                                <div class="text-gray-400 mt-1" data-i18n-html="guide_step2_a2_desc">Gateway <code>10.152.152.10</code>, máscara <code>255.255.192.0</code>, pool DHCP integrado para estaciones de trabajo conectadas.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
+                        <img src="../img/network_config.png" alt="Network Adapters GUI" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <span class="text-[11px] text-gray-500 font-mono italic" data-i18n="guide_step2_caption">Configuración de Adaptadores de Red (Cmd+n)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: PROXY SETUP WIZARD -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden" id="step-proxy-wizard">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold" data-i18n="guide_step3_window">Paso 3: Asistente de Proxies Multiprotocolo (Puerto 1080)</span>
+                <span class="font-mono text-[10px] text-accent-green bg-dark-input px-2 py-0.5 rounded border border-dark-border">03</span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6">
+                <span class="inline-block px-2.5 py-0.5 bg-dark-input border border-accent-green text-accent-green font-mono font-bold text-xs rounded" data-i18n="guide_step3_badge">PASO 3</span>
+                <h2 class="text-xl font-bold text-gray-100" data-i18n="guide_step3_title">Paso 3: Cadenas de Proxy Multiprotocolo (Proxy Setup Wizard)</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+                    <div class="space-y-3 text-xs sm:text-sm text-gray-300">
+                        <p data-i18n="guide_step3_desc">Importe enlaces vless:// Reality o ss:// Shadowsocks en Proxy Wizard (Cmd+p) para salir a través de nodos privados de alta velocidad.</p>
+                        <div class="p-3.5 bg-[#262018] border-l-4 border-accent-amber border-y border-r border-dark-border rounded text-xs text-[#e8d0b0] space-y-1">
+                            <div class="font-bold" data-i18n="guide_step3_trojan_note_title">⚠️ Estado del Protocolo Trojan:</div>
+                            <div data-i18n="guide_step3_trojan_note_desc">El protocolo Trojan se encuentra actualmente en desarrollo y aún no está soportado en Proxy Wizard. El soporte está programado para próximas versiones.</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
+                        <img src="../img/proxy_wizard.png" alt="Proxy Setup Wizard" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <span class="text-[11px] text-gray-500 font-mono italic" data-i18n="guide_step3_caption">Asistente Proxy Setup Wizard (Cmd+p)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: FIREWALL CONTROL CENTER -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden" id="step-firewall">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold" data-i18n="guide_step4_window">Paso 4: Centro de Control de Firewall Granular nftables</span>
+                <span class="font-mono text-[10px] text-accent-green bg-dark-input px-2 py-0.5 rounded border border-dark-border">04</span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6">
+                <span class="inline-block px-2.5 py-0.5 bg-dark-input border border-accent-green text-accent-green font-mono font-bold text-xs rounded" data-i18n="guide_step4_badge">PASO 4</span>
+                <h2 class="text-xl font-bold text-gray-100" data-i18n="guide_step4_title">Paso 4: Firewall Granular (Firewall & Security Control Center)</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+                    <div class="space-y-3 text-xs text-gray-300">
+                        <p data-i18n="guide_step4_desc">Controle 8 módulos nftables (Cmd+f) para bloquear o permitir tráfico en Chromium, Telegram, actualizaciones o activar el Killswitch.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] font-mono">
+                            <div class="p-2 bg-dark-input border border-dark-border rounded" data-i18n="g_mod1">1. Navegador Web Chromium</div>
+                            <div class="p-2 bg-dark-input border border-dark-border rounded" data-i18n="g_mod2">2. Cliente Telegram Desktop</div>
+                            <div class="p-2 bg-dark-input border border-dark-border rounded" data-i18n="g_mod3">3. Sing-Box SOCKS (Puerto 1080)</div>
+                            <div class="p-2 bg-dark-input border border-dark-border rounded" data-i18n="g_mod4">4. Servidor Web Onion (8080)</div>
+                            <div class="p-2 bg-dark-input border border-dark-border rounded" data-i18n="g_mod5">5. Enrutamiento LAN (eth1)</div>
+                            <div class="p-2 bg-dark-input border border-dark-border rounded" data-i18n="g_mod6">6. Actualizaciones Sistema y Tor</div>
+                            <div class="p-2 bg-dark-input border border-dark-border rounded" data-i18n="g_mod7">7. Administración SSH (22)</div>
+                            <div class="p-2 bg-dark-input border border-accent-red text-accent-red rounded font-bold" data-i18n="g_mod8">8. Killswitch de Pánico WAN</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
+                        <img src="../img/firewall_center.png" alt="Firewall Control Center" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <span class="text-[11px] text-gray-500 font-mono italic" data-i18n="guide_step4_caption">Centro de Control de Firewall (Cmd+f)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: APPLICATIONS -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden" id="step-apps">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold" data-i18n="guide_step5_window">Paso 5: Navegador y Mensajero Reforzados</span>
+                <span class="font-mono text-[10px] text-accent-green bg-dark-input px-2 py-0.5 rounded border border-dark-border">05</span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6">
+                <span class="inline-block px-2.5 py-0.5 bg-dark-input border border-accent-green text-accent-green font-mono font-bold text-xs rounded" data-i18n="guide_step5_badge">PASO 5</span>
+                <h2 class="text-xl font-bold text-gray-100" data-i18n="guide_step5_title">Paso 5: Navegación y Mensajería Privada</h2>
+                <p class="text-xs sm:text-sm text-gray-300" data-i18n="guide_step5_desc">Chromium preconfigurado en SOCKS5 127.0.0.1:1080 sin fugas. Telegram opera en grupo aislado con persistencia de proxy.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-4 bg-dark-input border border-dark-border rounded space-y-3">
+                        <h3 class="font-bold text-gray-100 text-sm" data-i18n="guide_step5_app1_title">🌐 Ungoogled Chromium</h3>
+                        <img src="../img/chromium_browserleaks.png" alt="Chromium Browserleaks" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <span class="block text-[11px] text-gray-500 font-mono italic text-center" data-i18n="guide_step5_app1_cap">BrowserLeaks: 0 fugas DNS/WebRTC, IP de salida anónima.</span>
+                    </div>
+
+                    <div class="p-4 bg-dark-input border border-dark-border rounded space-y-3">
+                        <h3 class="font-bold text-gray-100 text-sm" data-i18n="guide_step5_app2_title">💬 Telegram Desktop</h3>
+                        <img src="../img/telegram_proxy.png" alt="Telegram Proxy Settings" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <span class="block text-[11px] text-gray-500 font-mono italic text-center" data-i18n="guide_step5_app2_cap">Perfil de proxy SOCKS5 persistente preconfigurado: Online.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: ANTI-FORENSICS -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden" id="step-anti-forensics">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold" data-i18n="guide_step6_window">Paso 6: Eliminación de Rastros Anti-Forense</span>
+                <span class="font-mono text-[10px] text-accent-green bg-dark-input px-2 py-0.5 rounded border border-dark-border">06</span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6">
+                <span class="inline-block px-2.5 py-0.5 bg-dark-input border border-accent-green text-accent-green font-mono font-bold text-xs rounded" data-i18n="guide_step6_badge">PASO 6</span>
+                <h2 class="text-xl font-bold text-gray-100" data-i18n="guide_step6_title">Paso 6: Eliminación de Rastros de Sesión (Wipe Privacy Traces)</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+                    <div class="space-y-3 text-xs sm:text-sm text-gray-300">
+                        <p data-i18n="guide_step6_desc">Elimine al instante historial, caché, sesiones de Telegram y registros bash en 1 clic (Cmd+Shift+k) o automáticamente al apagar.</p>
+                        <div class="p-3 bg-dark-input border border-dark-border rounded text-xs text-gray-400 space-y-1">
+                            <div data-i18n="guide_step6_i1">✓ Caché, cookies e historial de Chromium</div>
+                            <div data-i18n="guide_step6_i2">✓ Sesiones y archivos de Telegram Desktop</div>
+                            <div data-i18n="guide_step6_i3">✓ Credenciales de proxy VLESS y Shadowsocks</div>
+                            <div data-i18n="guide_step6_i4">✓ Historial de terminal bash y registros temporales</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
+                        <img src="../img/wipe_traces.png" alt="Wipe Privacy Traces" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <span class="text-[11px] text-gray-500 font-mono italic" data-i18n="guide_step6_caption">Limpieza de Rastros Wipe Privacy Traces (Cmd+Shift+k)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: SYSTEM UPDATES -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden" id="step-updates">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold" data-i18n="guide_step7_window">Paso 7: Actualizaciones de Sistema y Tor</span>
+                <span class="font-mono text-[10px] text-accent-green bg-dark-input px-2 py-0.5 rounded border border-dark-border">07</span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6">
+                <span class="inline-block px-2.5 py-0.5 bg-dark-input border border-accent-green text-accent-green font-mono font-bold text-xs rounded" data-i18n="guide_step7_badge">PASO 7</span>
+                <h2 class="text-xl font-bold text-gray-100" data-i18n="guide_step7_title">Paso 7: Actualizaciones Seguras (System & Tor Update Manager)</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+                    <div class="space-y-3 text-xs sm:text-sm text-gray-300">
+                        <p data-i18n="guide_step7_desc">Actualice paquetes Debian y Tor de forma segura con respaldo automático de configuraciones AwesomeWM y auditoría health-check.</p>
+                    </div>
+
+                    <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
+                        <img src="../img/update_manager.png" alt="System Update Manager" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <span class="text-[11px] text-gray-500 font-mono italic" data-i18n="guide_step7_caption">Gestor de Actualizaciones del Sistema</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: MONITORING & UTILITIES -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden" id="step-monitoring">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold" data-i18n="guide_step8_window">Paso 8: Monitorización del Sistema y Utilidades</span>
+                <span class="font-mono text-[10px] text-accent-green bg-dark-input px-2 py-0.5 rounded border border-dark-border">08</span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6">
+                <span class="inline-block px-2.5 py-0.5 bg-dark-input border border-accent-green text-accent-green font-mono font-bold text-xs rounded" data-i18n="guide_step8_badge">PASO 8</span>
+                <h2 class="text-xl font-bold text-gray-100" data-i18n="guide_step8_title">Paso 8: Monitorización del Sistema y Utilidades Integradas</h2>
+                <p class="text-xs sm:text-sm text-gray-300" data-i18n="guide_step8_desc">Monitorización en vivo con Conky HUD, Nyx Tor Monitor (Cmd+m), Midnight Commander, Terminal Bash, Mousepad y control de audio.</p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded text-center space-y-2">
+                        <img src="../img/conky_hud.png" alt="Conky HUD" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border">
+                        <h4 class="font-bold text-gray-100 text-xs" data-i18n="g_util1_title">Conky — Panel HUD en Tiempo Real</h4>
+                        <p class="text-[11px] text-gray-400 text-left" data-i18n="g_util1_desc">Barra lateral HUD: carga de CPU/RAM, tráfico eth0/eth1, puertos de escucha activos.</p>
+                    </div>
+
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded text-center space-y-2">
+                        <img src="../img/nyx_monitor.png" alt="Nyx Monitor" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border">
+                        <h4 class="font-bold text-gray-100 text-xs" data-i18n="g_util2_title">Nyx — Monitor de Red Tor</h4>
+                        <p class="text-[11px] text-gray-400 text-left" data-i18n="g_util2_desc">Monitor interactivo de Tor (Cmd+m) con gráficos de ancho de banda y visor de circuitos.</p>
+                    </div>
+
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded text-center space-y-2">
+                        <img src="../img/midnight_commander.png" alt="Midnight Commander" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border">
+                        <h4 class="font-bold text-gray-100 text-xs" data-i18n="g_util3_title">Midnight Commander (mc)</h4>
+                        <p class="text-[11px] text-gray-400 text-left" data-i18n="g_util3_desc">Gestor de archivos de doble panel clásico en paleta Dark Pastels.</p>
+                    </div>
+
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded text-center space-y-2">
+                        <img src="../img/terminal_console.png" alt="Terminal Console" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border">
+                        <h4 class="font-bold text-gray-100 text-xs" data-i18n="g_util4_title">Consola de Terminal Bash</h4>
+                        <p class="text-[11px] text-gray-400 text-left" data-i18n="g_util4_desc">Terminal minimalista con integración de atajos de teclado del escritorio.</p>
+                    </div>
+
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded text-center space-y-2">
+                        <img src="../img/mousepad.png" alt="Mousepad" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border">
+                        <h4 class="font-bold text-gray-100 text-xs" data-i18n="g_util5_title">Editor de Texto Mousepad</h4>
+                        <p class="text-[11px] text-gray-400 text-left" data-i18n="g_util5_desc">Editor de texto GTK3 rápido y limpio para archivos de configuración y claves.</p>
+                    </div>
+
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded text-center space-y-2">
+                        <img src="../img/audio_control.png" alt="Audio Control" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border">
+                        <h4 class="font-bold text-gray-100 text-xs" data-i18n="g_util6_title">Control de Audio y Volumen</h4>
+                        <p class="text-[11px] text-gray-400 text-left" data-i18n="g_util6_desc">Widget nativo en C/GTK3 para control de volumen y micrófono.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- System Footer -->
+    <footer class="bg-dark-window border-t border-dark-border px-4 py-4 text-center font-mono text-[11px] text-gray-500 space-y-1">
+        <div class="flex justify-center gap-4 text-gray-400 pb-1 flex-wrap">
+            <a href="index.html" class="hover:text-gray-200" data-i18n="footer_nav_main">Inicio</a>
+            <a href="about.html" class="hover:text-gray-200" data-i18n="footer_nav_about">Misión</a>
+            <a href="guide.html" class="hover:text-gray-200" data-i18n="footer_nav_guide">Manual de Usuario</a>
+            <a href="terms.html" class="hover:text-gray-200" data-i18n="footer_nav_terms">Licencia & Descargo</a>
+            <a href="security.html" class="hover:text-gray-200" data-i18n="footer_nav_sec">Seguridad</a>
+            <a href="sitemap.xml" class="hover:text-gray-200" data-i18n="footer_nav_sitemap">Mapa del Sitio</a>
+        </div>
+        <div data-i18n="footer_text_1">DARK GATEWAY OS • CERO REGISTROS • CERO CONCESIONES</div>
+        <div data-i18n="footer_text_2">ALOJADO EN GITHUB PAGES Y RED TOR ONION (.ONION v3)</div>
+    </footer>
+
+        <script src="../js/app.js"></script>
+</body>
+</html>

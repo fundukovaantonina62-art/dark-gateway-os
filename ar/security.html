@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dark Gateway OS — Security Architecture, Threat Model, and Privacy Policies.">
+    <title data-i18n="sec_window_title">بنية الأمان وسياسة الخصوصية</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            desktop: '#191a1d',
+                            window: '#222222',
+                            header: '#272727',
+                            input: '#171717',
+                            border: '#2e2e2e',
+                            hover: '#2d2e32',
+                            subtle: '#333338'
+                        },
+                        accent: {
+                            green: '#8ab88c',
+                            blue: '#7ea4b8',
+                            amber: '#dca561',
+                            purple: '#c678dd',
+                            red: '#e06c75'
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['"JetBrains Mono"', '"DejaVu Sans Mono"', '"SF Mono"', 'monospace'],
+                        sans: ['"Inter"', '"DejaVu Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-dark-desktop text-gray-300 font-sans min-h-screen flex flex-col antialiased selection:bg-[#363636] selection:text-white rtl-layout">
+
+    <!-- Top System Panel (AwesomeWM Style) -->
+    <header class="system-panel bg-dark-window border-b border-dark-border px-4 py-1.5 flex flex-wrap items-center justify-between gap-3 sticky top-0 z-50 text-xs shadow-md">
+        <div class="flex items-center gap-4 flex-wrap">
+            <a href="index.html" class="flex items-center gap-2 font-mono font-bold text-gray-100 hover:text-accent-green transition">
+                <span class="text-accent-green text-sm">◈</span>
+                <span class="tracking-wide">Dark Gateway</span>
+                <span class="bg-dark-input text-accent-blue border border-dark-border px-1.5 py-0.5 rounded text-[10px]">v1.0 Alpha</span>
+            </a>
+            <nav class="flex items-center gap-2 sm:gap-4 font-mono text-[11px]">
+                <a href="index.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_overview">نظرة عامة (Overview)</a>
+                <a href="about.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_mission">المهمة والأهداف</a>
+                <a href="guide.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_guide">دليل الاستخدام والتطبيقات</a>
+                <a href="terms.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_terms">الشروط وإخلاء المسؤولية</a>
+                <a href="security.html" class="text-accent-green border-b border-accent-green pb-0.5" data-i18n="nav_security">الأمان والحماية</a>
+            </nav>
+        </div>
+
+        <div class="flex items-center gap-3 ml-auto flex-wrap">
+            <div id="lang-selector-widget" class="flex items-center gap-1.5 bg-dark-input border border-dark-border px-2 py-0.5 rounded text-[11px]">
+                <span class="text-xs">🌐</span>
+                <select id="lang-select" class="bg-transparent text-gray-200 outline-none cursor-pointer font-sans" onchange="switchLanguage(this.value, 'security.html')">
+                    <option value="en">🇬🇧 English</option>
+                    <option value="ru">🇷🇺 Русский</option>
+                    <option value="es">🇪🇸 Español</option>
+                    <option value="zh">🇨🇳 简体中文</option>
+                    <option value="de">🇩🇪 Deutsch</option>
+                    <option value="fr">🇫🇷 Français</option>
+                    <option value="pt">🇵🇹 Português</option>
+                    <option value="ja">🇯🇵 日本語</option>
+                    <option value="tr">🇹🇷 Türkçe</option>
+                    <option value="ar" selected>🇸🇦 العربية</option>
+                </select>
+            </div>
+
+            <button onclick="copyOnion()" class="flex items-center gap-1.5 bg-dark-input hover:border-accent-green text-gray-300 border border-dark-border px-2 py-0.5 rounded font-mono text-[11px] transition shadow-sm" title="Click to copy official .onion address">
+                <span class="text-accent-amber font-bold text-[9px] uppercase tracking-wider bg-black/40 px-1 rounded" data-i18n="onion_badge">ONION v3</span>
+                <span id="onion-text" class="text-gray-400 font-mono text-[10px] hidden sm:inline">tkefu5...mayid.onion</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="w-full max-w-5xl mx-auto px-4 sm:px-6 py-8 space-y-6 flex-grow">
+        
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold flex items-center gap-2">
+                    <span class="text-accent-green">🛡️</span> <span data-i18n="sec_window_title">بنية الأمان وسياسة الخصوصية</span>
+                </span>
+            </div>
+
+            <div class="p-6 sm:p-8 space-y-6 text-sm text-gray-300 leading-relaxed">
+                
+                <div class="space-y-2">
+                    <h1 class="text-xl sm:text-2xl font-bold text-gray-100 font-mono" data-i18n="sec_title">الهيكلية الأمنية لنظام Dark Gateway OS</h1>
+                    <p class="text-xs sm:text-sm text-gray-400" data-i18n="sec_lead">تم تصميم وتطوير Dark Gateway OS بالاستناد إلى مبادئ تقليص مساحة الهجوم، وعزل مسارات البيانات عزلًا صارمًا على مستوى نواة Linux، والانعدام التام لخدمات القياس والتتبع عن بُعد.</p>
+                </div>
+
+                <!-- 4 Security Guarantees Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 bg-dark-input border border-dark-border rounded space-y-2">
+                        <div class="font-mono font-bold text-accent-green text-xs flex items-center gap-2" data-i18n="sec_g1_badge">01 ضمان عدم وجود تتبع عن بُعد</div>
+                        <h3 class="font-bold text-gray-100 text-sm" data-i18n="sec_g1_title">انعدام التتبع والتحليلات بالكامل</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="sec_g1_desc">لا يحتوي النظام على أي برمجيات خلفية لجمع البيانات، أو خدمات تحليلات القياس عن بُعد، أو أدوات إرسال تقارير الأعطال، أو المزامنة مع خوادم المطورين.</p>
+                    </div>
+
+                    <div class="p-4 bg-dark-input border border-dark-border rounded space-y-2">
+                        <div class="font-mono font-bold text-accent-green text-xs flex items-center gap-2" data-i18n="sec_g2_badge">02 عزل تام للشبكة عند الإقلاع</div>
+                        <h3 class="font-bold text-gray-100 text-sm" data-i18n="sec_g2_title">تجميد الاتصال التلقائي (Airgap)</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="sec_g2_desc">يقوم خادم Tor بحظر كافة الاتصالات الصادرة تلقائيًا عند الإقلاع (<code>DisableNetwork 1</code>) حتى يختار المستخدم وضع التوجيه يدويًا، مما يمنع تسرب أي حزمة بيانات غير مشفرة.</p>
+                    </div>
+
+                    <div class="p-4 bg-dark-input border border-dark-border rounded space-y-2">
+                        <div class="font-mono font-bold text-accent-green text-xs flex items-center gap-2" data-i18n="sec_g3_badge">03 عزل مقابس النواة (Socket Isolation)</div>
+                        <h3 class="font-bold text-gray-100 text-sm" data-i18n="sec_g3_title">التحكم في وصول المنافذ عبر GID</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="sec_g3_desc">قواعد جدار الحماية nftables مقيدة بدقة بمعرّفات مجموعات النواة (GID)، ولا يمكن لأي تطبيق غير مصرح له إرسال أي حزم بيانات عبر الشبكة.</p>
+                    </div>
+
+                    <div class="p-4 bg-dark-input border border-dark-border rounded space-y-2">
+                        <div class="font-mono font-bold text-accent-green text-xs flex items-center gap-2" data-i18n="sec_g4_badge">04 التدمير التلقائي للبيانات عند الإيقاف</div>
+                        <h3 class="font-bold text-gray-100 text-sm" data-i18n="sec_g4_title">مسح تلقائي للأدلة الجنائية</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="sec_g4_desc">تعمل خدمة <code>wipe-traces.service</code> عند إيقاف تشغيل النظام (<code>shutdown.target</code>) لتدمير ذاكرة المتصفح المؤقتة، وجلسات Telegram، وسجلات الأوامر في الطرفية تدميرًا آمنًا.</p>
+                    </div>
+                </div>
+
+                <!-- Threat Model Overview -->
+                <div class="space-y-3 pt-2">
+                    <h2 class="text-lg font-bold text-gray-100 font-mono border-b border-dark-border pb-1" data-i18n="sec_threat_title">نموذج التهديدات واستراتيجية الدفاع</h2>
+                    <ul class="space-y-1.5 text-xs text-gray-400 ml-1">
+                        <li data-i18n-html="sec_threat_i1">• <b>الحماية من تجسس مزود الإنترنت (ISP):</b> يتم تغليف وتشفير 100% من حركة المرور الصادرة داخل أنفاق WebTunnel HTTPS أو دوائر Tor v3 Onion.</li>
+                        <li data-i18n-html="sec_threat_i2">• <b>الحماية من الفحص العميق للحزم (DPI):</b> بفضل تقنية VLESS Reality المدعومة بـ XTLS Vision، يتم تمويه حركة البيانات لتتطابق تمامًا مع حركة مرور TLS لشهادات كبرى شبكات CDN العالمية، مما يجعل تمييزها أو حظرها مستحيلًا.</li>
+                        <li data-i18n-html="sec_threat_i3">• <b>منع تسريبات DNS و WebRTC:</b> يقوم خادم DNS الداخلي بتحويل جميع طلبات الاستعلام إجباريًا إلى <code>10.152.152.10:5300</code> داخل شبكة Tor، متجاوزًا خوادم DNS الخاصة بمزود الخدمة تمامًا.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- System Footer -->
+    <footer class="bg-dark-window border-t border-dark-border px-4 py-4 text-center font-mono text-[11px] text-gray-500 space-y-1">
+        <div class="flex justify-center gap-4 text-gray-400 pb-1 flex-wrap">
+            <a href="index.html" class="hover:text-gray-200" data-i18n="footer_nav_main">الرئيسية</a>
+            <a href="about.html" class="hover:text-gray-200" data-i18n="footer_nav_about">المهمة</a>
+            <a href="guide.html" class="hover:text-gray-200" data-i18n="footer_nav_guide">الدليل</a>
+            <a href="terms.html" class="hover:text-gray-200" data-i18n="footer_nav_terms">الشروط وإخلاء المسؤولية</a>
+            <a href="security.html" class="hover:text-gray-200" data-i18n="footer_nav_sec">الأمان</a>
+            <a href="sitemap.xml" class="hover:text-gray-200" data-i18n="footer_nav_sitemap">خريطة الموقع</a>
+        </div>
+        <div data-i18n="footer_text_1">DARK GATEWAY OS • بدون سجلات • بدون مساومة على الخصوصية</div>
+    </footer>
+
+        <script src="../js/app.js"></script>
+</body>
+</html>

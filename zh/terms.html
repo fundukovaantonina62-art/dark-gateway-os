@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dark Gateway OS — End User License Agreement, Risk Disclaimer, and Terms of Use.">
+    <title data-i18n="terms_window_title">最终用户许可协议与法律免责声明</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            desktop: '#191a1d',
+                            window: '#222222',
+                            header: '#272727',
+                            input: '#171717',
+                            border: '#2e2e2e',
+                            hover: '#2d2e32',
+                            subtle: '#333338'
+                        },
+                        accent: {
+                            green: '#8ab88c',
+                            blue: '#7ea4b8',
+                            amber: '#dca561',
+                            purple: '#c678dd',
+                            red: '#e06c75'
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['"JetBrains Mono"', '"DejaVu Sans Mono"', '"SF Mono"', 'monospace'],
+                        sans: ['"Inter"', '"DejaVu Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-dark-desktop text-gray-300 font-sans min-h-screen flex flex-col antialiased selection:bg-[#363636] selection:text-white">
+
+    <!-- Top System Panel (AwesomeWM Style) -->
+    <header class="system-panel bg-dark-window border-b border-dark-border px-4 py-1.5 flex flex-wrap items-center justify-between gap-3 sticky top-0 z-50 text-xs shadow-md">
+        <div class="flex items-center gap-4 flex-wrap">
+            <a href="index.html" class="flex items-center gap-2 font-mono font-bold text-gray-100 hover:text-accent-green transition">
+                <span class="text-accent-green text-sm">◈</span>
+                <span class="tracking-wide">Dark Gateway</span>
+                <span class="bg-dark-input text-accent-blue border border-dark-border px-1.5 py-0.5 rounded text-[10px]">v1.0 Alpha</span>
+            </a>
+            <nav class="flex items-center gap-2 sm:gap-4 font-mono text-[11px]">
+                <a href="index.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_overview">总览 (Overview)</a>
+                <a href="about.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_mission">使命与目标</a>
+                <a href="guide.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_guide">使用手册与应用</a>
+                <a href="terms.html" class="text-accent-green border-b border-accent-green pb-0.5" data-i18n="nav_terms">条款与免责声明</a>
+                <a href="security.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_security">安全架构</a>
+            </nav>
+        </div>
+
+        <div class="flex items-center gap-3 ml-auto flex-wrap">
+            <div id="lang-selector-widget" class="flex items-center gap-1.5 bg-dark-input border border-dark-border px-2 py-0.5 rounded text-[11px]">
+                <span class="text-xs">🌐</span>
+                <select id="lang-select" class="bg-transparent text-gray-200 outline-none cursor-pointer font-sans" onchange="switchLanguage(this.value, 'terms.html')">
+                    <option value="en">🇬🇧 English</option>
+                    <option value="ru">🇷🇺 Русский</option>
+                    <option value="es">🇪🇸 Español</option>
+                    <option value="zh" selected>🇨🇳 简体中文</option>
+                    <option value="de">🇩🇪 Deutsch</option>
+                    <option value="fr">🇫🇷 Français</option>
+                    <option value="pt">🇵🇹 Português</option>
+                    <option value="ja">🇯🇵 日本語</option>
+                    <option value="tr">🇹🇷 Türkçe</option>
+                    <option value="ar">🇸🇦 العربية</option>
+                </select>
+            </div>
+
+            <button onclick="copyOnion()" class="flex items-center gap-1.5 bg-dark-input hover:border-accent-green text-gray-300 border border-dark-border px-2 py-0.5 rounded font-mono text-[11px] transition shadow-sm" title="Click to copy official .onion address">
+                <span class="text-accent-amber font-bold text-[9px] uppercase tracking-wider bg-black/40 px-1 rounded" data-i18n="onion_badge">ONION v3</span>
+                <span id="onion-text" class="text-gray-400 font-mono text-[10px] hidden sm:inline">tkefu5...mayid.onion</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="w-full max-w-5xl mx-auto px-4 sm:px-6 py-8 space-y-6 flex-grow">
+        
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold flex items-center gap-2">
+                    <span class="text-accent-amber">⚖</span> <span data-i18n="terms_window_title">最终用户许可协议与法律免责声明</span>
+                </span>
+            </div>
+
+            <div class="p-6 sm:p-8 space-y-6 text-sm text-gray-300 leading-relaxed">
+                
+                <!-- CRITICAL DISCLAIMER BANNER -->
+                <div class="p-4 sm:p-5 bg-[#2a1b1b] border-l-4 border-accent-red border-y border-r border-dark-border rounded space-y-2">
+                    <div class="font-bold text-accent-red flex items-center gap-2 text-base font-mono">
+                        <span>⚠️</span> <span data-i18n="terms_banner_title">法律免责声明与风险自担协议</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-red-200" data-i18n-html="terms_banner_desc"><b>出于任何目的使用本软件所产生的一切法律责任和安全风险完全由最终用户自行承担。</b> Dark Gateway OS 的开发者和分发者对因安装、运行或错误配置本软件而导致的任何直接、间接、附带或故意的后果、财务或法律风险、账户封禁或数据丢失概不承担任何责任。</p>
+                </div>
+
+                <!-- SECTION 1: AS-IS WARRANTY -->
+                <div class="space-y-2">
+                    <h2 class="text-lg font-bold text-gray-100 font-mono border-b border-dark-border pb-1" data-i18n="terms_s1_title">1. 按现状提供原则 (NO WARRANTY / AS-IS)</h2>
+                    <p data-i18n-html="terms_s1_p1">Dark Gateway OS 依据<b>“按现状（AS IS）”</b>原则分发，不提供任何明示或暗示的保证，包括但不限于对适销性、特定用途适用性、无差错运行或绝对安全无漏洞的保证。</p>
+                    <p data-i18n="terms_s1_p2">尽管系统采用了业界最高水准的防泄漏设计（开机网络完全隔离、nftables 严格过滤、VLESS Reality 伪装），但若物理硬件受损、宿主机感染恶意软件或用户违反操作安全（OpSec）规范，世界上没有任何操作系统能够保证 100% 的绝对匿名。</p>
+                </div>
+
+                <!-- SECTION 2: USER RESPONSIBILITY -->
+                <div class="space-y-2">
+                    <h2 class="text-lg font-bold text-gray-100 font-mono border-b border-dark-border pb-1" data-i18n="terms_s2_title">2. 用户责任与法律合规义务</h2>
+                    <p data-i18n="terms_s2_p1">用户同意仅在遵守其所在司法管辖区及中继网络节点法律的前提下，将 Dark Gateway OS 用于合法目的（如安全研究、隐私保护、安全通信等）。</p>
+                    <p data-i18n="terms_s2_p2">严禁将本系统用于未经授权访问计算机系统、实施网络攻击（如 DDoS、暴力破解、漏洞扫描）、分发恶意软件或进行任何非法行为。</p>
+                </div>
+
+                <!-- SECTION 3: HYPERVISOR COMPATIBILITY & LANGUAGE -->
+                <div class="space-y-2">
+                    <h2 class="text-lg font-bold text-gray-100 font-mono border-b border-dark-border pb-1" data-i18n="terms_s3_title">3. 运行环境与界面语言说明</h2>
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded text-xs space-y-1.5">
+                        <div data-i18n-html="terms_s3_item1">• <b>操作系统界面语言：</b> 虚拟机的图形桌面、终端、系统消息及控制工具<b>均严格以英文（English Only）设计和运行</b>。</div>
+                        <div data-i18n-html="terms_s3_item2">• <b>虚拟化验证环境：</b> 本系统针对 <b>VMware Fusion 和 VMware Workstation 深度优化并经过全面测试</b>。</div>
+                        <div data-i18n-html="terms_s3_item3">• <b>VirtualBox 兼容性：</b> OVA 镜像可导入 Oracle VirtualBox，但<b>未经官方完整测试</b>；虚拟网络配置须由用户自行负责。</div>
+                    </div>
+                </div>
+
+                <!-- SECTION 4: OPEN SOURCE & LICENSING -->
+                <div class="space-y-2">
+                    <h2 class="text-lg font-bold text-gray-100 font-mono border-b border-dark-border pb-1" data-i18n="terms_s4_title">4. 开源组件许可声明 (GPLv3 / MIT / BSD)</h2>
+                    <p data-i18n="terms_s4_p1">Dark Gateway OS 由 Linux 内核、Debian GNU/Linux、Whonix、AwesomeWM、Tor Project、Sing-Box 及原生 C 语言（GTK3）定制工具组成。所有原创组件均在自由开源许可证下公开发布。</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- System Footer -->
+    <footer class="bg-dark-window border-t border-dark-border px-4 py-4 text-center font-mono text-[11px] text-gray-500 space-y-1">
+        <div class="flex justify-center gap-4 text-gray-400 pb-1 flex-wrap">
+            <a href="index.html" class="hover:text-gray-200" data-i18n="footer_nav_main">首页</a>
+            <a href="about.html" class="hover:text-gray-200" data-i18n="footer_nav_about">使命</a>
+            <a href="guide.html" class="hover:text-gray-200" data-i18n="footer_nav_guide">手册</a>
+            <a href="terms.html" class="hover:text-gray-200" data-i18n="footer_nav_terms">条款与免责</a>
+            <a href="security.html" class="hover:text-gray-200" data-i18n="footer_nav_sec">安全</a>
+            <a href="sitemap.xml" class="hover:text-gray-200" data-i18n="footer_nav_sitemap">网站地图</a>
+        </div>
+        <div data-i18n="footer_text_1">DARK GATEWAY OS • 零日志 • 零妥协</div>
+    </footer>
+
+        <script src="../js/app.js"></script>
+</body>
+</html>

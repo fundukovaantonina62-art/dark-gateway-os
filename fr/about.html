@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dark Gateway OS — Mission statement, target audience, and architectural purpose.">
+    <title data-i18n="about_window_title">Mission & Objectifs du Système</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            desktop: '#191a1d',
+                            window: '#222222',
+                            header: '#272727',
+                            input: '#171717',
+                            border: '#2e2e2e',
+                            hover: '#2d2e32',
+                            subtle: '#333338'
+                        },
+                        accent: {
+                            green: '#8ab88c',
+                            blue: '#7ea4b8',
+                            amber: '#dca561',
+                            purple: '#c678dd',
+                            red: '#e06c75'
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['"JetBrains Mono"', '"DejaVu Sans Mono"', '"SF Mono"', 'monospace'],
+                        sans: ['"Inter"', '"DejaVu Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-dark-desktop text-gray-300 font-sans min-h-screen flex flex-col antialiased selection:bg-[#363636] selection:text-white">
+
+    <!-- Top System Panel (AwesomeWM Style) -->
+    <header class="system-panel bg-dark-window border-b border-dark-border px-4 py-1.5 flex flex-wrap items-center justify-between gap-3 sticky top-0 z-50 text-xs shadow-md">
+        <div class="flex items-center gap-4 flex-wrap">
+            <a href="index.html" class="flex items-center gap-2 font-mono font-bold text-gray-100 hover:text-accent-green transition">
+                <span class="text-accent-green text-sm">◈</span>
+                <span class="tracking-wide">Dark Gateway</span>
+                <span class="bg-dark-input text-accent-blue border border-dark-border px-1.5 py-0.5 rounded text-[10px]">v1.0 Alpha</span>
+            </a>
+            <nav class="flex items-center gap-2 sm:gap-4 font-mono text-[11px]">
+                <a href="index.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_overview">Aperçu (Overview)</a>
+                <a href="about.html" class="text-accent-green border-b border-accent-green pb-0.5" data-i18n="nav_mission">Mission & Objectifs</a>
+                <a href="guide.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_guide">Manuel & Applications</a>
+                <a href="terms.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_terms">Licence & Clause</a>
+                <a href="security.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_security">Sécurité</a>
+            </nav>
+        </div>
+
+        <div class="flex items-center gap-3 ml-auto flex-wrap">
+            <div id="lang-selector-widget" class="flex items-center gap-1.5 bg-dark-input border border-dark-border px-2 py-0.5 rounded text-[11px]">
+                <span class="text-xs">🌐</span>
+                <select id="lang-select" class="bg-transparent text-gray-200 outline-none cursor-pointer font-sans" onchange="switchLanguage(this.value, 'about.html')">
+                    <option value="en">🇬🇧 English</option>
+                    <option value="ru">🇷🇺 Русский</option>
+                    <option value="es">🇪🇸 Español</option>
+                    <option value="zh">🇨🇳 简体中文</option>
+                    <option value="de">🇩🇪 Deutsch</option>
+                    <option value="fr" selected>🇫🇷 Français</option>
+                    <option value="pt">🇵🇹 Português</option>
+                    <option value="ja">🇯🇵 日本語</option>
+                    <option value="tr">🇹🇷 Türkçe</option>
+                    <option value="ar">🇸🇦 العربية</option>
+                </select>
+            </div>
+
+            <button onclick="copyOnion()" class="flex items-center gap-1.5 bg-dark-input hover:border-accent-green text-gray-300 border border-dark-border px-2 py-0.5 rounded font-mono text-[11px] transition shadow-sm" title="Click to copy official .onion address">
+                <span class="text-accent-amber font-bold text-[9px] uppercase tracking-wider bg-black/40 px-1 rounded" data-i18n="onion_badge">ONION v3</span>
+                <span id="onion-text" class="text-gray-400 font-mono text-[10px] hidden sm:inline">tkefu5...mayid.onion</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="w-full max-w-6xl mx-auto px-4 sm:px-6 py-8 space-y-8 flex-grow">
+
+        <!-- SECTION 1: MISSION & PURPOSE -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold flex items-center gap-2">
+                    <span class="text-accent-green">▪</span> <span data-i18n="about_window_title">Mission & Objectifs du Système</span>
+                </span>
+            </div>
+
+            <div class="p-6 sm:p-8 space-y-6">
+                <div class="flex items-center gap-2 flex-wrap text-xs">
+                    <span class="bg-dark-input border border-accent-green text-accent-green px-2.5 py-0.5 rounded font-mono font-bold" data-i18n="about_hero_tag">PHILOSOPHIE & MISSION</span>
+                    <span class="text-gray-500 font-mono text-[11px]" data-i18n="about_hero_meta">ZÉRO TÉLÉMÉTRIE • ANTI-DPI • PASSERELLE RENFORCÉE</span>
+                </div>
+
+                <h1 class="text-2xl sm:text-3xl font-bold text-gray-100" data-i18n="about_title">Pourquoi Dark Gateway OS a-t-il été créé ?</h1>
+
+                <p class="text-gray-300 text-sm sm:text-base leading-relaxed" data-i18n-html="about_lead">L'Internet moderne est inondé de DPI et de surveillance. Dark Gateway OS agit comme une passerelle impénétrable protégeant les postes de travail.</p>
+
+                <!-- 3 Pillars Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+                    <div class="p-4 bg-dark-input border border-dark-border rounded space-y-2">
+                        <div class="text-2xl">🛡️</div>
+                        <h4 class="font-bold text-gray-100 text-sm" data-i18n="about_card1_title">Isolation Totale</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="about_card1_desc">Aucune application cliente ne peut découvrir l'IP réelle ou l'emplacement physique de l'hôte.</p>
+                    </div>
+
+                    <div class="p-4 bg-dark-input border border-dark-border rounded space-y-2">
+                        <div class="text-2xl">⚡</div>
+                        <h4 class="font-bold text-gray-100 text-sm" data-i18n="about_card2_title">Contournement DPI</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="about_card2_desc">WebTunnel et VLESS Reality traversent les pare-feux d'entreprise et d'État les plus stricts.</p>
+                    </div>
+
+                    <div class="p-4 bg-dark-input border border-dark-border rounded space-y-2">
+                        <div class="text-2xl">🚫</div>
+                        <h4 class="font-bold text-gray-100 text-sm" data-i18n="about_card3_title">Sortie Propre Anti-Captcha</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="about_card3_desc">Le routage via nœuds de sortie privés résout les blocages répétés de Cloudflare et Google.</p>
+                    </div>
+                </div>
+
+                <!-- Showcase Image -->
+                <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
+                    <img src="../img/overview_panorama.png" alt="AwesomeWM Desktop Panorama" class="w-full h-auto rounded border border-dark-border shadow-md">
+                    <span class="text-xs text-gray-500 font-mono italic" data-i18n="about_panorama_caption">Panorama du bureau Dark Gateway OS : outils natifs en C/GTK3, Conky HUD et AwesomeWM.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: TARGET AUDIENCE -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2">
+                <span class="font-mono text-xs text-gray-200 font-bold flex items-center gap-2">
+                    <span class="text-accent-green">▪</span> <span data-i18n="about_aud_window_title">Public Cible</span>
+                </span>
+            </div>
+
+            <div class="p-6 sm:p-8 space-y-6">
+                <h2 class="text-xl sm:text-2xl font-bold text-gray-100 border-b border-dark-border pb-3" data-i18n="about_aud_title">Pour qui Dark Gateway OS est-il conçu ?</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 bg-dark-input border border-dark-border rounded flex items-start gap-4">
+                        <div class="font-mono font-bold text-accent-green bg-black/40 border border-dark-border px-3 py-1.5 rounded text-sm">01</div>
+                        <div class="space-y-1">
+                            <h3 class="font-bold text-gray-100 text-sm" data-i18n="about_aud1_title">Journalistes & Enquêteurs</h3>
+                            <p class="text-xs text-gray-400 leading-relaxed" data-i18n="about_aud1_desc">Pour des communications sécurisées et des investigations sous haute surveillance.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-dark-input border border-dark-border rounded flex items-start gap-4">
+                        <div class="font-mono font-bold text-accent-green bg-black/40 border border-dark-border px-3 py-1.5 rounded text-sm">02</div>
+                        <div class="space-y-1">
+                            <h3 class="font-bold text-gray-100 text-sm" data-i18n="about_aud2_title">Experts en Sécurité & OSINT</h3>
+                            <p class="text-xs text-gray-400 leading-relaxed" data-i18n="about_aud2_desc">Pour l'analyse de malwares et recherches isolées sans exposer l'infrastructure réelle.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-dark-input border border-dark-border rounded flex items-start gap-4">
+                        <div class="font-mono font-bold text-accent-green bg-black/40 border border-dark-border px-3 py-1.5 rounded text-sm">03</div>
+                        <div class="space-y-1">
+                            <h3 class="font-bold text-gray-100 text-sm" data-i18n="about_aud3_title">Utilisateurs en Zones de Censure</h3>
+                            <p class="text-xs text-gray-400 leading-relaxed" data-i18n="about_aud3_desc">Pour accéder à l'Internet libre lorsque les VPN et relais Tor publics sont bloqués.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-dark-input border border-dark-border rounded flex items-start gap-4">
+                        <div class="font-mono font-bold text-accent-green bg-black/40 border border-dark-border px-3 py-1.5 rounded text-sm">04</div>
+                        <div class="space-y-1">
+                            <h3 class="font-bold text-gray-100 text-sm" data-i18n="about_aud4_title">Développeurs & Administrateurs</h3>
+                            <p class="text-xs text-gray-400 leading-relaxed" data-i18n="about_aud4_desc">Pour déployer des passerelles anonymes fiables dans des laboratoires virtuels.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Showcase Image 2 -->
+                <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
+                    <img src="../img/active_routing.png" alt="Active Routing" class="w-full h-auto rounded border border-dark-border shadow-md">
+                    <span class="text-xs text-gray-500 font-mono italic" data-i18n="about_routing_caption">Vérification Zero-Leak : test BrowserLeaks, Telegram SOCKS5 :1080 actif et Conky HUD.</span>
+                </div>
+
+                <!-- CTA Banner -->
+                <div class="bg-gradient-to-r from-[#181f1b] to-dark-window border border-accent-green/60 p-5 sm:p-6 rounded flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div>
+                        <h3 class="font-bold text-gray-100 text-sm sm:text-base" data-i18n="about_cta_title">Prêt à déployer une passerelle de sécurité autonome ?</h3>
+                        <p class="text-xs text-gray-300 mt-0.5" data-i18n="about_cta_desc">Téléchargez l'image OVA préconfigurée de 1.0 Go et consultez la documentation détaillée.</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <a href="guide.html" class="px-4 py-2 bg-dark-input hover:bg-dark-hover border border-dark-border text-gray-200 font-mono text-xs rounded transition" data-i18n="about_cta_guide_btn">Lire le Manuel Utilisateur</a>
+                        <a href="index.html#download" class="px-4 py-2 bg-accent-green hover:bg-[#9ac79c] text-dark-desktop font-mono font-bold text-xs rounded transition shadow-md" data-i18n="about_cta_dl_btn">Télécharger OVA (1.0 GB)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- System Footer -->
+    <footer class="bg-dark-window border-t border-dark-border px-4 py-4 text-center font-mono text-[11px] text-gray-500 space-y-1">
+        <div class="flex justify-center gap-4 text-gray-400 pb-1 flex-wrap">
+            <a href="index.html" class="hover:text-gray-200" data-i18n="footer_nav_main">Accueil</a>
+            <a href="about.html" class="hover:text-gray-200" data-i18n="footer_nav_about">Mission</a>
+            <a href="guide.html" class="hover:text-gray-200" data-i18n="footer_nav_guide">Manuel</a>
+            <a href="terms.html" class="hover:text-gray-200" data-i18n="footer_nav_terms">Licence & Décharge</a>
+            <a href="security.html" class="hover:text-gray-200" data-i18n="footer_nav_sec">Sécurité</a>
+            <a href="sitemap.xml" class="hover:text-gray-200" data-i18n="footer_nav_sitemap">Sitemap</a>
+        </div>
+        <div data-i18n="footer_text_1">DARK GATEWAY OS • ZÉRO LOG • ZÉRO COMPROMIS</div>
+        <div data-i18n="footer_text_2">HÉBERGÉ SUR GITHUB PAGES & RÉSEAU TOR ONION (.ONION v3)</div>
+    </footer>
+
+        <script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dark Gateway OS — Step-by-step user manual and application guide with screenshots.">
+    <title data-i18n="guide_window_title">دليل الاستخدام ودليل التطبيقات</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            desktop: '#191a1d',
+                            window: '#222222',
+                            header: '#272727',
+                            input: '#171717',
+                            border: '#2e2e2e',
+                            hover: '#2d2e32',
+                            subtle: '#333338'
+                        },
+                        accent: {
+                            green: '#8ab88c',
+                            blue: '#7ea4b8',
+                            amber: '#dca561',
+                            purple: '#c678dd',
+                            red: '#e06c75'
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['"JetBrains Mono"', '"DejaVu Sans Mono"', '"SF Mono"', 'monospace'],
+                        sans: ['"Inter"', '"DejaVu Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-dark-desktop text-gray-300 font-sans min-h-screen flex flex-col antialiased selection:bg-[#363636] selection:text-white rtl-layout">
+
+    <!-- Top System Panel (AwesomeWM Style) -->
+    <header class="system-panel bg-dark-window border-b border-dark-border px-4 py-1.5 flex flex-wrap items-center justify-between gap-3 sticky top-0 z-50 text-xs shadow-md">
+        <div class="flex items-center gap-4 flex-wrap">
+            <a href="index.html" class="flex items-center gap-2 font-mono font-bold text-gray-100 hover:text-accent-green transition">
+                <span class="text-accent-green text-sm">◈</span>
+                <span class="tracking-wide">Dark Gateway</span>
+                <span class="bg-dark-input text-accent-blue border border-dark-border px-1.5 py-0.5 rounded text-[10px]">v1.0 Alpha</span>
+            </a>
+            <nav class="flex items-center gap-2 sm:gap-4 font-mono text-[11px]">
+                <a href="index.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_overview">نظرة عامة (Overview)</a>
+                <a href="about.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_mission">المهمة والأهداف</a>
+                <a href="guide.html" class="text-accent-green border-b border-accent-green pb-0.5" data-i18n="nav_guide">دليل الاستخدام والتطبيقات</a>
+                <a href="terms.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_terms">الشروط وإخلاء المسؤولية</a>
+                <a href="security.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_security">الأمان والحماية</a>
+            </nav>
+        </div>
+
+        <div class="flex items-center gap-3 ml-auto flex-wrap">
+            <div id="lang-selector-widget" class="flex items-center gap-1.5 bg-dark-input border border-dark-border px-2 py-0.5 rounded text-[11px]">
+                <span class="text-xs">🌐</span>
+                <select id="lang-select" class="bg-transparent text-gray-200 outline-none cursor-pointer font-sans" onchange="switchLanguage(this.value, 'guide.html')">
+                    <option value="en">🇬🇧 English</option>
+                    <option value="ru">🇷🇺 Русский</option>
+                    <option value="es">🇪🇸 Español</option>
+                    <option value="zh">🇨🇳 简体中文</option>
+                    <option value="de">🇩🇪 Deutsch</option>
+                    <option value="fr">🇫🇷 Français</option>
+                    <option value="pt">🇵🇹 Português</option>
+                    <option value="ja">🇯🇵 日本語</option>
+                    <option value="tr">🇹🇷 Türkçe</option>
+                    <option value="ar" selected>🇸🇦 العربية</option>
+                </select>
+            </div>
+
+            <button onclick="copyOnion()" class="flex items-center gap-1.5 bg-dark-input hover:border-accent-green text-gray-300 border border-dark-border px-2 py-0.5 rounded font-mono text-[11px] transition shadow-sm" title="Click to copy official .onion address">
+                <span class="text-accent-amber font-bold text-[9px] uppercase tracking-wider bg-black/40 px-1 rounded" data-i18n="onion_badge">ONION v3</span>
+                <span id="onion-text" class="text-gray-400 font-mono text-[10px] hidden sm:inline">tkefu5...mayid.onion</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="w-full max-w-6xl mx-auto px-4 sm:px-6 py-8 space-y-8 flex-grow">
+
+        <!-- HEADER HERO -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold flex items-center gap-2">
+                    <span class="text-accent-green">▪</span> <span data-i18n="guide_window_title">دليل الاستخدام ودليل التطبيقات</span>
+                </span>
+            </div>
+
+            <div class="p-6 sm:p-8 space-y-5">
+                <div class="flex items-center gap-2 flex-wrap text-xs">
+                    <span class="bg-dark-input border border-accent-green text-accent-green px-2.5 py-0.5 rounded font-mono font-bold" data-i18n="guide_hero_tag">التوثيق ودليل التشغيل</span>
+                    <span class="text-gray-500 font-mono text-[11px]" data-i18n="guide_hero_meta">دليل خطوة بخطوة بالصور • شرح كافة الأدوات والخدمات</span>
+                </div>
+
+                <h1 class="text-2xl sm:text-3xl font-bold text-gray-100" data-i18n="guide_title">كيفية استخدام Dark Gateway OS</h1>
+                <p class="text-gray-300 text-sm sm:text-base leading-relaxed" data-i18n="guide_lead">دليل تفصيلي ومصور يشمل الإقلاع الأول، وإعدادات بطاقات الشبكة، والربط بالبروكسي، والتحكم الدقيق بجدار الحماية، والتطبيقات المدمجة.</p>
+
+                <!-- Quick Navigation TOC -->
+                <div class="bg-dark-input border-l-4 border-accent-green border-y border-r border-dark-border p-4 rounded space-y-2.5">
+                    <div class="font-mono font-bold text-xs text-gray-200 tracking-wider" data-i18n="guide_toc_title">⚡ التنقل السريع بين الأقسام:</div>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-mono">
+                        <a href="#step-first-boot" class="p-2 bg-dark-window hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition" data-i18n="toc_s1">1. الإقلاع والاتصال بـ Tor</a>
+                        <a href="#step-network-config" class="p-2 bg-dark-window hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition" data-i18n="toc_s2">2. محولات الشبكة</a>
+                        <a href="#step-proxy-wizard" class="p-2 bg-dark-window hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition" data-i18n="toc_s3">3. معالج البروكسي</a>
+                        <a href="#step-firewall" class="p-2 bg-dark-window hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition" data-i18n="toc_s4">4. جدار الحماية</a>
+                        <a href="#step-apps" class="p-2 bg-dark-window hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition" data-i18n="toc_s5">5. المتصفح والتيليجرام</a>
+                        <a href="#step-anti-forensics" class="p-2 bg-dark-window hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition" data-i18n="toc_s6">6. مسح الآثار</a>
+                        <a href="#step-updates" class="p-2 bg-dark-window hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition" data-i18n="toc_s7">7. تحديث النظام</a>
+                        <a href="#step-monitoring" class="p-2 bg-dark-window hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition" data-i18n="toc_s8">8. شاشة المراقبة HUD</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1: FIRST BOOT & TOR SETUP -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden" id="step-first-boot">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold" data-i18n="guide_step1_window">الخطوة 1: عزل الإقلاع والاتصال بشبكة Tor</span>
+                <span class="font-mono text-[10px] text-accent-green bg-dark-input px-2 py-0.5 rounded border border-dark-border">01</span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-4">
+                <span class="inline-block px-2.5 py-0.5 bg-dark-input border border-accent-green text-accent-green font-mono font-bold text-xs rounded" data-i18n="guide_step1_badge">الخطوة 1</span>
+                <h2 class="text-xl font-bold text-gray-100" data-i18n="guide_step1_title">الخطوة 1: الإقلاع الأول وإعداد شبكة Tor (Boot Isolation)</h2>
+                
+                <p class="text-xs sm:text-sm text-gray-300 leading-relaxed" data-i18n-html="guide_step1_desc">عند بدء التشغيل، يتم تجميد الشبكة تلقائيًا (<code>DisableNetwork 1</code>) لمنع أي تسريب. اختر الاتصال المباشر أو ألصق جسر <b>WebTunnel</b> / <b>obfs4</b> في نافذة Tor Connection Setup واضغط <b>[Connect]</b>.</p>
+
+                <div class="p-4 bg-dark-input border border-dark-border rounded space-y-2 text-xs">
+                    <div class="font-bold text-gray-200" data-i18n="guide_step1_modes_title">📋 أوضاع الاتصال المتاحة:</div>
+                    <ul class="space-y-1 text-gray-400 ml-1">
+                        <li data-i18n-html="guide_step1_mode1">• <b>Direct Tor:</b> اتصال مباشر بشبكة Tor (مناسب للشبكات التي لا تفرض رقابة).</li>
+                        <li data-i18n-html="guide_step1_mode2">• <b>Configure custom bridge:</b> استخدام جسور HTTPS المشفرة مثل <code>webtunnel</code> أو <code>obfs4</code> لتجاوز فلاتر DPI الصارمة.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: NETWORK ADAPTERS CONFIGURATION -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden" id="step-network-config">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold" data-i18n="guide_step2_window">الخطوة 2: الواجهة الرسومية لمحولات الشبكة</span>
+                <span class="font-mono text-[10px] text-accent-green bg-dark-input px-2 py-0.5 rounded border border-dark-border">02</span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6">
+                <span class="inline-block px-2.5 py-0.5 bg-dark-input border border-accent-green text-accent-green font-mono font-bold text-xs rounded" data-i18n="guide_step2_badge">الخطوة 2</span>
+                <h2 class="text-xl font-bold text-gray-100" data-i18n="guide_step2_title">الخطوة 2: إعداد بطاقات الشبكة (Network GUI)</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+                    <div class="space-y-3 text-xs sm:text-sm text-gray-300">
+                        <p data-i18n="guide_step2_desc">اضغط الاختصار Cmd+n لضبط بطاقة WAN الخارجية eth0 (تلقائي DHCP أو IP ثابت) وبوابة LAN الداخلية eth1 (العنوان 10.152.152.10 مع خادم DHCP مدمج).</p>
+                        <div class="space-y-2 pt-1 text-xs">
+                            <div class="p-3 bg-dark-input border border-dark-border rounded">
+                                <div class="font-bold text-gray-200" data-i18n="guide_step2_a1_title">المحول 1: eth0 (الإنترنت الخارجي / WAN)</div>
+                                <div class="text-gray-400 mt-1" data-i18n="guide_step2_a1_desc">الحصول التلقائي عبر DHCP أو إدخال عنوان IP الثابت والبوابة الافتراضية يدويًا.</div>
+                            </div>
+                            <div class="p-3 bg-dark-input border border-dark-border rounded">
+                                <div class="font-bold text-gray-200" data-i18n="guide_step2_a2_title">المحول 2: eth1 (البوابة الداخلية / LAN)</div>
+                                <div class="text-gray-400 mt-1" data-i18n-html="guide_step2_a2_desc">البوابة <code>10.152.152.10</code>، وقناع الشبكة <code>255.255.192.0</code>، ونطاق DHCP المدمج لتوزيع العناوين على محطات العمل المتصلة.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
+                        <img src="../img/network_config.png" alt="Network Adapters GUI" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <span class="text-[11px] text-gray-500 font-mono italic" data-i18n="guide_step2_caption">أداة إعداد بطاقات الشبكة (Cmd+n)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: PROXY SETUP WIZARD -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden" id="step-proxy-wizard">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold" data-i18n="guide_step3_window">الخطوة 3: معالج البروكسي متعدد البروتوكولات (المنفذ 1080)</span>
+                <span class="font-mono text-[10px] text-accent-green bg-dark-input px-2 py-0.5 rounded border border-dark-border">03</span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6">
+                <span class="inline-block px-2.5 py-0.5 bg-dark-input border border-accent-green text-accent-green font-mono font-bold text-xs rounded" data-i18n="guide_step3_badge">الخطوة 3</span>
+                <h2 class="text-xl font-bold text-gray-100" data-i18n="guide_step3_title">الخطوة 3: الربط المتسلسل بالبروكسي (Proxy Setup Wizard)</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+                    <div class="space-y-3 text-xs sm:text-sm text-gray-300">
+                        <p data-i18n="guide_step3_desc">استورد روابط vless:// Reality أو ss:// Shadowsocks عبر معالج البروكسي (Cmd+p) للخروج عبر عقد خاصة فائقة السرعة.</p>
+                        <div class="p-3.5 bg-[#262018] border-l-4 border-accent-amber border-y border-r border-dark-border rounded text-xs text-[#e8d0b0] space-y-1">
+                            <div class="font-bold" data-i18n="guide_step3_trojan_note_title">⚠️ ملاحظة حول حالة بروتوكول Trojan:</div>
+                            <div data-i18n="guide_step3_trojan_note_desc">بروتوكول Trojan قيد التطوير والاختبار حاليًا وغير مدعوم في Proxy Wizard في هذا الإصدار، وسيتم إتاحته في التحديثات القادمة.</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
+                        <img src="../img/proxy_wizard.png" alt="Proxy Setup Wizard" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <span class="text-[11px] text-gray-500 font-mono italic" data-i18n="guide_step3_caption">معالج إعداد البروكسي Proxy Wizard (Cmd+p)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: FIREWALL CONTROL CENTER -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden" id="step-firewall">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold" data-i18n="guide_step4_window">الخطوة 4: مركز التحكم الدقيق بجدار الحماية nftables</span>
+                <span class="font-mono text-[10px] text-accent-green bg-dark-input px-2 py-0.5 rounded border border-dark-border">04</span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6">
+                <span class="inline-block px-2.5 py-0.5 bg-dark-input border border-accent-green text-accent-green font-mono font-bold text-xs rounded" data-i18n="guide_step4_badge">الخطوة 4</span>
+                <h2 class="text-xl font-bold text-gray-100" data-i18n="guide_step4_title">الخطوة 4: جدار الحماية التفصيلي (Firewall Control Center)</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+                    <div class="space-y-3 text-xs text-gray-300">
+                        <p data-i18n="guide_step4_desc">تحكم في 8 وحدات مستقلة في nftables بالضغط على Cmd+f للسماح أو حظر حركة المرور لـ Chromium و Telegram والتحديثات، أو تفعيل مفتاح الطوارئ Killswitch.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] font-mono">
+                            <div class="p-2 bg-dark-input border border-dark-border rounded" data-i18n="g_mod1">1. متصفح الويب Chromium</div>
+                            <div class="p-2 bg-dark-input border border-dark-border rounded" data-i18n="g_mod2">2. تطبيق Telegram Desktop</div>
+                            <div class="p-2 bg-dark-input border border-dark-border rounded" data-i18n="g_mod3">3. منفذ Sing-Box SOCKS (1080)</div>
+                            <div class="p-2 bg-dark-input border border-dark-border rounded" data-i18n="g_mod4">4. خادم الويب Onion (8080)</div>
+                            <div class="p-2 bg-dark-input border border-dark-border rounded" data-i18n="g_mod5">5. توجيه شبكة العميل LAN (eth1)</div>
+                            <div class="p-2 bg-dark-input border border-dark-border rounded" data-i18n="g_mod6">6. تحديثات النظام وأمان Tor</div>
+                            <div class="p-2 bg-dark-input border border-dark-border rounded" data-i18n="g_mod7">7. الإدارة عن بُعد عبر SSH (22)</div>
+                            <div class="p-2 bg-dark-input border border-accent-red text-accent-red rounded font-bold" data-i18n="g_mod8">8. مفتاح قطع الطوارئ WAN Killswitch</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
+                        <img src="../img/firewall_center.png" alt="Firewall Control Center" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <span class="text-[11px] text-gray-500 font-mono italic" data-i18n="guide_step4_caption">مركز التحكم بجدار الحماية والأمان (Cmd+f)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: APPLICATIONS -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden" id="step-apps">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold" data-i18n="guide_step5_window">الخطوة 5: متصفح وتطبيق مراسلة محصنان ضد التتبع</span>
+                <span class="font-mono text-[10px] text-accent-green bg-dark-input px-2 py-0.5 rounded border border-dark-border">05</span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6">
+                <span class="inline-block px-2.5 py-0.5 bg-dark-input border border-accent-green text-accent-green font-mono font-bold text-xs rounded" data-i18n="guide_step5_badge">الخطوة 5</span>
+                <h2 class="text-xl font-bold text-gray-100" data-i18n="guide_step5_title">الخطوة 5: تصفح الويب الآمن والمراسلة الخاصة</h2>
+                <p class="text-xs sm:text-sm text-gray-300" data-i18n="guide_step5_desc">تم إعداد متصفح Chromium مسبقًا عبر البروكسي SOCKS5 127.0.0.1:1080 بدون أي تسريب لـ WebRTC أو DNS. يعمل Telegram في مجموعة معزولة مع حفظ دائم للبروكسي.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-4 bg-dark-input border border-dark-border rounded space-y-3">
+                        <h3 class="font-bold text-gray-100 text-sm" data-i18n="guide_step5_app1_title">🌐 Ungoogled Chromium</h3>
+                        <img src="../img/chromium_browserleaks.png" alt="Chromium Browserleaks" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <span class="block text-[11px] text-gray-500 font-mono italic text-center" data-i18n="guide_step5_app1_cap">اختبار BrowserLeaks: 0 تسريب لـ DNS/WebRTC، عنوان IP مجهول كليًا.</span>
+                    </div>
+
+                    <div class="p-4 bg-dark-input border border-dark-border rounded space-y-3">
+                        <h3 class="font-bold text-gray-100 text-sm" data-i18n="guide_step5_app2_title">💬 Telegram Desktop</h3>
+                        <img src="../img/telegram_proxy.png" alt="Telegram Proxy Settings" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <span class="block text-[11px] text-gray-500 font-mono italic text-center" data-i18n="guide_step5_app2_cap">ملف تعريف بروكسي SOCKS5 الدائم جاهز: متصل بالإنترنت.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: ANTI-FORENSICS -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden" id="step-anti-forensics">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold" data-i18n="guide_step6_window">الخطوة 6: أداة مسح الآثار الجنائية الرقمية</span>
+                <span class="font-mono text-[10px] text-accent-green bg-dark-input px-2 py-0.5 rounded border border-dark-border">06</span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6">
+                <span class="inline-block px-2.5 py-0.5 bg-dark-input border border-accent-green text-accent-green font-mono font-bold text-xs rounded" data-i18n="guide_step6_badge">الخطوة 6</span>
+                <h2 class="text-xl font-bold text-gray-100" data-i18n="guide_step6_title">الخطوة 6: المسح الشامل لآثار الجلسة (Wipe Privacy Traces)</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+                    <div class="space-y-3 text-xs sm:text-sm text-gray-300">
+                        <p data-i18n="guide_step6_desc">امسح على الفور سجل التصفح، والملفات المؤقتة، وجلسات Telegram، وسجلات Bash بنقرة واحدة عبر الاختصار Cmd+Shift+k (يتم تنفيذه تلقائيًا عند إيقاف التشغيل).</p>
+                        <div class="p-3 bg-dark-input border border-dark-border rounded text-xs text-gray-400 space-y-1">
+                            <div data-i18n="guide_step6_i1">✓ ذاكرة التخزين المؤقت، وملفات تعريف الارتباط، وسجل تصفح Chromium</div>
+                            <div data-i18n="guide_step6_i2">✓ جلسات تسجيل الدخول والملفات المحملة في Telegram Desktop</div>
+                            <div data-i18n="guide_step6_i3">✓ بيانات اعتماد وإعدادات بروكسي VLESS و Shadowsocks المحفوظة</div>
+                            <div data-i18n="guide_step6_i4">✓ سجل أوامر الطرفية Bash وسجلات النظام المؤقتة</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
+                        <img src="../img/wipe_traces.png" alt="Wipe Privacy Traces" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <span class="text-[11px] text-gray-500 font-mono italic" data-i18n="guide_step6_caption">أداة مسح الخصوصية Wipe Privacy Traces (Cmd+Shift+k)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: SYSTEM UPDATES -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden" id="step-updates">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold" data-i18n="guide_step7_window">الخطوة 7: تحديثات النظام وأمان شبكة Tor</span>
+                <span class="font-mono text-[10px] text-accent-green bg-dark-input px-2 py-0.5 rounded border border-dark-border">07</span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6">
+                <span class="inline-block px-2.5 py-0.5 bg-dark-input border border-accent-green text-accent-green font-mono font-bold text-xs rounded" data-i18n="guide_step7_badge">الخطوة 7</span>
+                <h2 class="text-xl font-bold text-gray-100" data-i18n="guide_step7_title">الخطوة 7: التحديثات الآمنة (Update Manager)</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+                    <div class="space-y-3 text-xs sm:text-sm text-gray-300">
+                        <p data-i18n="guide_step7_desc">حدّث حزم الأمان لنظام Debian وخادم Tor بأمان مع إجراء نسخ احتياطي تلقائي لإعدادات AwesomeWM وفحص شامل للسلامة (health-check).</p>
+                    </div>
+
+                    <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
+                        <img src="../img/update_manager.png" alt="System Update Manager" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <span class="text-[11px] text-gray-500 font-mono italic" data-i18n="guide_step7_caption">مدير تحديثات النظام</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: MONITORING & UTILITIES -->
+        <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden" id="step-monitoring">
+            <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
+                <span class="font-mono text-xs text-gray-200 font-bold" data-i18n="guide_step8_window">الخطوة 8: مراقبة النظام والأدوات المدمجة</span>
+                <span class="font-mono text-[10px] text-accent-green bg-dark-input px-2 py-0.5 rounded border border-dark-border">08</span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6">
+                <span class="inline-block px-2.5 py-0.5 bg-dark-input border border-accent-green text-accent-green font-mono font-bold text-xs rounded" data-i18n="guide_step8_badge">الخطوة 8</span>
+                <h2 class="text-xl font-bold text-gray-100" data-i18n="guide_step8_title">الخطوة 8: مراقبة الأداء والأدوات المساعدة المدمجة</h2>
+                <p class="text-xs sm:text-sm text-gray-300" data-i18n="guide_step8_desc">مراقبة حية عبر Conky HUD، ومراقب Tor التفاعلي Nyx (Cmd+m)، ومدير الملفات Midnight Commander، والطرفية Bash، ومحرر Mousepad، وأداة التحكم بالصوت.</p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded text-center space-y-2">
+                        <img src="../img/conky_hud.png" alt="Conky HUD" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border">
+                        <h4 class="font-bold text-gray-100 text-xs" data-i18n="g_util1_title">Conky — شاشة القياس في الوقت الفعلي</h4>
+                        <p class="text-[11px] text-gray-400 text-left" data-i18n="g_util1_desc">شريط جانبي لمراقبة استهلاك المعالج والذاكرة، وحركة البيانات على eth0/eth1، والمنافذ المفتوحة.</p>
+                    </div>
+
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded text-center space-y-2">
+                        <img src="../img/nyx_monitor.png" alt="Nyx Monitor" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border">
+                        <h4 class="font-bold text-gray-100 text-xs" data-i18n="g_util2_title">Nyx — مراقب شبكة Tor</h4>
+                        <p class="text-[11px] text-gray-400 text-left" data-i18n="g_util2_desc">أداة تفاعلية لمراقبة شبكة Tor (Cmd+m) مع رسوم بيانية حية لحجم البيانات ومسارات الدوائر.</p>
+                    </div>
+
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded text-center space-y-2">
+                        <img src="../img/midnight_commander.png" alt="Midnight Commander" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border">
+                        <h4 class="font-bold text-gray-100 text-xs" data-i18n="g_util3_title">Midnight Commander (mc)</h4>
+                        <p class="text-[11px] text-gray-400 text-left" data-i18n="g_util3_desc">مدير ملفات كلاسيكي مزدوج اللوحات بمظهر Dark Pastels الأنيق.</p>
+                    </div>
+
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded text-center space-y-2">
+                        <img src="../img/terminal_console.png" alt="Terminal Console" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border">
+                        <h4 class="font-bold text-gray-100 text-xs" data-i18n="g_util4_title">وحدة التحكم الطرفية Bash</h4>
+                        <p class="text-[11px] text-gray-400 text-left" data-i18n="g_util4_desc">طرفية سريعة وخفيفة مع تكامل كامل لاختصارات سطح المكتب.</p>
+                    </div>
+
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded text-center space-y-2">
+                        <img src="../img/mousepad.png" alt="Mousepad" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border">
+                        <h4 class="font-bold text-gray-100 text-xs" data-i18n="g_util5_title">محرر النصوص Mousepad</h4>
+                        <p class="text-[11px] text-gray-400 text-left" data-i18n="g_util5_desc">محرر نصوص GTK3 سريع ونظيف ومثالي لتعديل ملفات التكوين والمفاتيح.</p>
+                    </div>
+
+                    <div class="p-3.5 bg-dark-input border border-dark-border rounded text-center space-y-2">
+                        <img src="../img/audio_control.png" alt="Audio Control" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border">
+                        <h4 class="font-bold text-gray-100 text-xs" data-i18n="g_util6_title">التحكم في الصوت والميكروفون</h4>
+                        <p class="text-[11px] text-gray-400 text-left" data-i18n="g_util6_desc">أداة C/GTK3 أصلية لضبط مستوى الصوت وحساسية الميكروفون بسرعة.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- System Footer -->
+    <footer class="bg-dark-window border-t border-dark-border px-4 py-4 text-center font-mono text-[11px] text-gray-500 space-y-1">
+        <div class="flex justify-center gap-4 text-gray-400 pb-1 flex-wrap">
+            <a href="index.html" class="hover:text-gray-200" data-i18n="footer_nav_main">الرئيسية</a>
+            <a href="about.html" class="hover:text-gray-200" data-i18n="footer_nav_about">المهمة</a>
+            <a href="guide.html" class="hover:text-gray-200" data-i18n="footer_nav_guide">الدليل</a>
+            <a href="terms.html" class="hover:text-gray-200" data-i18n="footer_nav_terms">الشروط وإخلاء المسؤولية</a>
+            <a href="security.html" class="hover:text-gray-200" data-i18n="footer_nav_sec">الأمان</a>
+            <a href="sitemap.xml" class="hover:text-gray-200" data-i18n="footer_nav_sitemap">خريطة الموقع</a>
+        </div>
+        <div data-i18n="footer_text_1">DARK GATEWAY OS • بدون سجلات • بدون مساومة على الخصوصية</div>
+        <div data-i18n="footer_text_2">مستضاف على GITHUB PAGES وشبكة TOR ONION (.ONION v3)</div>
+    </footer>
+
+        <script src="../js/app.js"></script>
+</body>
+</html>

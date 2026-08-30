@@ -1,33 +1,769 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://darkgateway.ftp.sh/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/index.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/index.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/index.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/index.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/index.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/index.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/index.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/index.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/index.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/index.html" />
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://darkgateway.ftp.sh/about.html</loc>
-    <lastmod>2026-08-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://darkgateway.ftp.sh/guide.html</loc>
-    <lastmod>2026-08-30</lastmod>
+    <loc>https://darkgateway.ftp.sh/en/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/index.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/index.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/index.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/index.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/index.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/index.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/index.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/index.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/index.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/index.html" />
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://darkgateway.ftp.sh/terms.html</loc>
-    <lastmod>2026-08-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <loc>https://darkgateway.ftp.sh/ru/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/index.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/index.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/index.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/index.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/index.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/index.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/index.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/index.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/index.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/index.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://darkgateway.ftp.sh/security.html</loc>
-    <lastmod>2026-08-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://darkgateway.ftp.sh/es/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/index.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/index.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/index.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/index.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/index.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/index.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/index.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/index.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/index.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/index.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/zh/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/index.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/index.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/index.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/index.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/index.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/index.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/index.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/index.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/index.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/index.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/de/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/index.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/index.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/index.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/index.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/index.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/index.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/index.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/index.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/index.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/index.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/fr/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/index.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/index.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/index.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/index.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/index.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/index.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/index.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/index.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/index.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/index.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/pt/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/index.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/index.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/index.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/index.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/index.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/index.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/index.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/index.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/index.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/index.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/ja/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/index.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/index.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/index.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/index.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/index.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/index.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/index.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/index.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/index.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/index.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/tr/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/index.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/index.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/index.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/index.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/index.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/index.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/index.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/index.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/index.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/index.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/ar/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/index.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/index.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/index.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/index.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/index.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/index.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/index.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/index.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/index.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/index.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/en/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/about.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/about.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/about.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/about.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/about.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/about.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/about.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/about.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/about.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/about.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/ru/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/about.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/about.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/about.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/about.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/about.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/about.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/about.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/about.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/about.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/about.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/es/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/about.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/about.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/about.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/about.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/about.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/about.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/about.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/about.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/about.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/about.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/zh/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/about.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/about.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/about.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/about.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/about.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/about.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/about.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/about.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/about.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/about.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/de/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/about.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/about.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/about.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/about.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/about.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/about.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/about.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/about.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/about.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/about.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/fr/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/about.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/about.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/about.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/about.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/about.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/about.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/about.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/about.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/about.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/about.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/pt/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/about.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/about.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/about.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/about.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/about.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/about.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/about.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/about.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/about.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/about.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/ja/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/about.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/about.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/about.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/about.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/about.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/about.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/about.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/about.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/about.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/about.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/tr/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/about.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/about.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/about.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/about.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/about.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/about.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/about.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/about.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/about.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/about.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/ar/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/about.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/about.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/about.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/about.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/about.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/about.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/about.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/about.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/about.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/about.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/en/guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/guide.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/guide.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/guide.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/guide.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/guide.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/guide.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/guide.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/ru/guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/guide.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/guide.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/guide.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/guide.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/guide.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/guide.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/guide.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/es/guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/guide.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/guide.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/guide.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/guide.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/guide.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/guide.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/guide.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/zh/guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/guide.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/guide.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/guide.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/guide.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/guide.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/guide.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/guide.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/de/guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/guide.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/guide.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/guide.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/guide.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/guide.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/guide.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/guide.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/fr/guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/guide.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/guide.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/guide.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/guide.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/guide.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/guide.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/guide.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/pt/guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/guide.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/guide.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/guide.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/guide.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/guide.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/guide.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/guide.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/ja/guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/guide.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/guide.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/guide.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/guide.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/guide.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/guide.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/guide.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/tr/guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/guide.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/guide.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/guide.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/guide.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/guide.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/guide.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/guide.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/ar/guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/guide.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/guide.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/guide.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/guide.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/guide.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/guide.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/guide.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/guide.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/en/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/terms.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/terms.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/terms.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/terms.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/terms.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/terms.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/terms.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/ru/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/terms.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/terms.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/terms.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/terms.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/terms.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/terms.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/terms.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/es/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/terms.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/terms.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/terms.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/terms.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/terms.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/terms.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/terms.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/zh/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/terms.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/terms.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/terms.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/terms.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/terms.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/terms.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/terms.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/de/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/terms.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/terms.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/terms.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/terms.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/terms.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/terms.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/terms.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/fr/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/terms.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/terms.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/terms.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/terms.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/terms.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/terms.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/terms.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/pt/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/terms.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/terms.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/terms.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/terms.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/terms.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/terms.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/terms.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/ja/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/terms.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/terms.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/terms.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/terms.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/terms.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/terms.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/terms.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/tr/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/terms.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/terms.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/terms.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/terms.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/terms.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/terms.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/terms.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/ar/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/terms.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/terms.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/terms.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/terms.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/terms.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/terms.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/terms.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/terms.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/en/security.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/security.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/security.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/security.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/security.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/security.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/security.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/security.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/security.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/security.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/security.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/ru/security.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/security.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/security.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/security.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/security.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/security.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/security.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/security.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/security.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/security.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/security.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/es/security.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/security.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/security.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/security.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/security.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/security.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/security.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/security.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/security.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/security.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/security.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/zh/security.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/security.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/security.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/security.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/security.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/security.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/security.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/security.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/security.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/security.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/security.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/de/security.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/security.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/security.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/security.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/security.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/security.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/security.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/security.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/security.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/security.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/security.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/fr/security.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/security.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/security.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/security.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/security.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/security.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/security.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/security.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/security.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/security.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/security.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/pt/security.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/security.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/security.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/security.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/security.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/security.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/security.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/security.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/security.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/security.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/security.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/ja/security.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/security.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/security.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/security.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/security.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/security.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/security.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/security.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/security.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/security.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/security.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/tr/security.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/security.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/security.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/security.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/security.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/security.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/security.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/security.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/security.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/security.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/security.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darkgateway.ftp.sh/ar/security.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkgateway.ftp.sh/en/security.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://darkgateway.ftp.sh/ru/security.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkgateway.ftp.sh/es/security.html" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://darkgateway.ftp.sh/zh/security.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://darkgateway.ftp.sh/de/security.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://darkgateway.ftp.sh/fr/security.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://darkgateway.ftp.sh/pt/security.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://darkgateway.ftp.sh/ja/security.html" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://darkgateway.ftp.sh/tr/security.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://darkgateway.ftp.sh/ar/security.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

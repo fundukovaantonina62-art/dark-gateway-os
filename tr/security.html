@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Dark Gateway OS — Security Architecture, Threat Model, and Privacy Policies.">
-    <title data-i18n="sec_window_title">Dark Gateway OS — Security Architecture &amp; Policy</title>
+    <title data-i18n="sec_window_title">Security Architecture & Privacy Policy</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -38,8 +38,7 @@
             }
         }
     </script>
-    <link rel="stylesheet" href="style.css">
-    <script src="i18n.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="bg-dark-desktop text-gray-300 font-sans min-h-screen flex flex-col antialiased selection:bg-[#363636] selection:text-white">
 
@@ -52,27 +51,27 @@
                 <span class="bg-dark-input text-accent-blue border border-dark-border px-1.5 py-0.5 rounded text-[10px]">v1.0 Alpha</span>
             </a>
             <nav class="flex items-center gap-2 sm:gap-4 font-mono text-[11px]">
-                <a href="index.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_overview">Overview</a>
-                <a href="about.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_mission">Mission &amp; Purpose</a>
-                <a href="guide.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_guide">Manual &amp; Apps</a>
-                <a href="terms.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_terms">License &amp; Disclaimer</a>
-                <a href="security.html" class="text-accent-green border-b border-accent-green pb-0.5" data-i18n="nav_security">Security</a>
+                <a href="index.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_overview">Genel Bakış (Overview)</a>
+                <a href="about.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_mission">Misyon & Hedefler</a>
+                <a href="guide.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_guide">Kılavuz & Uygulamalar</a>
+                <a href="terms.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_terms">Lisans & Red</a>
+                <a href="security.html" class="text-accent-green border-b border-accent-green pb-0.5" data-i18n="nav_security">Güvenlik</a>
             </nav>
         </div>
 
         <div class="flex items-center gap-3 ml-auto flex-wrap">
             <div id="lang-selector-widget" class="flex items-center gap-1.5 bg-dark-input border border-dark-border px-2 py-0.5 rounded text-[11px]">
                 <span class="text-xs">🌐</span>
-                <select id="lang-select" class="bg-transparent text-gray-200 outline-none cursor-pointer font-sans" onchange="setLanguage(this.value)">
-                    <option value="en" selected>🇬🇧 English</option>
+                <select id="lang-select" class="bg-transparent text-gray-200 outline-none cursor-pointer font-sans" onchange="switchLanguage(this.value, 'security.html')">
+                    <option value="en">🇬🇧 English</option>
                     <option value="ru">🇷🇺 Русский</option>
                     <option value="es">🇪🇸 Español</option>
                     <option value="zh">🇨🇳 简体中文</option>
                     <option value="de">🇩🇪 Deutsch</option>
                     <option value="fr">🇫🇷 Français</option>
-                    <option value="pt">🇧🇷 Português</option>
+                    <option value="pt">🇵🇹 Português</option>
                     <option value="ja">🇯🇵 日本語</option>
-                    <option value="tr">🇹🇷 Türkçe</option>
+                    <option value="tr" selected>🇹🇷 Türkçe</option>
                     <option value="ar">🇸🇦 العربية</option>
                 </select>
             </div>
@@ -90,7 +89,7 @@
         <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden">
             <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
                 <span class="font-mono text-xs text-gray-200 font-bold flex items-center gap-2">
-                    <span class="text-accent-green">🛡️</span> <span data-i18n="sec_window_title">Security Architecture &amp; Policy</span>
+                    <span class="text-accent-green">🛡️</span> <span data-i18n="sec_window_title">Security Architecture & Privacy Policy</span>
                 </span>
             </div>
 
@@ -98,61 +97,43 @@
                 
                 <div class="space-y-2">
                     <h1 class="text-xl sm:text-2xl font-bold text-gray-100 font-mono" data-i18n="sec_title">Dark Gateway OS Security Architecture</h1>
-                    <p class="text-xs sm:text-sm text-gray-400" data-i18n="sec_lead">
-                        Dark Gateway OS is built on the principles of absolute attack surface minimization, strict Linux kernel socket isolation, and zero hidden telemetry services.
-                    </p>
+                    <p class="text-xs sm:text-sm text-gray-400" data-i18n="sec_lead">Dark Gateway OS is engineered around the principles of attack surface minimization, strict Linux kernel stream isolation, and complete elimination of telemetry services.</p>
                 </div>
 
                 <!-- 4 Security Guarantees Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="p-4 bg-dark-input border border-dark-border rounded space-y-2">
-                        <div class="font-mono font-bold text-accent-green text-xs flex items-center gap-2" data-i18n="sec_g1_badge">
-                            01 ZERO-TELEMETRY GUARANTEE
-                        </div>
+                        <div class="font-mono font-bold text-accent-green text-xs flex items-center gap-2" data-i18n="sec_g1_badge">01 ZERO-TELEMETRY GUARANTEE</div>
                         <h3 class="font-bold text-gray-100 text-sm" data-i18n="sec_g1_title">Zero Data Collection</h3>
-                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="sec_g1_desc">
-                            The system contains zero background trackers, analytical telemetry services, crash report senders, or external synchronization with developer servers.
-                        </p>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="sec_g1_desc">The system contains zero background trackers, analytical telemetry daemons, crash reporters, or external developer synchronization.</p>
                     </div>
 
                     <div class="p-4 bg-dark-input border border-dark-border rounded space-y-2">
-                        <div class="font-mono font-bold text-accent-green text-xs flex items-center gap-2" data-i18n="sec_g2_badge">
-                            02 BOOT-TIME AIRGAP / PAUSE
-                        </div>
-                        <h3 class="font-bold text-gray-100 text-sm" data-i18n="sec_g2_title">Boot-time Network Freeze</h3>
-                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="sec_g2_desc">
-                            The Tor daemon blocks connection (<code>DisableNetwork 1</code>) until the user explicitly selects a routing mode, preventing unencrypted packets from leaking during boot.
-                        </p>
+                        <div class="font-mono font-bold text-accent-green text-xs flex items-center gap-2" data-i18n="sec_g2_badge">02 BOOT-TIME AIRGAP / PAUSE</div>
+                        <h3 class="font-bold text-gray-100 text-sm" data-i18n="sec_g2_title">Network Boot Pause</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="sec_g2_desc">Tor daemon blocks outbound traffic on boot (<code>DisableNetwork 1</code>) until the user explicitly selects a routing mode, preventing any plaintext packets from escaping during boot.</p>
                     </div>
 
                     <div class="p-4 bg-dark-input border border-dark-border rounded space-y-2">
-                        <div class="font-mono font-bold text-accent-green text-xs flex items-center gap-2" data-i18n="sec_g3_badge">
-                            03 KERNEL SOCKET ISOLATION
-                        </div>
-                        <h3 class="font-bold text-gray-100 text-sm" data-i18n="sec_g3_title">Socket GID Isolation</h3>
-                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="sec_g3_desc">
-                            nftables firewall rules are tied to specific kernel group IDs (GID). Applications without explicit firewall authorization cannot send a single packet.
-                        </p>
+                        <div class="font-mono font-bold text-accent-green text-xs flex items-center gap-2" data-i18n="sec_g3_badge">03 KERNEL SOCKET ISOLATION</div>
+                        <h3 class="font-bold text-gray-100 text-sm" data-i18n="sec_g3_title">GID Socket Isolation</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="sec_g3_desc">nftables firewall rules are tied to specific kernel group IDs (GIDs). Applications without explicit firewall authorization cannot transmit any packets.</p>
                     </div>
 
                     <div class="p-4 bg-dark-input border border-dark-border rounded space-y-2">
-                        <div class="font-mono font-bold text-accent-green text-xs flex items-center gap-2" data-i18n="sec_g4_badge">
-                            04 AUTOMATED SHUTDOWN PURGE
-                        </div>
+                        <div class="font-mono font-bold text-accent-green text-xs flex items-center gap-2" data-i18n="sec_g4_badge">04 AUTOMATED SHUTDOWN PURGE</div>
                         <h3 class="font-bold text-gray-100 text-sm" data-i18n="sec_g4_title">Automated Anti-Forensics</h3>
-                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="sec_g4_desc">
-                            The <code>wipe-traces.service</code> runs on <code>shutdown.target</code>, destroying browser caches, Telegram sessions, shell history, and temporary logs.
-                        </p>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="sec_g4_desc">The <code>wipe-traces.service</code> runs on <code>shutdown.target</code>, securely wiping browser cache, Telegram sessions, shell history, and temporary logs.</p>
                     </div>
                 </div>
 
                 <!-- Threat Model Overview -->
                 <div class="space-y-3 pt-2">
-                    <h2 class="text-lg font-bold text-gray-100 font-mono border-b border-dark-border pb-1" data-i18n="sec_threat_title">Threat Model Defense</h2>
+                    <h2 class="text-lg font-bold text-gray-100 font-mono border-b border-dark-border pb-1" data-i18n="sec_threat_title">Threat Model</h2>
                     <ul class="space-y-1.5 text-xs text-gray-400 ml-1">
                         <li data-i18n-html="sec_threat_i1">• <b>Protection against ISP sniffing:</b> 100% of outbound traffic is encapsulated inside WebTunnel HTTPS or Tor v3 onion circuits.</li>
-                        <li data-i18n-html="sec_threat_i2">• <b>Protection against DPI fingerprinting:</b> VLESS Reality with XTLS Vision imitates genuine TLS certificates of popular CDNs, making traffic indistinguishable from normal browsing.</li>
-                        <li data-i18n-html="sec_threat_i3">• <b>Protection against DNS and WebRTC leaks:</b> Internal DNS resolver redirects all queries to <code>10.152.152.10:5300</code> inside the onion network, bypassing ISP DNS completely.</li>
+                        <li data-i18n-html="sec_threat_i2">• <b>Protection against DPI fingerprinting:</b> VLESS Reality with XTLS Vision mimics authentic TLS certificates of popular CDNs, making traffic indistinguishable from normal HTTPS browsing.</li>
+                        <li data-i18n-html="sec_threat_i3">• <b>Protection against DNS and WebRTC leaks:</b> Internal DNS resolver routes all queries to <code>10.152.152.10:5300</code> inside Tor, completely bypassing ISP DNS servers.</li>
                     </ul>
                 </div>
 
@@ -164,16 +145,16 @@
     <!-- System Footer -->
     <footer class="bg-dark-window border-t border-dark-border px-4 py-4 text-center font-mono text-[11px] text-gray-500 space-y-1">
         <div class="flex justify-center gap-4 text-gray-400 pb-1 flex-wrap">
-            <a href="index.html" class="hover:text-gray-200" data-i18n="footer_nav_main">Home</a>
-            <a href="about.html" class="hover:text-gray-200" data-i18n="footer_nav_about">Mission</a>
-            <a href="guide.html" class="hover:text-gray-200" data-i18n="footer_nav_guide">Manual</a>
-            <a href="terms.html" class="hover:text-gray-200" data-i18n="footer_nav_terms">License &amp; Disclaimer</a>
-            <a href="security.html" class="hover:text-gray-200" data-i18n="footer_nav_sec">Security</a>
-            <a href="sitemap.xml" class="hover:text-gray-200" data-i18n="footer_nav_sitemap">Sitemap</a>
+            <a href="index.html" class="hover:text-gray-200" data-i18n="footer_nav_main">Ana Sayfa</a>
+            <a href="about.html" class="hover:text-gray-200" data-i18n="footer_nav_about">Misyon</a>
+            <a href="guide.html" class="hover:text-gray-200" data-i18n="footer_nav_guide">Kılavuz</a>
+            <a href="terms.html" class="hover:text-gray-200" data-i18n="footer_nav_terms">Lisans & Red</a>
+            <a href="security.html" class="hover:text-gray-200" data-i18n="footer_nav_sec">Güvenlik</a>
+            <a href="sitemap.xml" class="hover:text-gray-200" data-i18n="footer_nav_sitemap">Site Haritası</a>
         </div>
-        <div data-i18n="footer_text_1">DARK GATEWAY OS • ZERO LOGS • ZERO COMPROMISES</div>
+        <div data-i18n="footer_text_1">DARK GATEWAY OS • SIFIR GÜNLÜK • SIFIR TAVİZ</div>
     </footer>
 
-        <script src="app.js"></script>
+        <script src="../js/app.js"></script>
 </body>
 </html>
