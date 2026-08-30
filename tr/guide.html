@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Dark Gateway OS — Step-by-step user manual and application guide with screenshots.">
     <title data-i18n="guide_window_title">System User Manual & Application Guide</title>
+        <link rel="preload" href="../fonts/font_12.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/font_5.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="bg-dark-desktop text-gray-300 font-sans min-h-screen flex flex-col antialiased selection:bg-[#363636] selection:text-white">
@@ -135,7 +137,7 @@
                     </div>
 
                     <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
-                        <img src="../img/network_config.png" alt="Network Adapters GUI" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <img src="../img/network_config.png" alt="Network Adapters GUI" class="w-full h-auto rounded border border-dark-border shadow-md" loading="lazy" class="w-full h-auto bg-dark-input rounded shadow aspect-video object-cover">
                         <span class="text-[11px] text-gray-500 font-mono italic" data-i18n="guide_step2_caption">Network Adapters Configuration (Cmd+n)</span>
                     </div>
                 </div>
@@ -162,7 +164,7 @@
                     </div>
 
                     <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
-                        <img src="../img/proxy_wizard.png" alt="Proxy Setup Wizard" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <img src="../img/proxy_wizard.png" alt="Proxy Setup Wizard" class="w-full h-auto rounded border border-dark-border shadow-md" loading="lazy" class="w-full h-auto bg-dark-input rounded shadow aspect-video object-cover">
                         <span class="text-[11px] text-gray-500 font-mono italic" data-i18n="guide_step3_caption">Proxy Setup Wizard (Cmd+p)</span>
                     </div>
                 </div>
@@ -195,7 +197,7 @@
                     </div>
 
                     <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
-                        <img src="../img/firewall_center.png" alt="Firewall Control Center" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <img src="../img/firewall_center.png" alt="Firewall Control Center" class="w-full h-auto rounded border border-dark-border shadow-md" loading="lazy" class="w-full h-auto bg-dark-input rounded shadow aspect-video object-cover">
                         <span class="text-[11px] text-gray-500 font-mono italic" data-i18n="guide_step4_caption">Firewall & Security Control Center (Cmd+f)</span>
                     </div>
                 </div>
@@ -216,13 +218,13 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="p-4 bg-dark-input border border-dark-border rounded space-y-3">
                         <h3 class="font-bold text-gray-100 text-sm" data-i18n="guide_step5_app1_title">🌐 Ungoogled Chromium</h3>
-                        <img src="../img/chromium_browserleaks.png" alt="Chromium Browserleaks" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <img src="../img/chromium_browserleaks.png" alt="Chromium Browserleaks" class="w-full h-auto rounded border border-dark-border shadow-md" loading="lazy" class="w-full h-auto bg-dark-input rounded shadow aspect-video object-cover">
                         <span class="block text-[11px] text-gray-500 font-mono italic text-center" data-i18n="guide_step5_app1_cap">BrowserLeaks: 0 DNS/WebRTC leaks, anonymous exit IP.</span>
                     </div>
 
                     <div class="p-4 bg-dark-input border border-dark-border rounded space-y-3">
                         <h3 class="font-bold text-gray-100 text-sm" data-i18n="guide_step5_app2_title">💬 Telegram Desktop</h3>
-                        <img src="../img/telegram_proxy.png" alt="Telegram Proxy Settings" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <img src="../img/telegram_proxy.png" alt="Telegram Proxy Settings" class="w-full h-auto rounded border border-dark-border shadow-md" loading="lazy" class="w-full h-auto bg-dark-input rounded shadow aspect-video object-cover">
                         <span class="block text-[11px] text-gray-500 font-mono italic text-center" data-i18n="guide_step5_app2_cap">Pre-configured persistent SOCKS5 proxy profile: Online.</span>
                     </div>
                 </div>
@@ -251,7 +253,7 @@
                     </div>
 
                     <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
-                        <img src="../img/wipe_traces.png" alt="Wipe Privacy Traces" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <img src="../img/wipe_traces.png" alt="Wipe Privacy Traces" class="w-full h-auto rounded border border-dark-border shadow-md" loading="lazy" class="w-full h-auto bg-dark-input rounded shadow aspect-video object-cover">
                         <span class="text-[11px] text-gray-500 font-mono italic" data-i18n="guide_step6_caption">Wipe Privacy Traces (Cmd+Shift+k)</span>
                     </div>
                 </div>
@@ -274,7 +276,7 @@
                     </div>
 
                     <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
-                        <img src="../img/update_manager.png" alt="System Update Manager" class="w-full h-auto rounded border border-dark-border shadow-md">
+                        <img src="../img/update_manager.png" alt="System Update Manager" class="w-full h-auto rounded border border-dark-border shadow-md" loading="lazy" class="w-full h-auto bg-dark-input rounded shadow aspect-video object-cover">
                         <span class="text-[11px] text-gray-500 font-mono italic" data-i18n="guide_step7_caption">System & Tor Update Manager</span>
                     </div>
                 </div>
@@ -294,37 +296,37 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     <div class="p-3.5 bg-dark-input border border-dark-border rounded text-center space-y-2">
-                        <img src="../img/conky_hud.png" alt="Conky HUD" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border">
+                        <img src="../img/conky_hud.png" alt="Conky HUD" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border" loading="lazy" class="w-full h-auto bg-dark-input rounded shadow aspect-video object-cover">
                         <h4 class="font-bold text-gray-100 text-xs" data-i18n="g_util1_title">Conky Real-time HUD</h4>
                         <p class="text-[11px] text-gray-400 text-left" data-i18n="g_util1_desc">Sidebar HUD: CPU/RAM load, eth0/eth1 traffic, active listeners.</p>
                     </div>
 
                     <div class="p-3.5 bg-dark-input border border-dark-border rounded text-center space-y-2">
-                        <img src="../img/nyx_monitor.png" alt="Nyx Monitor" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border">
+                        <img src="../img/nyx_monitor.png" alt="Nyx Monitor" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border" loading="lazy" class="w-full h-auto bg-dark-input rounded shadow aspect-video object-cover">
                         <h4 class="font-bold text-gray-100 text-xs" data-i18n="g_util2_title">Nyx — Tor Monitor</h4>
                         <p class="text-[11px] text-gray-400 text-left" data-i18n="g_util2_desc">Interactive Tor monitor (Cmd+m) with live bandwidth graphs.</p>
                     </div>
 
                     <div class="p-3.5 bg-dark-input border border-dark-border rounded text-center space-y-2">
-                        <img src="../img/midnight_commander.png" alt="Midnight Commander" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border">
+                        <img src="../img/midnight_commander.png" alt="Midnight Commander" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border" loading="lazy" class="w-full h-auto bg-dark-input rounded shadow aspect-video object-cover">
                         <h4 class="font-bold text-gray-100 text-xs" data-i18n="g_util3_title">Midnight Commander (mc)</h4>
                         <p class="text-[11px] text-gray-400 text-left" data-i18n="g_util3_desc">Dual-pane terminal file manager in Dark Pastels color scheme.</p>
                     </div>
 
                     <div class="p-3.5 bg-dark-input border border-dark-border rounded text-center space-y-2">
-                        <img src="../img/terminal_console.png" alt="Terminal Console" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border">
+                        <img src="../img/terminal_console.png" alt="Terminal Console" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border" loading="lazy" class="w-full h-auto bg-dark-input rounded shadow aspect-video object-cover">
                         <h4 class="font-bold text-gray-100 text-xs" data-i18n="g_util4_title">Terminal Console</h4>
                         <p class="text-[11px] text-gray-400 text-left" data-i18n="g_util4_desc">Minimalist Bash terminal with desktop shortcut integration.</p>
                     </div>
 
                     <div class="p-3.5 bg-dark-input border border-dark-border rounded text-center space-y-2">
-                        <img src="../img/mousepad.png" alt="Mousepad" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border">
+                        <img src="../img/mousepad.png" alt="Mousepad" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border" loading="lazy" class="w-full h-auto bg-dark-input rounded shadow aspect-video object-cover">
                         <h4 class="font-bold text-gray-100 text-xs" data-i18n="g_util5_title">Mousepad Text Editor</h4>
                         <p class="text-[11px] text-gray-400 text-left" data-i18n="g_util5_desc">Clean and fast GTK3 text editor for config files and keys.</p>
                     </div>
 
                     <div class="p-3.5 bg-dark-input border border-dark-border rounded text-center space-y-2">
-                        <img src="../img/audio_control.png" alt="Audio Control" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border">
+                        <img src="../img/audio_control.png" alt="Audio Control" class="w-full h-44 object-contain rounded bg-black/40 p-1 border border-dark-border" loading="lazy" class="w-full h-auto bg-dark-input rounded shadow aspect-video object-cover">
                         <h4 class="font-bold text-gray-100 text-xs" data-i18n="g_util6_title">Volume & Audio Control</h4>
                         <p class="text-[11px] text-gray-400 text-left" data-i18n="g_util6_desc">Native C/GTK3 volume and microphone control widget.</p>
                     </div>

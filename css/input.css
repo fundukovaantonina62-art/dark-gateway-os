@@ -1,4 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+/* Dark Gateway OS — Pre-compiled Tailwind & Self-Hosted Zero-FOUC Fonts */
+
+/* Local Self-Hosted Inter & JetBrains Mono Fonts (No External Network Requests) */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: block;
+    src: url('../fonts/font_12.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: block;
+    src: url('../fonts/font_5.woff2') format('woff2');
+}
 
 @tailwind base;
 @tailwind components;
@@ -23,15 +40,20 @@
     box-sizing: border-box;
 }
 
+html {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 body {
     background-color: var(--bg-desktop);
     color: var(--text-secondary);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    -webkit-font-smoothing: antialiased;
 }
 
 code, pre, .font-mono {
-    font-family: 'JetBrains Mono', "DejaVu Sans Mono", monospace;
+    font-family: 'JetBrains Mono', "DejaVu Sans Mono", "SF Mono", monospace;
 }
 
 /* Custom Scrollbars */
@@ -48,6 +70,11 @@ code, pre, .font-mono {
 }
 ::-webkit-scrollbar-thumb:hover {
     background: #444444;
+}
+
+/* Image container stabilization to prevent any layout shifts */
+img {
+    content-visibility: auto;
 }
 
 /* Modal / Lightbox for Image Zoom */

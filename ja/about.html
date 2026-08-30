@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Dark Gateway OS — Mission statement, target audience, and architectural purpose.">
     <title data-i18n="about_window_title">設計思想と開発目的 (Mission Statement)</title>
+        <link rel="preload" href="../fonts/font_12.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/font_5.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="bg-dark-desktop text-gray-300 font-sans min-h-screen flex flex-col antialiased selection:bg-[#363636] selection:text-white">
@@ -94,7 +96,7 @@
 
                 <!-- Showcase Image -->
                 <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
-                    <img src="../img/overview_panorama.png" alt="AwesomeWM Desktop Panorama" class="w-full h-auto rounded border border-dark-border shadow-md">
+                    <img src="../img/overview_panorama.png" alt="AwesomeWM Desktop Panorama" class="w-full h-auto rounded border border-dark-border shadow-md" loading="lazy" class="w-full h-auto bg-dark-input rounded shadow aspect-video object-cover">
                     <span class="text-xs text-gray-500 font-mono italic" data-i18n="about_panorama_caption">Dark Gateway OS デスクトップ全景：ネイティブC/GTK3ツール群、ConkyテレメトリHUD、AwesomeWM タイル型ウィンドウマネージャ。</span>
                 </div>
             </div>
@@ -147,7 +149,7 @@
 
                 <!-- Showcase Image 2 -->
                 <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
-                    <img src="../img/active_routing.png" alt="Active Routing" class="w-full h-auto rounded border border-dark-border shadow-md">
+                    <img src="../img/active_routing.png" alt="Active Routing" class="w-full h-auto rounded border border-dark-border shadow-md" loading="lazy" class="w-full h-auto bg-dark-input rounded shadow aspect-video object-cover">
                     <span class="text-xs text-gray-500 font-mono italic" data-i18n="about_routing_caption">ゼロリーク検証：BrowserLeaks によるテスト、Telegram SOCKS5 :1080 接続、Conky HUD の稼働状況。</span>
                 </div>
 
