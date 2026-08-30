@@ -19,7 +19,7 @@ function getToastMessages() {
 }
 
 function copyOnion() {
-    const text = 'tkefu5h5l74eabxeqy6oowg7v54u7v74xskg4n5b4d7l74eabxeqmayid.onion';
+    const text = 'tkefu5bcmnhvrofyhqg735opw7ydkyxueoazvjtfifd3znhvwylmayid.onion';
     const toast = getToastMessages();
     navigator.clipboard.writeText(text).then(() => {
         const badge = document.getElementById('onion-badge');
