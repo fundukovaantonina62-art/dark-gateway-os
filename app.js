@@ -2,11 +2,15 @@
 
 function copyOnion() {
     const onionAddress = "tkefu5bcmnhvrofyhqg735opw7ydkyxueoazvjtfifd3znhvwylmayid.onion";
+    const currentLang = localStorage.getItem("dg_lang") || "en";
+    const dict = (typeof I18N !== "undefined" && I18N[currentLang]) ? I18N[currentLang] : {};
+    const copiedMsg = dict["copied"] || "COPIED!";
+
     navigator.clipboard.writeText(onionAddress).then(() => {
         const btnText = document.getElementById("onion-text");
         if (btnText) {
             const original = btnText.textContent;
-            btnText.textContent = "COPIED!";
+            btnText.textContent = copiedMsg;
             btnText.style.color = "#8ab88c";
             setTimeout(() => {
                 btnText.textContent = original;
@@ -18,19 +22,23 @@ function copyOnion() {
     });
 }
 
-function copyHash() {
+function copyHash(btn) {
     const hashEl = document.getElementById("file-hash");
     if (!hashEl) return;
     const hashText = hashEl.textContent.trim();
+    const currentLang = localStorage.getItem("dg_lang") || "en";
+    const dict = (typeof I18N !== "undefined" && I18N[currentLang]) ? I18N[currentLang] : {};
+    const copiedMsg = dict["copied_btn"] || "✓ Copied";
+
     navigator.clipboard.writeText(hashText).then(() => {
-        const btn = event.target;
-        if (btn) {
-            const orig = btn.textContent;
-            btn.textContent = "✓ Скопировано";
-            btn.style.color = "#8ab88c";
+        const targetBtn = btn || event.target;
+        if (targetBtn) {
+            const orig = targetBtn.textContent;
+            targetBtn.textContent = copiedMsg;
+            targetBtn.style.color = "#8ab88c";
             setTimeout(() => {
-                btn.textContent = orig;
-                btn.style.color = "";
+                targetBtn.textContent = orig;
+                targetBtn.style.color = "";
             }, 2000);
         }
     }).catch(err => {
@@ -87,7 +95,6 @@ class TerminalAnimator {
         if (!this.isRunning) return;
 
         if (this.currentStep >= TERMINAL_LINES.length) {
-            // Add trailing prompt with blinking cursor and pause before restarting
             const promptLine = document.createElement("div");
             promptLine.className = "text-gray-300 pt-1";
             promptLine.innerHTML = `<span class="text-gray-400">user@dark-gateway:~$</span> <span class="inline-block w-2 h-3.5 bg-accent-green align-middle animate-pulse"></span>`;

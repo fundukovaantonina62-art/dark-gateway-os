@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Dark Gateway OS — End User License Agreement, Risk Disclaimer, and Terms of Use.">
-    <title>Dark Gateway OS — License Agreement &amp; Disclaimer</title>
+    <title data-i18n="terms_window_title">Dark Gateway OS — License Agreement &amp; Disclaimer</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -54,7 +54,8 @@
                 <a href="index.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_overview">Главная (Overview)</a>
                 <a href="about.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_mission">Назначение &amp; Цели</a>
                 <a href="guide.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_guide">Руководство &amp; Софт</a>
-                <a href="terms.html" class="text-accent-green border-b border-accent-green pb-0.5" data-i18n="nav_terms">Лицензия &amp; Отказ от ответственности</a>
+                <a href="terms.html" class="text-accent-green border-b border-accent-green pb-0.5" data-i18n="nav_terms">Лицензия &amp; Отказ</a>
+                <a href="security.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_security">Безопасность</a>
             </nav>
         </div>
 
@@ -88,7 +89,7 @@
         <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden">
             <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
                 <span class="font-mono text-xs text-gray-200 font-bold flex items-center gap-2">
-                    <span class="text-accent-amber">⚖</span> End User License Agreement &amp; Legal Disclaimer
+                    <span class="text-accent-amber">⚖</span> <span data-i18n="terms_window_title">End User License Agreement &amp; Legal Disclaimer</span>
                 </span>
             </div>
 
@@ -97,9 +98,9 @@
                 <!-- CRITICAL DISCLAIMER BANNER -->
                 <div class="p-4 sm:p-5 bg-[#2a1b1b] border-l-4 border-accent-red border-y border-r border-dark-border rounded space-y-2">
                     <div class="font-bold text-accent-red flex items-center gap-2 text-base font-mono">
-                        <span>⚠️</span> ОТКАЗ ОТ ОТВЕТСТВЕННОСТИ И РАСПРЕДЕЛЕНИЕ РИСКОВ
+                        <span>⚠️</span> <span data-i18n="terms_banner_title">ОТКАЗ ОТ ОТВЕТСТВЕННОСТИ И РАСПРЕДЕЛЕНИЕ РИСКОВ</span>
                     </div>
-                    <p class="text-xs sm:text-sm text-red-200">
+                    <p class="text-xs sm:text-sm text-red-200" data-i18n-html="terms_banner_desc">
                         <b>ВСЕ РИСКИ ЗА ИСПОЛЬЗОВАНИЕ ДАННОГО ПРОГРАММНОГО ОБЕСПЕЧЕНИЯ В ЛЮБЫХ ЦЕЛЯХ НЕСУТ ИСКЛЮЧИТЕЛЬНО ПОЛЬЗОВАТЕЛИ.</b>
                         Разработчики и дистрибьюторы Dark Gateway OS не несут ответственности за любые прямые, косвенные, случайные или преднамеренные последствия, финансовые или правовые риски, блокировки аккаунтов или потерю данных, возникшие в результате установки, эксплуатации или неправильной настройки данного программного обеспечения.
                     </p>
@@ -107,40 +108,40 @@
 
                 <!-- SECTION 1: AS-IS WARRANTY -->
                 <div class="space-y-2">
-                    <h2 class="text-lg font-bold text-gray-100 font-mono border-b border-dark-border pb-1">1. Предоставление «Как есть» (NO WARRANTY / AS-IS)</h2>
-                    <p>
+                    <h2 class="text-lg font-bold text-gray-100 font-mono border-b border-dark-border pb-1" data-i18n="terms_s1_title">1. Предоставление «Как есть» (NO WARRANTY / AS-IS)</h2>
+                    <p data-i18n-html="terms_s1_p1">
                         Dark Gateway OS распространяется на условиях принципа <b>«КАК ЕСТЬ» (AS IS)</b>, без каких-либо явных или подразумеваемых гарантий, включая, но не ограничиваясь: гарантиями товарной пригодности, применимости для конкретных задач, безошибочной работы или абсолютной неуязвимости.
                     </p>
-                    <p>
+                    <p data-i18n="terms_s1_p2">
                         Хотя система спроектирована с упором на максимальную защиту от утечек (Zero-Leak Boot Isolation, nftables stream isolation, VLESS Reality), ни одна операционная система в мире не может гарантировать 100% анонимность при компрометации оборудования пользователя, вредоносной активности на физическом хосте или ошибках человеческого фактора (OpSec).
                     </p>
                 </div>
 
                 <!-- SECTION 2: USER RESPONSIBILITY -->
                 <div class="space-y-2">
-                    <h2 class="text-lg font-bold text-gray-100 font-mono border-b border-dark-border pb-1">2. Ответственность и соответствие законодательству</h2>
-                    <p>
+                    <h2 class="text-lg font-bold text-gray-100 font-mono border-b border-dark-border pb-1" data-i18n="terms_s2_title">2. Ответственность и соответствие законодательству</h2>
+                    <p data-i18n="terms_s2_p1">
                         Пользователь обязуется использовать Dark Gateway OS исключительно в законных целях в соответствии с законодательством своей юрисдикции и юрисдикций транзитных сетевых узлов.
                     </p>
-                    <p>
+                    <p data-i18n="terms_s2_p2">
                         Запрещается использовать систему для несанкционированного доступа к чужим компьютерным системам, осуществления кибератак (DDoS, брутфорс, сканирование уязвимостей), распространения вредоносного ПО или любых противоправных действий.
                     </p>
                 </div>
 
                 <!-- SECTION 3: HYPERVISOR COMPATIBILITY & LANGUAGE -->
                 <div class="space-y-2">
-                    <h2 class="text-lg font-bold text-gray-100 font-mono border-b border-dark-border pb-1">3. Окружение развертывания и язык интерфейса</h2>
+                    <h2 class="text-lg font-bold text-gray-100 font-mono border-b border-dark-border pb-1" data-i18n="terms_s3_title">3. Окружение развертывания и язык интерфейса</h2>
                     <div class="p-3.5 bg-dark-input border border-dark-border rounded text-xs space-y-1.5">
-                        <div><b>• Язык интерфейса ОС:</b> Графический интерфейс системы, системные сообщения, терминал и утилиты управления разработаны и функционируют <b>исключительно на английском языке (English Only)</b>.</div>
-                        <div><b>• Среда виртуализации:</b> Система спроектирована, оптимизирована и <b>протестирована на гипервизорах VMware (VMware Fusion, VMware Workstation)</b>.</div>
-                        <div><b>• Совместимость с VirtualBox:</b> Образ OVA может быть импортирован в Oracle VirtualBox, однако <b>полноценное тестирование на VirtualBox не проводилось</b>. Пользователь несет самостоятельную ответственность за настройку виртуальных сетевых адаптеров в VirtualBox.</div>
+                        <div data-i18n-html="terms_s3_item1">• <b>Язык интерфейса ОС:</b> Графический интерфейс системы, системные сообщения, терминал и утилиты управления разработаны и функционируют <b>исключительно на английском языке (English Only)</b>.</div>
+                        <div data-i18n-html="terms_s3_item2">• <b>Среда виртуализации:</b> Система спроектирована, оптимизирована и <b>протестирована на гипервизорах VMware (VMware Fusion, VMware Workstation)</b>.</div>
+                        <div data-i18n-html="terms_s3_item3">• <b>Совместимость с VirtualBox:</b> Образ OVA может быть импортирован в Oracle VirtualBox, однако <b>полноценное тестирование на VirtualBox не проводилось</b>. Пользователь несет самостоятельную ответственность за настройку виртуальных сетевых адаптеров в VirtualBox.</div>
                     </div>
                 </div>
 
                 <!-- SECTION 4: OPEN SOURCE & LICENSING -->
                 <div class="space-y-2">
-                    <h2 class="text-lg font-bold text-gray-100 font-mono border-b border-dark-border pb-1">4. Лицензия компонентов (GPLv3 / MIT / BSD)</h2>
-                    <p>
+                    <h2 class="text-lg font-bold text-gray-100 font-mono border-b border-dark-border pb-1" data-i18n="terms_s4_title">4. Лицензия компонентов (GPLv3 / MIT / BSD)</h2>
+                    <p data-i18n="terms_s4_p1">
                         Dark Gateway OS базируется на компонентах свободного программного обеспечения Linux Kernel, Debian GNU/Linux, Whonix, AwesomeWM, Tor Project, Sing-Box и пользовательских утилитах, написанных на языке C (GTK3). Все оригинальные компоненты Dark Gateway OS лицензированы под свободной лицензией с открытым исходным кодом.
                     </p>
                 </div>
@@ -152,13 +153,13 @@
 
     <!-- System Footer -->
     <footer class="bg-dark-window border-t border-dark-border px-4 py-4 text-center font-mono text-[11px] text-gray-500 space-y-1">
-        <div class="flex justify-center gap-4 text-gray-400 pb-1">
-            <a href="index.html" class="hover:text-gray-200">Главная</a>
-            <a href="about.html" class="hover:text-gray-200">Назначение</a>
-            <a href="guide.html" class="hover:text-gray-200">Руководство</a>
-            <a href="terms.html" class="text-accent-green">Лицензия &amp; Отказ от ответственности</a>
-            <a href="security.html" class="hover:text-gray-200">Безопасность</a>
-            <a href="sitemap.xml" class="hover:text-gray-200">Sitemap</a>
+        <div class="flex justify-center gap-4 text-gray-400 pb-1 flex-wrap">
+            <a href="index.html" class="hover:text-gray-200" data-i18n="footer_nav_main">Главная</a>
+            <a href="about.html" class="hover:text-gray-200" data-i18n="footer_nav_about">Назначение</a>
+            <a href="guide.html" class="hover:text-gray-200" data-i18n="footer_nav_guide">Руководство</a>
+            <a href="terms.html" class="hover:text-gray-200" data-i18n="footer_nav_terms">Лицензия &amp; Отказ от ответственности</a>
+            <a href="security.html" class="hover:text-gray-200" data-i18n="footer_nav_sec">Безопасность</a>
+            <a href="sitemap.xml" class="hover:text-gray-200" data-i18n="footer_nav_sitemap">Sitemap</a>
         </div>
         <div data-i18n="footer_text_1">DARK GATEWAY OS • ZERO LOGS • ZERO COMPROMISES</div>
     </footer>

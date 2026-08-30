@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Dark Gateway OS — Mission statement, target audience, and architectural purpose.">
-    <title>Dark Gateway OS — Mission &amp; Purpose</title>
+    <title data-i18n="about_window_title">Dark Gateway OS — Mission &amp; Purpose</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -54,12 +54,12 @@
                 <a href="index.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_overview">Главная (Overview)</a>
                 <a href="about.html" class="text-accent-green border-b border-accent-green pb-0.5" data-i18n="nav_mission">Назначение &amp; Цели</a>
                 <a href="guide.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_guide">Руководство &amp; Софт</a>
-                <a href="index.html#download" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_download">Скачать OVA</a>
+                <a href="terms.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_terms">Лицензия &amp; Отказ</a>
+                <a href="security.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_security">Безопасность</a>
             </nav>
         </div>
 
         <div class="flex items-center gap-3 ml-auto flex-wrap">
-            <!-- Language Selector Widget -->
             <div id="lang-selector-widget" class="flex items-center gap-1.5 bg-dark-input border border-dark-border px-2 py-0.5 rounded text-[11px]">
                 <span class="text-xs">🌐</span>
                 <select id="lang-select" class="bg-transparent text-gray-200 outline-none cursor-pointer font-sans" onchange="setLanguage(this.value)">
@@ -76,11 +76,6 @@
                 </select>
             </div>
 
-            <div class="hidden md:flex items-center gap-1.5 font-mono text-[10px] text-accent-green bg-dark-input border border-dark-border px-2 py-0.5 rounded">
-                <span class="w-1.5 h-1.5 rounded-full bg-accent-green animate-pulse"></span>
-                <span data-i18n="status_tor_active">TOR ROUTING: ACTIVE</span>
-            </div>
-
             <button onclick="copyOnion()" class="flex items-center gap-1.5 bg-dark-input hover:border-accent-green text-gray-300 border border-dark-border px-2 py-0.5 rounded font-mono text-[11px] transition shadow-sm" title="Click to copy official .onion address">
                 <span class="text-accent-amber font-bold text-[9px] uppercase tracking-wider bg-black/40 px-1 rounded" data-i18n="onion_badge">ONION v3</span>
                 <span id="onion-text" class="text-gray-400 font-mono text-[10px] hidden sm:inline">tkefu5...mayid.onion</span>
@@ -88,31 +83,26 @@
         </div>
     </header>
 
-    <!-- Main Container (Full Width Responsive) -->
+    <!-- Main Container -->
     <main class="w-full max-w-6xl mx-auto px-4 sm:px-6 py-8 space-y-8 flex-grow">
 
         <!-- SECTION 1: MISSION & PURPOSE -->
         <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden">
             <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
                 <span class="font-mono text-xs text-gray-200 font-bold flex items-center gap-2">
-                    <span class="text-accent-green">▪</span> Mission Statement &amp; System Purpose — Для чего создана ОС
+                    <span class="text-accent-green">▪</span> <span data-i18n="about_window_title">Mission Statement &amp; System Purpose — Для чего создана ОС</span>
                 </span>
-                <div class="flex items-center gap-1.5 font-mono text-xs text-gray-500">
-                    <span class="px-1.5 py-0.5 bg-dark-input rounded">_</span>
-                    <span class="px-1.5 py-0.5 bg-dark-input rounded">□</span>
-                    <span class="px-1.5 py-0.5 bg-dark-input rounded">×</span>
-                </div>
             </div>
 
             <div class="p-6 sm:p-8 space-y-6">
                 <div class="flex items-center gap-2 flex-wrap text-xs">
                     <span class="bg-dark-input border border-accent-green text-accent-green px-2.5 py-0.5 rounded font-mono font-bold" data-i18n="about_hero_tag">ФИЛОСОФИЯ И МИССИЯ</span>
-                    <span class="text-gray-500 font-mono text-[11px]">ZERO-TELEMETRY • ANTI-DPI • HARDENED GATEWAY</span>
+                    <span class="text-gray-500 font-mono text-[11px]" data-i18n="about_hero_meta">ZERO-TELEMETRY • ANTI-DPI • HARDENED GATEWAY</span>
                 </div>
 
                 <h1 class="text-2xl sm:text-3xl font-bold text-gray-100" data-i18n="about_title">Для чего создана Dark Gateway OS?</h1>
 
-                <p class="text-gray-300 text-sm sm:text-base leading-relaxed" data-i18n="about_lead">
+                <p class="text-gray-300 text-sm sm:text-base leading-relaxed" data-i18n-html="about_lead">
                     Современный интернет перегружен системами глубокого анализа пакетов (DPI), цензурными фильтрами, сквозным трекингом цифровых отпечатков (fingerprinting) и методами деанонимизации на уровне провайдеров. Dark Gateway OS спроектирована как <b>непроницаемый изолированный шлюз безопасности</b>, который берет на себя всю работу по шифрованию, фильтрации и маршрутизации, полностью защищая клиентские рабочие станции от утечек.
                 </p>
 
@@ -140,7 +130,7 @@
                 <!-- Showcase Image -->
                 <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
                     <img src="img/overview_panorama.png" alt="AwesomeWM Desktop Panorama" class="w-full h-auto rounded border border-dark-border shadow-md">
-                    <span class="text-xs text-gray-500 font-mono italic">Панорама рабочего стола Dark Gateway OS: нативные C/GTK3 утилиты, мониторинг Conky и тайловый менеджер AwesomeWM.</span>
+                    <span class="text-xs text-gray-500 font-mono italic" data-i18n="about_panorama_caption">Панорама рабочего стола Dark Gateway OS: нативные C/GTK3 утилиты, мониторинг Conky и тайловый менеджер AwesomeWM.</span>
                 </div>
             </div>
         </section>
@@ -149,7 +139,7 @@
         <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden">
             <div class="bg-dark-header border-b border-dark-border px-4 py-2">
                 <span class="font-mono text-xs text-gray-200 font-bold flex items-center gap-2">
-                    <span class="text-accent-green">▪</span> Target Audience — Для кого предназначена эта операционная система
+                    <span class="text-accent-green">▪</span> <span data-i18n="about_aud_window_title">Target Audience — Для кого предназначена эта операционная система</span>
                 </span>
             </div>
 
@@ -193,18 +183,18 @@
                 <!-- Showcase Image 2 -->
                 <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
                     <img src="img/active_routing.png" alt="Active Routing" class="w-full h-auto rounded border border-dark-border shadow-md">
-                    <span class="text-xs text-gray-500 font-mono italic">Сквозная демонстрация: проверка отсутствия утечек через BrowserLeaks, рабочий прокси-канал Telegram и системный монитор.</span>
+                    <span class="text-xs text-gray-500 font-mono italic" data-i18n="about_routing_caption">Сквозная демонстрация: проверка отсутствия утечек через BrowserLeaks, рабочий прокси-канал Telegram и системный монитор.</span>
                 </div>
 
                 <!-- CTA Banner -->
                 <div class="bg-gradient-to-r from-[#181f1b] to-dark-window border border-accent-green/60 p-5 sm:p-6 rounded flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                     <div>
-                        <h3 class="font-bold text-gray-100 text-sm sm:text-base">Готовы развернуть безопасный шлюз?</h3>
-                        <p class="text-xs text-gray-300 mt-0.5">Скачайте готовый преднастроенный OVA-образ и ознакомьтесь с подробным руководством.</p>
+                        <h3 class="font-bold text-gray-100 text-sm sm:text-base" data-i18n="about_cta_title">Готовы развернуть безопасный шлюз?</h3>
+                        <p class="text-xs text-gray-300 mt-0.5" data-i18n="about_cta_desc">Скачайте готовый преднастроенный OVA-образ и ознакомьтесь с подробным руководством.</p>
                     </div>
                     <div class="flex items-center gap-3">
-                        <a href="guide.html" class="px-4 py-2 bg-dark-input hover:bg-dark-hover border border-dark-border text-gray-200 font-mono text-xs rounded transition" data-i18n="nav_guide">Читать руководство</a>
-                        <a href="index.html#download" class="px-4 py-2 bg-accent-green hover:bg-[#9ac79c] text-dark-desktop font-mono font-bold text-xs rounded transition shadow-md" data-i18n="nav_download">Скачать OVA (1.0 GB)</a>
+                        <a href="guide.html" class="px-4 py-2 bg-dark-input hover:bg-dark-hover border border-dark-border text-gray-200 font-mono text-xs rounded transition" data-i18n="about_cta_guide_btn">Читать руководство</a>
+                        <a href="index.html#download" class="px-4 py-2 bg-accent-green hover:bg-[#9ac79c] text-dark-desktop font-mono font-bold text-xs rounded transition shadow-md" data-i18n="about_cta_dl_btn">Скачать OVA (1.0 GB)</a>
                     </div>
                 </div>
             </div>
@@ -213,15 +203,14 @@
     </main>
 
     <!-- System Footer -->
-        <!-- System Footer -->
     <footer class="bg-dark-window border-t border-dark-border px-4 py-4 text-center font-mono text-[11px] text-gray-500 space-y-1">
         <div class="flex justify-center gap-4 text-gray-400 pb-1 flex-wrap">
-            <a href="index.html" class="hover:text-gray-200">Главная</a>
-            <a href="about.html" class="hover:text-gray-200">Назначение</a>
-            <a href="guide.html" class="hover:text-gray-200">Руководство</a>
-            <a href="terms.html" class="hover:text-gray-200">Лицензия &amp; Отказ от ответственности</a>
-            <a href="security.html" class="hover:text-gray-200">Безопасность</a>
-            <a href="sitemap.xml" class="hover:text-gray-200">Sitemap</a>
+            <a href="index.html" class="hover:text-gray-200" data-i18n="footer_nav_main">Главная</a>
+            <a href="about.html" class="hover:text-gray-200" data-i18n="footer_nav_about">Назначение</a>
+            <a href="guide.html" class="hover:text-gray-200" data-i18n="footer_nav_guide">Руководство</a>
+            <a href="terms.html" class="hover:text-gray-200" data-i18n="footer_nav_terms">Лицензия &amp; Отказ от ответственности</a>
+            <a href="security.html" class="hover:text-gray-200" data-i18n="footer_nav_sec">Безопасность</a>
+            <a href="sitemap.xml" class="hover:text-gray-200" data-i18n="footer_nav_sitemap">Sitemap</a>
         </div>
         <div data-i18n="footer_text_1">DARK GATEWAY OS • ZERO LOGS • ZERO COMPROMISES</div>
         <div data-i18n="footer_text_2">HOSTED ON GITHUB PAGES &amp; TOR ONION NETWORK (.ONION v3)</div>
