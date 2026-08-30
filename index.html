@@ -52,10 +52,10 @@
             </a>
             <nav class="flex items-center gap-2 sm:gap-4 font-mono text-[11px]">
                 <a href="index.html" class="text-accent-green border-b border-accent-green pb-0.5" data-i18n="nav_overview">Overview</a>
-                <a href="about.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_mission">Mission & Goals</a>
-                <a href="guide.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_guide">User Manual & Apps</a>
-                <a href="terms.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_terms">License & Disclaimer</a>
-                <a href="security.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_security">Security Policy</a>
+                <a href="about.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_mission">Mission &amp; Purpose</a>
+                <a href="guide.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_guide">Manual &amp; Apps</a>
+                <a href="terms.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_terms">License &amp; Disclaimer</a>
+                <a href="security.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_security">Security</a>
             </nav>
         </div>
 
@@ -64,8 +64,8 @@
             <div id="lang-selector-widget" class="flex items-center gap-1.5 bg-dark-input border border-dark-border px-2 py-0.5 rounded text-[11px]">
                 <span class="text-xs">🌐</span>
                 <select id="lang-select" class="bg-transparent text-gray-200 outline-none cursor-pointer font-sans" onchange="setLanguage(this.value)">
-                    <option value="en">🇬🇧 English</option>
-                    <option value="ru" selected>🇷🇺 Русский</option>
+                    <option value="en" selected>🇬🇧 English</option>
+                    <option value="ru">🇷🇺 Русский</option>
                     <option value="es">🇪🇸 Español</option>
                     <option value="zh">🇨🇳 简体中文</option>
                     <option value="de">🇩🇪 Deutsch</option>
@@ -96,15 +96,15 @@
         <aside class="lg:col-span-1 space-y-4">
             <div class="bg-dark-window border border-dark-border rounded shadow-lg overflow-hidden font-mono text-[11px]">
                 <div class="bg-dark-header border-b border-dark-border px-3 py-1.5 flex items-center justify-between text-gray-200 font-bold tracking-wider">
-                    <span data-i18n="sidebar_telemetry_title">⚡ TELEMETRY HUD</span>
+                    <span data-i18n="sidebar_telemetry_title">⚡ SYSTEM TELEMETRY HUD</span>
                     <span class="text-[9px] text-accent-green bg-dark-input px-1 rounded" data-i18n="sidebar_telemetry_live">LIVE</span>
                 </div>
                 <div class="p-3 space-y-3">
                     <div class="space-y-1">
-                        <div class="text-[10px] text-gray-500 font-bold uppercase tracking-wider border-b border-dark-border pb-0.5" data-i18n="sidebar_sys_specs">System Specs</div>
-                        <div class="flex justify-between"><span class="text-gray-400" data-i18n="sidebar_host">HOST:</span><span class="text-gray-200">6.12.105-amd64</span></div>
+                        <div class="text-[10px] text-gray-500 font-bold uppercase tracking-wider border-b border-dark-border pb-0.5" data-i18n="sidebar_sys_specs">System Specifications</div>
+                        <div class="flex justify-between"><span class="text-gray-400" data-i18n="sidebar_host">HOST KERNEL:</span><span class="text-gray-200">6.12.105-amd64</span></div>
                         <div class="flex justify-between"><span class="text-gray-400" data-i18n="sidebar_ram">RAM USAGE:</span><span class="text-accent-green">~600 MB / 2 GB</span></div>
-                        <div class="flex justify-between"><span class="text-gray-400" data-i18n="sidebar_disk">DISK:</span><span class="text-accent-green">2.2 GB / 98 GB</span></div>
+                        <div class="flex justify-between"><span class="text-gray-400" data-i18n="sidebar_disk">STORAGE:</span><span class="text-accent-green">2.2 GB / 98 GB</span></div>
                     </div>
 
                     <div class="space-y-1">
@@ -116,8 +116,8 @@
 
                     <div class="space-y-1">
                         <div class="text-[10px] text-gray-500 font-bold uppercase tracking-wider border-b border-dark-border pb-0.5" data-i18n="sidebar_env">Environment</div>
-                        <div class="flex justify-between"><span class="text-gray-400" data-i18n="sidebar_hypervisor">HYPERVISOR:</span><span class="text-accent-green font-bold" data-i18n="sidebar_hypervisor_val">VMware Tested</span></div>
-                        <div class="flex justify-between"><span class="text-gray-400" data-i18n="sidebar_os_lang">OS UI LANG:</span><span class="text-accent-amber font-bold" data-i18n="sidebar_os_lang_val">English Only</span></div>
+                        <div class="flex justify-between"><span class="text-gray-400" data-i18n="sidebar_hypervisor">HYPERVISOR:</span><span class="text-accent-green font-bold" data-i18n="sidebar_hypervisor_val">Tested on VMware</span></div>
+                        <div class="flex justify-between"><span class="text-gray-400" data-i18n="sidebar_os_lang">OS UI LANGUAGE:</span><span class="text-accent-amber font-bold" data-i18n="sidebar_os_lang_val">English Only</span></div>
                     </div>
                 </div>
             </div>
@@ -126,15 +126,15 @@
             <div class="bg-dark-window border border-dark-border rounded p-3 space-y-2 font-mono text-xs">
                 <div class="text-[10px] text-gray-500 font-bold uppercase tracking-wider" data-i18n="sidebar_quick_nav">Quick Navigation</div>
                 <a href="about.html" class="block p-2 bg-dark-input hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition flex items-center justify-between">
-                    <span data-i18n="sidebar_link_mission">🎯 Mission & Purpose</span>
+                    <span data-i18n="sidebar_link_mission">🎯 Mission &amp; Purpose</span>
                     <span>➔</span>
                 </a>
                 <a href="guide.html" class="block p-2 bg-dark-input hover:bg-dark-hover border border-dark-border rounded text-accent-blue hover:text-accent-green transition flex items-center justify-between">
-                    <span data-i18n="sidebar_link_guide">📖 User Manual & Apps</span>
+                    <span data-i18n="sidebar_link_guide">📖 Manual &amp; Apps</span>
                     <span>➔</span>
                 </a>
                 <a href="terms.html" class="block p-2 bg-dark-input hover:bg-dark-hover border border-dark-border rounded text-accent-amber hover:text-gray-200 transition flex items-center justify-between">
-                    <span data-i18n="sidebar_link_terms">⚖ License & Disclaimer</span>
+                    <span data-i18n="sidebar_link_terms">⚖ License &amp; Disclaimer</span>
                     <span>➔</span>
                 </a>
             </div>
@@ -162,17 +162,25 @@
                         <span class="text-gray-500 font-mono text-[11px]" data-i18n="hero_meta">ZERO-TELEMETRY • ANTI-DPI • MULTI-LAYER EGRESS</span>
                     </div>
 
-                    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-100 leading-tight" data-i18n-html="hero_title">Hermetic Traffic Isolation.<br><span class="text-accent-green">Multi-Layer VLESS Egress.</span></span>
+                    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-100 leading-tight" data-i18n-html="hero_title">
+                        Hermetic Traffic Isolation.<br>
+                        <span class="text-accent-green">Multi-Protocol VLESS Egress.</span>
                     </h1>
 
-                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed" data-i18n-html="hero_lead"><b>Dark Gateway OS</b> is an autonomous next-generation security gateway built on hardened Debian 13/Whonix. Designed to strictly isolate local workstation traffic, defeat deep-packet inspection (DPI), and route anonymous streams through private VLESS Reality exit nodes with zero digital footprint.</b> — автономный шлюз безопасности нового поколения на базе hardened Debian 13/Whonix. Разработан для строгой изоляции локальных рабочих станций, обхода глубокого анализа пакетов (DPI) и маршрутизации анонимных потоков через приватные выходные ноды VLESS Reality с нулевым цифровым следом.
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed" data-i18n-html="hero_lead">
+                        <b>Dark Gateway OS</b> is a next-generation autonomous security gateway built on hardened Debian 13/Whonix. Designed to strictly isolate workstation traffic, bypass Deep Packet Inspection (DPI), and route anonymous streams through private VLESS Reality exit nodes with zero digital footprint.
                     </p>
 
                     <div class="flex flex-wrap items-center gap-3 pt-2">
-                        <a href="#download" class="px-4 py-2.5 bg-accent-green hover:bg-[#9ac79c] text-dark-desktop font-mono font-bold text-xs rounded transition flex items-center gap-2 shadow-md" data-i18n="btn_download_hero">Download Appliance (1.0 GB OVA)<span>⬇</span> Скачать образ (1.0 GB OVA)
+                        <a href="#download" class="px-4 py-2.5 bg-accent-green hover:bg-[#9ac79c] text-dark-desktop font-mono font-bold text-xs rounded transition flex items-center gap-2 shadow-md">
+                            <span>⬇</span> <span data-i18n="btn_download_hero">Download Appliance (1.0 GB OVA)</span>
                         </a>
-                        <a href="about.html" class="px-4 py-2.5 bg-dark-input hover:bg-dark-hover border border-dark-border text-gray-200 font-mono text-xs rounded transition" data-i18n="btn_about_hero">Mission & Audience</a>
-                        <a href="guide.html" class="px-4 py-2.5 bg-dark-input hover:bg-dark-hover border border-dark-border text-gray-200 font-mono text-xs rounded transition" data-i18n="btn_guide_hero">User Manual & App Guide</a>
+                        <a href="about.html" class="px-4 py-2.5 bg-dark-input hover:bg-dark-hover border border-dark-border text-gray-200 font-mono text-xs rounded transition" data-i18n="btn_about_hero">
+                            Mission &amp; Audience
+                        </a>
+                        <a href="guide.html" class="px-4 py-2.5 bg-dark-input hover:bg-dark-hover border border-dark-border text-gray-200 font-mono text-xs rounded transition" data-i18n="btn_guide_hero">
+                            User Manual &amp; Apps
+                        </a>
                     </div>
 
                     <!-- TERMINAL SIMULATION -->
@@ -204,30 +212,30 @@
             <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <a href="about.html" class="block p-4 bg-dark-window hover:bg-dark-hover border border-dark-border hover:border-accent-green rounded transition group shadow-md">
                     <div class="text-2xl mb-2">🎯</div>
-                    <h3 class="font-bold text-gray-100 text-sm group-hover:text-accent-green transition" data-i18n="card_mission_title">Mission & Purpose</h3>
-                    <p class="text-xs text-gray-400 mt-1 leading-relaxed" data-i18n="card_mission_desc">Who the OS is built for, core use-cases, censorship circumvention, DPI resistance, and stream correlation defense.</p>
+                    <h3 class="font-bold text-gray-100 text-sm group-hover:text-accent-green transition" data-i18n="card_mission_title">Mission &amp; Purpose</h3>
+                    <p class="text-xs text-gray-400 mt-1 leading-relaxed" data-i18n="card_mission_desc">Who the OS is designed for, core use cases, censorship circumvention, DPI resilience, and traffic correlation defense.</p>
                     <span class="inline-block mt-3 text-[11px] font-mono text-accent-green font-bold" data-i18n="card_learn_more">Learn more ➔</span>
                 </a>
 
                 <a href="guide.html" class="block p-4 bg-dark-window hover:bg-dark-hover border border-dark-border hover:border-accent-green rounded transition group shadow-md">
                     <div class="text-2xl mb-2">📖</div>
-                    <h3 class="font-bold text-gray-100 text-sm group-hover:text-accent-green transition" data-i18n="card_guide_title">User Manual & Apps</h3>
-                    <p class="text-xs text-gray-400 mt-1 leading-relaxed" data-i18n="card_guide_desc">Step-by-step instructions for Proxy Wizard, Firewall Control Center, Network GUI, and privacy tools with screenshots.</p>
-                    <span class="inline-block mt-3 text-[11px] font-mono text-accent-green font-bold" data-i18n="card_open_guide">Open Manual ➔</span>
+                    <h3 class="font-bold text-gray-100 text-sm group-hover:text-accent-green transition" data-i18n="card_guide_title">User Manual</h3>
+                    <p class="text-xs text-gray-400 mt-1 leading-relaxed" data-i18n="card_guide_desc">Step-by-step illustrated instructions for Proxy Wizard, Firewall Control Center, Network GUI, and privacy tools.</p>
+                    <span class="inline-block mt-3 text-[11px] font-mono text-accent-green font-bold" data-i18n="card_open_guide">Open manual ➔</span>
                 </a>
 
                 <a href="#download" class="block p-4 bg-dark-window hover:bg-dark-hover border border-dark-border hover:border-accent-green rounded transition group shadow-md">
                     <div class="text-2xl mb-2">📦</div>
-                    <h3 class="font-bold text-gray-100 text-sm group-hover:text-accent-green transition" data-i18n="card_download_title">Download Virtual Appliance</h3>
-                    <p class="text-xs text-gray-400 mt-1 leading-relaxed" data-i18n="card_download_desc">Official compressed OVA appliance (1.0 GB), verified SHA-256 checksums, and deployment instructions.</p>
-                    <span class="inline-block mt-3 text-[11px] font-mono text-accent-green font-bold" data-i18n="card_goto_dl">Go to Download ➔</span>
+                    <h3 class="font-bold text-gray-100 text-sm group-hover:text-accent-green transition" data-i18n="card_download_title">Download Virtual Machine</h3>
+                    <p class="text-xs text-gray-400 mt-1 leading-relaxed" data-i18n="card_download_desc">Official compressed OVA appliance (1.0 GB), SHA-256 checksums, and deployment instructions.</p>
+                    <span class="inline-block mt-3 text-[11px] font-mono text-accent-green font-bold" data-i18n="card_goto_dl">Go to download ➔</span>
                 </a>
             </section>
 
             <!-- CORE FEATURES GRID -->
             <section class="bg-dark-window border border-dark-border rounded shadow-lg p-5 sm:p-6 space-y-4">
                 <div class="border-b border-dark-border pb-3 flex items-center justify-between">
-                    <h2 class="font-bold text-gray-100 text-sm sm:text-base tracking-wide font-mono" data-i18n="feat_header">⚡ SYSTEM CAPABILITIES & PILLARS</h2>
+                    <h2 class="font-bold text-gray-100 text-sm sm:text-base tracking-wide font-mono" data-i18n="feat_header">⚡ CORE CAPABILITIES &amp; ARCHITECTURE</h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -236,7 +244,7 @@
                             <span class="text-accent-green font-bold">▪</span>
                             <span data-i18n="feat_proxy_title">Multi-Protocol Proxy Egress</span>
                         </div>
-                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="feat_proxy_desc">Chains onion circuits into private <b>VLESS Reality (XTLS Vision)</b> or <b>Shadowsocks</b> nodes (<i>Trojan in development</i>). Eliminates Cloudflare/Google Captchas.</b> или <b>Shadowsocks</b> (<i>Trojan в разработке</i>). Устраняет блокировки Cloudflare/Google Captcha.</p>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="feat_proxy_desc">Seamlessly chains onion circuits into private <b>VLESS Reality (XTLS Vision)</b> or <b>Shadowsocks</b> nodes (<i>Trojan in active development</i>). Eliminates Cloudflare/Google captchas.</p>
                     </div>
 
                     <div class="p-3.5 bg-dark-input border border-dark-border rounded space-y-1.5">
@@ -244,7 +252,7 @@
                             <span class="text-accent-green font-bold">▪</span>
                             <span data-i18n="feat_boot_title">Zero-Leak Boot Isolation</span>
                         </div>
-                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="feat_boot_desc">Network starts frozen (<code>DisableNetwork 1</code>). Access opens only after intentional routing selection in <b>Tor Connection Setup</b>.</code>). Доступ открывается только после осознанного выбора маршрутизации в мастере <b>Tor Connection Setup</b>.</p>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="feat_boot_desc">Network starts frozen (<code>DisableNetwork 1</code>). Connection opens only after explicit routing selection in <b>Tor Connection Setup</b>.</p>
                     </div>
 
                     <div class="p-3.5 bg-dark-input border border-dark-border rounded space-y-1.5">
@@ -252,7 +260,7 @@
                             <span class="text-accent-green font-bold">▪</span>
                             <span data-i18n="feat_fw_title">Granular nftables Firewall</span>
                         </div>
-                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="feat_fw_desc">Controls per-application network access at the kernel socket level with instant socket termination (<code>ss -K</code>).</code>).</p>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="feat_fw_desc">Controls network access on kernel-socket GID level per application with instant active socket termination (<code>ss -K</code>).</p>
                     </div>
 
                     <div class="p-3.5 bg-dark-input border border-dark-border rounded space-y-1.5">
@@ -260,7 +268,7 @@
                             <span class="text-accent-green font-bold">▪</span>
                             <span data-i18n="feat_c_title">Pure C (GTK3) Native Stack</span>
                         </div>
-                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="feat_c_desc">All GUI utilities written in native C with zero Python/Bash overhead. Millisecond startup and ultra-low RAM usage (~600 MB).</p>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="feat_c_desc">All GUI utilities are written in pure C without Python/Bash overhead. Millisecond startup time and ultra-low memory consumption (~600 MB RAM).</p>
                     </div>
 
                     <div class="p-3.5 bg-dark-input border border-dark-border rounded space-y-1.5">
@@ -268,15 +276,15 @@
                             <span class="text-accent-green font-bold">▪</span>
                             <span data-i18n="feat_wipe_title">Automated Anti-Forensics</span>
                         </div>
-                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="feat_wipe_desc">Wipe Privacy Traces utility and <code>wipe-traces.service</code> automatically erase browser cache, sessions, shell history, and logs on shutdown.</b> и служба <code>wipe-traces.service</code> автоматически стирают кэш браузера, сессии, историю команд и временные логи при завершении работы.</p>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="feat_wipe_desc">Wipe Privacy Traces tool and <code>wipe-traces.service</code> automatically purge browser cache, sessions, command history, and temporary logs on shutdown.</p>
                     </div>
 
                     <div class="p-3.5 bg-dark-input border border-dark-border rounded space-y-1.5">
                         <div class="font-bold text-gray-100 text-xs flex items-center gap-2">
                             <span class="text-accent-green font-bold">▪</span>
-                            <span data-i18n="feat_apps_title">Privacy-Hardened Applications</span>
+                            <span data-i18n="feat_apps_title">Hardened Privacy Applications</span>
                         </div>
-                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="feat_apps_desc">Pre-configured Ungoogled Chromium with anti-fingerprinting and isolated Telegram Desktop with auto-proxy persistence.</p>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n-html="feat_apps_desc">Preconfigured Ungoogled Chromium with anti-fingerprinting and isolated Telegram Desktop with auto-proxy persistence.</p>
                     </div>
                 </div>
             </section>
@@ -284,8 +292,8 @@
             <!-- SECTION: ADVANTAGES OVER ALTERNATIVES -->
             <section class="bg-dark-window border border-dark-border rounded shadow-lg p-5 sm:p-6 space-y-4">
                 <div class="border-b border-dark-border pb-3">
-                    <h2 class="font-bold text-gray-100 text-sm sm:text-base tracking-wide font-mono" data-i18n="sec_compare_title">Advantages Over Alternative Systems</h2>
-                    <p class="text-xs text-gray-400 mt-1" data-i18n="sec_compare_desc">How Dark Gateway OS compares to traditional Whonix Gateway, Tails, and custom VPN routers.</p>
+                    <h2 class="font-bold text-gray-100 text-sm sm:text-base tracking-wide font-mono" data-i18n="sec_compare_title">Advantages Over Alternatives (Whonix, Tails)</h2>
+                    <p class="text-xs text-gray-400 mt-1" data-i18n="sec_compare_desc">Architectural comparison of Dark Gateway OS with Whonix Gateway, Tails OS, and standard VPN gateways.</p>
                 </div>
 
                 <div class="overflow-x-auto">
@@ -306,37 +314,37 @@
                                 <td class="p-2.5 text-gray-500" data-i18n="comp_f1_tails">GNOME / Python</td>
                             </tr>
                             <tr class="hover:bg-dark-hover/50">
-                                <td class="p-2.5 font-bold" data-i18n="comp_f2_title">Idle Memory Usage (RAM)</td>
+                                <td class="p-2.5 font-bold" data-i18n="comp_f2_title">Idle RAM Consumption</td>
                                 <td class="p-2.5 text-accent-green font-bold" data-i18n="comp_f2_dg">~600 MB RAM</td>
                                 <td class="p-2.5 text-gray-400" data-i18n="comp_f2_whonix">~1.2 GB - 1.8 GB</td>
                                 <td class="p-2.5 text-gray-400" data-i18n="comp_f2_tails">~1.5 GB+</td>
                             </tr>
                             <tr class="hover:bg-dark-hover/50">
-                                <td class="p-2.5 font-bold" data-i18n="comp_f3_title">Compressed Appliance Size</td>
+                                <td class="p-2.5 font-bold" data-i18n="comp_f3_title">Compressed OVA Size</td>
                                 <td class="p-2.5 text-accent-green font-bold" data-i18n="comp_f3_dg">1.0 GB OVA (2.9 GB VMDK)</td>
                                 <td class="p-2.5 text-gray-400" data-i18n="comp_f3_whonix">3.5 GB - 5.0 GB</td>
                                 <td class="p-2.5 text-gray-400" data-i18n="comp_f3_tails">1.3 GB (Live ISO)</td>
                             </tr>
                             <tr class="hover:bg-dark-hover/50">
                                 <td class="p-2.5 font-bold" data-i18n="comp_f4_title">VLESS Reality Egress</td>
-                                <td class="p-2.5 text-accent-green font-bold" data-i18n="comp_f4_dg">✓ Built-in (Sing-Box :1080)</td>
+                                <td class="p-2.5 text-accent-green font-bold" data-i18n="comp_f4_dg">✓ Integrated (Sing-Box :1080)</td>
                                 <td class="p-2.5 text-gray-500" data-i18n="comp_f4_whonix">✗ Tor exit-nodes only</td>
                                 <td class="p-2.5 text-gray-500" data-i18n="comp_f4_tails">✗ Tor exit-nodes only</td>
                             </tr>
                             <tr class="hover:bg-dark-hover/50">
-                                <td class="p-2.5 font-bold" data-i18n="comp_f5_title">Boot-Time Zero-Leak Pause</td>
+                                <td class="p-2.5 font-bold" data-i18n="comp_f5_title">Boot-time Network Freeze</td>
                                 <td class="p-2.5 text-accent-green font-bold" data-i18n="comp_f5_dg">✓ DisableNetwork 1</td>
                                 <td class="p-2.5 text-gray-400" data-i18n="comp_f5_whonix">✓ Anon-Connection</td>
                                 <td class="p-2.5 text-gray-400" data-i18n="comp_f5_tails">✓ Tor Connection</td>
                             </tr>
                             <tr class="hover:bg-dark-hover/50">
-                                <td class="p-2.5 font-bold" data-i18n="comp_f6_title">8-Module Firewall (ss -K)</td>
+                                <td class="p-2.5 font-bold" data-i18n="comp_f6_title">8-Module Socket Firewall (ss -K)</td>
                                 <td class="p-2.5 text-accent-green font-bold" data-i18n="comp_f6_dg">✓ Native C Control Center</td>
                                 <td class="p-2.5 text-gray-500" data-i18n="comp_f6_whonix">✗ Monolithic iptables</td>
                                 <td class="p-2.5 text-gray-500" data-i18n="comp_f6_tails">✗ Monolithic iptables</td>
                             </tr>
                             <tr class="hover:bg-dark-hover/50">
-                                <td class="p-2.5 font-bold" data-i18n="comp_f7_title">Auto-Wipe on Shutdown</td>
+                                <td class="p-2.5 font-bold" data-i18n="comp_f7_title">Shutdown Trace Purge</td>
                                 <td class="p-2.5 text-accent-green font-bold" data-i18n="comp_f7_dg">✓ wipe-traces.service</td>
                                 <td class="p-2.5 text-gray-500" data-i18n="comp_f7_whonix">✗ Manual cleanup</td>
                                 <td class="p-2.5 text-accent-green" data-i18n="comp_f7_tails">✓ RAM Wipe (Live)</td>
@@ -349,27 +357,27 @@
             <!-- SECTION: SYSTEM REQUIREMENTS & VIRTUALIZATION -->
             <section class="bg-dark-window border border-dark-border rounded shadow-lg p-5 sm:p-6 space-y-4">
                 <div class="border-b border-dark-border pb-3">
-                    <h2 class="font-bold text-gray-100 text-sm sm:text-base tracking-wide font-mono" data-i18n="sec_req_title">System Requirements & Virtualization</h2>
+                    <h2 class="font-bold text-gray-100 text-sm sm:text-base tracking-wide font-mono" data-i18n="sec_req_title">System Requirements &amp; Virtualization</h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono">
                     <div class="p-4 bg-dark-input border border-dark-border rounded space-y-2">
-                        <div class="font-bold text-accent-green border-b border-dark-border pb-1" data-i18n="req_min_title">⚡ MINIMUM REQUIREMENTS</div>
+                        <div class="font-bold text-accent-green border-b border-dark-border pb-1" data-i18n="req_min_title">⚡ MINIMUM SYSTEM REQUIREMENTS</div>
                         <ul class="space-y-1 text-gray-300">
-                            <li data-i18n-html="req_min_cpu">• <b>Processor:</b> 1–2 vCPU (x86_64 with VT-x/AMD-V)</b> 1–2 vCPU (x86_64 с поддержкой VT-x/AMD-V)</li>
-                            <li data-i18n-html="req_min_ram">• <b>RAM:</b> 2 GB RAM (~600 MB idle consumption)</b> 2 GB RAM (потребление ~600 MB)</li>
-                            <li data-i18n-html="req_min_disk">• <b>Storage:</b> 15 GB free disk space</b> 15 GB свободного места</li>
-                            <li data-i18n-html="req_min_net">• <b>Network:</b> 2 virtual NICs (WAN NAT + LAN Host-Only)</b> 2 виртуальных адаптера (WAN NAT + LAN Host-Only)</li>
+                            <li data-i18n-html="req_min_cpu">• <b>Processor:</b> 1–2 vCPU (x86_64 with VT-x/AMD-V)</li>
+                            <li data-i18n-html="req_min_ram">• <b>RAM:</b> 2 GB RAM (~600 MB idle consumption)</li>
+                            <li data-i18n-html="req_min_disk">• <b>Storage:</b> 15 GB free disk space</li>
+                            <li data-i18n-html="req_min_net">• <b>Network:</b> 2 virtual NICs (WAN NAT + LAN Host-Only)</li>
                         </ul>
                     </div>
 
                     <div class="p-4 bg-dark-input border border-dark-border rounded space-y-2">
-                        <div class="font-bold text-accent-blue border-b border-dark-border pb-1" data-i18n="req_rec_title">🚀 RECOMMENDED SPECS</div>
+                        <div class="font-bold text-accent-blue border-b border-dark-border pb-1" data-i18n="req_rec_title">🚀 RECOMMENDED SPECIFICATIONS</div>
                         <ul class="space-y-1 text-gray-300">
-                            <li data-i18n-html="req_rec_cpu">• <b>Processor:</b> 2–4 vCPU</b> 2–4 vCPU</li>
-                            <li data-i18n-html="req_rec_ram">• <b>RAM:</b> 4 GB RAM</b> 4 GB RAM</li>
-                            <li data-i18n-html="req_rec_disk">• <b>Storage:</b> 30 GB on NVMe / SSD</b> 30 GB на NVMe / SSD</li>
-                            <li data-i18n-html="req_rec_net">• <b>Network:</b> Gigabit WAN Bridge + Isolated LAN vSwitch</b> Гигабитный мост WAN + изолированный vSwitch LAN</li>
+                            <li data-i18n-html="req_rec_cpu">• <b>Processor:</b> 2–4 vCPU</li>
+                            <li data-i18n-html="req_rec_ram">• <b>RAM:</b> 4 GB RAM</li>
+                            <li data-i18n-html="req_rec_disk">• <b>Storage:</b> 30 GB on NVMe / SSD</li>
+                            <li data-i18n-html="req_rec_net">• <b>Network:</b> Gigabit WAN Bridge + Isolated LAN vSwitch</li>
                         </ul>
                     </div>
                 </div>
@@ -377,31 +385,33 @@
                 <!-- HYPERVISOR & LANGUAGE CALLOUT BOXES -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
                     <div class="p-4 bg-dark-input border-l-4 border-accent-green border-y border-r border-dark-border rounded space-y-1.5">
-                        <div class="font-bold text-gray-100 text-xs font-mono" data-i18n="vmware_tested_title">Designed & Tested on VMware</div>
-                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="vmware_tested_desc">Optimized and thoroughly tested on VMware Fusion and VMware Workstation. Instant clean OVA import.</p>
+                        <div class="font-bold text-gray-100 text-xs font-mono" data-i18n="vmware_tested_title">Designed &amp; Tested on VMware</div>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="vmware_tested_desc">The system is optimized and fully tested on VMware Fusion and VMware Workstation. Clean OVA import without warnings.</p>
                     </div>
 
                     <div class="p-4 bg-dark-input border-l-4 border-accent-amber border-y border-r border-dark-border rounded space-y-1.5">
                         <div class="font-bold text-gray-100 text-xs font-mono" data-i18n="vbox_notice_title">VirtualBox Compatibility</div>
-                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="vbox_notice_desc">Can be deployed on Oracle VirtualBox, but has not been officially tested. Virtual networking must be configured manually.</p>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="vbox_notice_desc">The OVA image can be deployed on Oracle VirtualBox, but official testing has not been performed. Virtual network configuration is the responsibility of the user.</p>
                     </div>
                 </div>
 
                 <!-- LANGUAGE NOTICE -->
                 <div class="p-3 bg-[#1e232b] border border-accent-blue/40 rounded flex items-center gap-3 text-xs">
                     <span class="text-accent-blue text-base">ℹ️</span>
-                    <span class="text-gray-300 font-mono" data-i18n-html="os_lang_notice_full"><b>OS Interface Language:</b> The system graphical desktop, terminal, and all built-in control tools support <b>English only (English Only)</b>.</b> Графический интерфейс системы, системные меню, терминал и утилиты управления поддерживают <b>только английский язык (English Only)</b>.</span>
+                    <span class="text-gray-300 font-mono" data-i18n-html="os_lang_notice_full"><b>OS Interface Language:</b> The system graphical desktop, terminal, and management utilities support <b>English only (English Only)</b>.</span>
                 </div>
             </section>
 
             <!-- CRITICAL LEGAL DISCLAIMER -->
             <section class="p-5 sm:p-6 bg-[#2a1b1b] border-l-4 border-accent-red border-y border-r border-dark-border rounded space-y-2">
                 <div class="flex items-center justify-between flex-wrap gap-2">
-                    <h3 class="font-bold text-accent-red text-sm font-mono flex items-center gap-2" data-i18n="disclaimer_title">Legal Disclaimer & Risk Notice<span>⚠️</span> Отказ от ответственности и риски
+                    <h3 class="font-bold text-accent-red text-sm font-mono flex items-center gap-2">
+                        <span>⚠️</span> <span data-i18n="disclaimer_title">Disclaimer &amp; User Risks</span>
                     </h3>
-                    <a href="terms.html" class="text-[11px] font-mono text-accent-amber underline hover:text-white" data-i18n="disclaimer_read_eula">Read License Agreement (EULA) ➔</a>
+                    <a href="terms.html" class="text-[11px] font-mono text-accent-amber underline hover:text-white" data-i18n="disclaimer_read_eula">Read End User License Agreement (EULA) ➔</a>
                 </div>
-                <p class="text-xs text-red-200 leading-relaxed" data-i18n-html="disclaimer_lead"><b>All risks associated with the use of this software for any purpose rest solely with the end user.</b> The developers assume no liability for any direct, indirect, financial, or legal consequences arising from the deployment or use of Dark Gateway OS.</b> Разработчики не несут ответственности за любые последствия, финансовые или правовые риски, возникшие в результате использования Dark Gateway OS.
+                <p class="text-xs text-red-200 leading-relaxed" data-i18n-html="disclaimer_lead">
+                    <b>All risks associated with the use of this software for any purpose rest entirely with the end user.</b> The developers assume no liability for any direct, indirect, financial, or legal consequences arising from the use of Dark Gateway OS.
                 </p>
             </section>
 
@@ -410,9 +420,10 @@
                 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-dark-border pb-4">
                     <div>
                         <h3 class="text-base sm:text-lg font-bold text-gray-100" data-i18n="dl_box_title">Dark Gateway OS — Virtual Appliance (OVA)</h3>
-                        <p class="text-xs text-gray-400 mt-1" data-i18n="dl_box_desc">Universal ready-to-run image compatible with VMware Fusion / Workstation, VirtualBox, KVM / QEMU, and Proxmox VE.</p>
+                        <p class="text-xs text-gray-400 mt-1" data-i18n="dl_box_desc">Universal ready-to-use image compatible with VMware Fusion / Workstation, VirtualBox, KVM / QEMU, and Proxmox VE.</p>
                     </div>
-                    <a href="https://github.com/fundukovaantonina62-art/dark-gateway-os/releases/download/v1.0.0-alpha/Dark_Gateway_OS.ova" class="px-5 py-3 bg-accent-green hover:bg-[#9ac79c] text-dark-desktop font-mono font-bold text-xs rounded transition whitespace-nowrap shadow-md flex items-center gap-2" data-i18n="btn_download_release">Download OVA from GitHub (1.0 GB)<span>⬇</span> Скачать OVA с GitHub (1.0 GB)
+                    <a href="https://github.com/fundukovaantonina62-art/dark-gateway-os/releases/download/v1.0.0-alpha/Dark_Gateway_OS.ova" class="px-5 py-3 bg-accent-green hover:bg-[#9ac79c] text-dark-desktop font-mono font-bold text-xs rounded transition whitespace-nowrap shadow-md flex items-center gap-2">
+                        <span>⬇</span> <span data-i18n="btn_download_release">Download OVA from GitHub (1.0 GB)</span>
                     </a>
                 </div>
 
@@ -434,12 +445,12 @@
             <a href="index.html" class="hover:text-gray-200" data-i18n="footer_nav_main">Home</a>
             <a href="about.html" class="hover:text-gray-200" data-i18n="footer_nav_about">Mission</a>
             <a href="guide.html" class="hover:text-gray-200" data-i18n="footer_nav_guide">Manual</a>
-            <a href="terms.html" class="hover:text-gray-200" data-i18n="footer_nav_terms">License & Disclaimer</a>
+            <a href="terms.html" class="hover:text-gray-200" data-i18n="footer_nav_terms">License &amp; Disclaimer</a>
             <a href="security.html" class="hover:text-gray-200" data-i18n="footer_nav_sec">Security</a>
             <a href="sitemap.xml" class="hover:text-gray-200" data-i18n="footer_nav_sitemap">Sitemap</a>
         </div>
         <div data-i18n="footer_text_1">DARK GATEWAY OS • ZERO LOGS • ZERO COMPROMISES</div>
-        <div data-i18n="footer_text_2">HOSTED ON GITHUB PAGES & TOR ONION NETWORK (.ONION v3)</div>
+        <div data-i18n="footer_text_2">HOSTED ON GITHUB PAGES &amp; TOR ONION NETWORK (.ONION v3)</div>
     </footer>
 
     <script src="i18n.js"></script>
