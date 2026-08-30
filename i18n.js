@@ -2934,6 +2934,7 @@ function getActiveLanguage() {
             const urlLang = params.get("lang");
             if (urlLang && SUPPORTED_LANGUAGES[urlLang]) {
                 try { localStorage.setItem("dg_lang", urlLang); } catch(e) {}
+                try { document.cookie = "dg_lang=" + urlLang + ";path=/;max-age=31536000;SameSite=Lax"; } catch(e) {}
                 return urlLang;
             }
         }
@@ -2949,7 +2950,17 @@ function getActiveLanguage() {
         }
     } catch(e) {}
 
-    // 3. Check browser language
+    // 3. Check Cookie
+    try {
+        if (typeof document !== "undefined" && document.cookie) {
+            const match = document.cookie.match(/dg_lang=([a-z]{2})/);
+            if (match && SUPPORTED_LANGUAGES[match[1]]) {
+                return match[1];
+            }
+        }
+    } catch(e) {}
+
+    // 4. Check browser language
     try {
         if (typeof navigator !== "undefined") {
             const browserLangs = navigator.languages || [navigator.language || navigator.userLanguage || "en"];
@@ -2973,6 +2984,18 @@ function setLanguage(langCode) {
 
     try {
         localStorage.setItem("dg_lang", langCode);
+    } catch(e) {}
+    try {
+        document.cookie = "dg_lang=" + langCode + ";path=/;max-age=31536000;SameSite=Lax";
+    } catch(e) {}
+
+    // Update URL query parameter without page reload
+    try {
+        if (typeof window !== "undefined" && window.history && window.history.replaceState) {
+            const url = new URL(window.location.href);
+            url.searchParams.set("lang", langCode);
+            window.history.replaceState(null, "", url.toString());
+        }
     } catch(e) {}
 
     if (typeof document !== "undefined") {
@@ -3002,11 +3025,11 @@ function setLanguage(langCode) {
             }
         });
 
-        // Also update all internal links to preserve ?lang=
-        document.querySelectorAll("nav a, footer a, a[href$='.html']").forEach(link => {
+        // Update all internal links across the page so clicking preserves language
+        document.querySelectorAll("a").forEach(link => {
             try {
                 const href = link.getAttribute("href");
-                if (href && !href.startsWith("http") && !href.startsWith("#") && href.includes(".html")) {
+                if (href && !href.startsWith("http") && !href.startsWith("#") && !href.startsWith("mailto:") && href.includes(".html")) {
                     const cleanHref = href.split("?")[0];
                     link.setAttribute("href", `${cleanHref}?lang=${langCode}`);
                 }
