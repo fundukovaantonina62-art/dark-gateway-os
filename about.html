@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Dark Gateway OS — Mission statement, target audience, and architectural purpose.">
-    <title data-i18n="about_window_title">Dark Gateway OS — Mission &amp; Purpose</title>
+    <title data-i18n="about_window_title">Mission Statement & System Purpose</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -51,11 +51,11 @@
                 <span class="bg-dark-input text-accent-blue border border-dark-border px-1.5 py-0.5 rounded text-[10px]">v1.0 Alpha</span>
             </a>
             <nav class="flex items-center gap-2 sm:gap-4 font-mono text-[11px]">
-                <a href="index.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_overview">Главная (Overview)</a>
-                <a href="about.html" class="text-accent-green border-b border-accent-green pb-0.5" data-i18n="nav_mission">Назначение &amp; Цели</a>
-                <a href="guide.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_guide">Руководство &amp; Софт</a>
-                <a href="terms.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_terms">Лицензия &amp; Отказ</a>
-                <a href="security.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_security">Безопасность</a>
+                <a href="index.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_overview">Overview</a>
+                <a href="about.html" class="text-accent-green border-b border-accent-green pb-0.5" data-i18n="nav_mission">Mission & Goals</a>
+                <a href="guide.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_guide">User Manual & Apps</a>
+                <a href="terms.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_terms">License & Disclaimer</a>
+                <a href="security.html" class="text-gray-400 hover:text-gray-200 transition" data-i18n="nav_security">Security Policy</a>
             </nav>
         </div>
 
@@ -90,47 +90,46 @@
         <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden">
             <div class="bg-dark-header border-b border-dark-border px-4 py-2 flex items-center justify-between">
                 <span class="font-mono text-xs text-gray-200 font-bold flex items-center gap-2">
-                    <span class="text-accent-green">▪</span> <span data-i18n="about_window_title">Mission Statement &amp; System Purpose — Для чего создана ОС</span>
+                    <span class="text-accent-green">▪</span> <span data-i18n="about_window_title">Mission Statement & System Purpose</span>
                 </span>
             </div>
 
             <div class="p-6 sm:p-8 space-y-6">
                 <div class="flex items-center gap-2 flex-wrap text-xs">
-                    <span class="bg-dark-input border border-accent-green text-accent-green px-2.5 py-0.5 rounded font-mono font-bold" data-i18n="about_hero_tag">ФИЛОСОФИЯ И МИССИЯ</span>
+                    <span class="bg-dark-input border border-accent-green text-accent-green px-2.5 py-0.5 rounded font-mono font-bold" data-i18n="about_hero_tag">PHILOSOPHY & MISSION</span>
                     <span class="text-gray-500 font-mono text-[11px]" data-i18n="about_hero_meta">ZERO-TELEMETRY • ANTI-DPI • HARDENED GATEWAY</span>
                 </div>
 
-                <h1 class="text-2xl sm:text-3xl font-bold text-gray-100" data-i18n="about_title">Для чего создана Dark Gateway OS?</h1>
+                <h1 class="text-2xl sm:text-3xl font-bold text-gray-100" data-i18n="about_title">Why was Dark Gateway OS created?</h1>
 
-                <p class="text-gray-300 text-sm sm:text-base leading-relaxed" data-i18n-html="about_lead">
-                    Современный интернет перегружен системами глубокого анализа пакетов (DPI), цензурными фильтрами, сквозным трекингом цифровых отпечатков (fingerprinting) и методами деанонимизации на уровне провайдеров. Dark Gateway OS спроектирована как <b>непроницаемый изолированный шлюз безопасности</b>, который берет на себя всю работу по шифрованию, фильтрации и маршрутизации, полностью защищая клиентские рабочие станции от утечек.
+                <p class="text-gray-300 text-sm sm:text-base leading-relaxed" data-i18n-html="about_lead">The modern internet is saturated with Deep Packet Inspection (DPI), pervasive censorship filters, browser fingerprinting, and ISP-level de-anonymization. Dark Gateway OS acts as an impenetrable security gateway, handling all encryption, routing, and filtering while keeping client workstations completely isolated.</b>, который берет на себя всю работу по шифрованию, фильтрации и маршрутизации, полностью защищая клиентские рабочие станции от утечек.
                 </p>
 
                 <!-- 3 Pillars Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                     <div class="p-4 bg-dark-input border border-dark-border rounded space-y-2">
                         <div class="text-2xl">🛡️</div>
-                        <h4 class="font-bold text-gray-100 text-sm" data-i18n="about_card1_title">Изоляция от утечек</h4>
-                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="about_card1_desc">Ни одно приложение на рабочей машине не сможет узнать реальный IP, MAC-адрес или геолокацию хоста.</p>
+                        <h4 class="font-bold text-gray-100 text-sm" data-i18n="about_card1_title">Zero-Leak Isolation</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="about_card1_desc">No application on client workstations can discover the real IP, MAC address, or geographic location of the host.</p>
                     </div>
 
                     <div class="p-4 bg-dark-input border border-dark-border rounded space-y-2">
                         <div class="text-2xl">⚡</div>
-                        <h4 class="font-bold text-gray-100 text-sm" data-i18n="about_card2_title">Обход DPI</h4>
-                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="about_card2_desc">WebTunnel (HTTPS-маскировка) и VLESS Reality пробивают самые жесткие корпоративные и государственные файрволы.</p>
+                        <h4 class="font-bold text-gray-100 text-sm" data-i18n="about_card2_title">DPI Resistance</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="about_card2_desc">WebTunnel (HTTPS domain-fronting) and VLESS Reality bypass even the strictest national and corporate firewalls.</p>
                     </div>
 
                     <div class="p-4 bg-dark-input border border-dark-border rounded space-y-2">
                         <div class="text-2xl">🚫</div>
-                        <h4 class="font-bold text-gray-100 text-sm" data-i18n="about_card3_title">Анти-капча и чистый выход</h4>
-                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="about_card3_desc">Маршрутизация через приватные выходные ноды решает проблему постоянных блокировок Cloudflare и Google Captcha.</p>
+                        <h4 class="font-bold text-gray-100 text-sm" data-i18n="about_card3_title">Clean Egress & Anti-Captcha</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="about_card3_desc">Routing through private exit nodes eliminates continuous Cloudflare/Google Captcha challenges.</p>
                     </div>
                 </div>
 
                 <!-- Showcase Image -->
                 <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
                     <img src="img/overview_panorama.png" alt="AwesomeWM Desktop Panorama" class="w-full h-auto rounded border border-dark-border shadow-md">
-                    <span class="text-xs text-gray-500 font-mono italic" data-i18n="about_panorama_caption">Панорама рабочего стола Dark Gateway OS: нативные C/GTK3 утилиты, мониторинг Conky и тайловый менеджер AwesomeWM.</span>
+                    <span class="text-xs text-gray-500 font-mono italic" data-i18n="about_panorama_caption">Dark Gateway OS Desktop Panorama: Native C/GTK3 utilities, Conky telemetry HUD, and AwesomeWM tiling window manager.</span>
                 </div>
             </div>
         </section>
@@ -139,43 +138,43 @@
         <section class="bg-dark-window border border-dark-border rounded shadow-xl overflow-hidden">
             <div class="bg-dark-header border-b border-dark-border px-4 py-2">
                 <span class="font-mono text-xs text-gray-200 font-bold flex items-center gap-2">
-                    <span class="text-accent-green">▪</span> <span data-i18n="about_aud_window_title">Target Audience — Для кого предназначена эта операционная система</span>
+                    <span class="text-accent-green">▪</span> <span data-i18n="about_aud_window_title">Target Audience</span>
                 </span>
             </div>
 
             <div class="p-6 sm:p-8 space-y-6">
-                <h2 class="text-xl sm:text-2xl font-bold text-gray-100 border-b border-dark-border pb-3" data-i18n="about_aud_title">Для кого разработана Dark Gateway OS?</h2>
+                <h2 class="text-xl sm:text-2xl font-bold text-gray-100 border-b border-dark-border pb-3" data-i18n="about_aud_title">Target Audience — Who is this OS for?</h2>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="p-4 bg-dark-input border border-dark-border rounded flex items-start gap-4">
                         <div class="font-mono font-bold text-accent-green bg-black/40 border border-dark-border px-3 py-1.5 rounded text-sm">01</div>
                         <div class="space-y-1">
-                            <h3 class="font-bold text-gray-100 text-sm" data-i18n="about_aud1_title">Журналисты, расследователи и правозащитники</h3>
-                            <p class="text-xs text-gray-400 leading-relaxed" data-i18n="about_aud1_desc">Для безопасного взаимодействия с источниками, публикации материалов и расследований в условиях агрессивного мониторинга трафика и сетевого наблюдения.</p>
+                            <h3 class="font-bold text-gray-100 text-sm" data-i18n="about_aud1_title">Journalists, Investigators & Activists</h3>
+                            <p class="text-xs text-gray-400 leading-relaxed" data-i18n="about_aud1_desc">For secure communications with sources, research, and publishing under aggressive surveillance.</p>
                         </div>
                     </div>
 
                     <div class="p-4 bg-dark-input border border-dark-border rounded flex items-start gap-4">
                         <div class="font-mono font-bold text-accent-green bg-black/40 border border-dark-border px-3 py-1.5 rounded text-sm">02</div>
                         <div class="space-y-1">
-                            <h3 class="font-bold text-gray-100 text-sm" data-i18n="about_aud2_title">Специалисты по информационной безопасности и исследователи</h3>
-                            <p class="text-xs text-gray-400 leading-relaxed" data-i18n="about_aud2_desc">Для проведения безопасного OSINT-анализа, исследования вредоносного ПО (Malware Analysis) и изолированного тестирования без риска засветить реальную инфраструктуру.</p>
+                            <h3 class="font-bold text-gray-100 text-sm" data-i18n="about_aud2_title">Security Researchers & OSINT Specialists</h3>
+                            <p class="text-xs text-gray-400 leading-relaxed" data-i18n="about_aud2_desc">For safe malware analysis, threat research, and isolated investigations without exposing real infrastructure.</p>
                         </div>
                     </div>
 
                     <div class="p-4 bg-dark-input border border-dark-border rounded flex items-start gap-4">
                         <div class="font-mono font-bold text-accent-green bg-black/40 border border-dark-border px-3 py-1.5 rounded text-sm">03</div>
                         <div class="space-y-1">
-                            <h3 class="font-bold text-gray-100 text-sm" data-i18n="about_aud3_title">Пользователи в регионах с тотальной цензурой</h3>
-                            <p class="text-xs text-gray-400 leading-relaxed" data-i18n="about_aud3_desc">Для стабильного доступа к глобальному свободному интернету там, где заблокированы не только стандартные сайты, но и стандартные протоколы OpenVPN, WireGuard и публичные узлы Tor.</p>
+                            <h3 class="font-bold text-gray-100 text-sm" data-i18n="about_aud3_title">Users Facing Heavy Censorship</h3>
+                            <p class="text-xs text-gray-400 leading-relaxed" data-i18n="about_aud3_desc">For unrestricted access to the open web where standard VPNs and public Tor relays are blocked.</p>
                         </div>
                     </div>
 
                     <div class="p-4 bg-dark-input border border-dark-border rounded flex items-start gap-4">
                         <div class="font-mono font-bold text-accent-green bg-black/40 border border-dark-border px-3 py-1.5 rounded text-sm">04</div>
                         <div class="space-y-1">
-                            <h3 class="font-bold text-gray-100 text-sm" data-i18n="about_aud4_title">Разработчики и системные администраторы</h3>
-                            <p class="text-xs text-gray-400 leading-relaxed" data-i18n="about_aud4_desc">Для организации надежного анонимного шлюза для виртуальных лабораторий, серверов тестирования и автоматизированных сред.</p>
+                            <h3 class="font-bold text-gray-100 text-sm" data-i18n="about_aud4_title">Developers & Lab Administrators</h3>
+                            <p class="text-xs text-gray-400 leading-relaxed" data-i18n="about_aud4_desc">For setting up secure automated testbeds and isolated virtual environments.</p>
                         </div>
                     </div>
                 </div>
@@ -183,18 +182,18 @@
                 <!-- Showcase Image 2 -->
                 <div class="bg-black/50 border border-dark-border rounded p-3 text-center space-y-2">
                     <img src="img/active_routing.png" alt="Active Routing" class="w-full h-auto rounded border border-dark-border shadow-md">
-                    <span class="text-xs text-gray-500 font-mono italic" data-i18n="about_routing_caption">Сквозная демонстрация: проверка отсутствия утечек через BrowserLeaks, рабочий прокси-канал Telegram и системный монитор.</span>
+                    <span class="text-xs text-gray-500 font-mono italic" data-i18n="about_routing_caption">Zero-Leak Verification: BrowserLeaks test, active Telegram SOCKS5 :1080 channel, and Conky HUD.</span>
                 </div>
 
                 <!-- CTA Banner -->
                 <div class="bg-gradient-to-r from-[#181f1b] to-dark-window border border-accent-green/60 p-5 sm:p-6 rounded flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                     <div>
-                        <h3 class="font-bold text-gray-100 text-sm sm:text-base" data-i18n="about_cta_title">Готовы развернуть безопасный шлюз?</h3>
-                        <p class="text-xs text-gray-300 mt-0.5" data-i18n="about_cta_desc">Скачайте готовый преднастроенный OVA-образ и ознакомьтесь с подробным руководством.</p>
+                        <h3 class="font-bold text-gray-100 text-sm sm:text-base" data-i18n="about_cta_title">Ready to deploy an autonomous security gateway?</h3>
+                        <p class="text-xs text-gray-300 mt-0.5" data-i18n="about_cta_desc">Download the pre-configured OVA appliance and explore the comprehensive documentation.</p>
                     </div>
                     <div class="flex items-center gap-3">
-                        <a href="guide.html" class="px-4 py-2 bg-dark-input hover:bg-dark-hover border border-dark-border text-gray-200 font-mono text-xs rounded transition" data-i18n="about_cta_guide_btn">Читать руководство</a>
-                        <a href="index.html#download" class="px-4 py-2 bg-accent-green hover:bg-[#9ac79c] text-dark-desktop font-mono font-bold text-xs rounded transition shadow-md" data-i18n="about_cta_dl_btn">Скачать OVA (1.0 GB)</a>
+                        <a href="guide.html" class="px-4 py-2 bg-dark-input hover:bg-dark-hover border border-dark-border text-gray-200 font-mono text-xs rounded transition" data-i18n="about_cta_guide_btn">Read User Manual</a>
+                        <a href="index.html#download" class="px-4 py-2 bg-accent-green hover:bg-[#9ac79c] text-dark-desktop font-mono font-bold text-xs rounded transition shadow-md" data-i18n="about_cta_dl_btn">Download OVA (1.0 GB)</a>
                     </div>
                 </div>
             </div>
@@ -205,15 +204,15 @@
     <!-- System Footer -->
     <footer class="bg-dark-window border-t border-dark-border px-4 py-4 text-center font-mono text-[11px] text-gray-500 space-y-1">
         <div class="flex justify-center gap-4 text-gray-400 pb-1 flex-wrap">
-            <a href="index.html" class="hover:text-gray-200" data-i18n="footer_nav_main">Главная</a>
-            <a href="about.html" class="hover:text-gray-200" data-i18n="footer_nav_about">Назначение</a>
-            <a href="guide.html" class="hover:text-gray-200" data-i18n="footer_nav_guide">Руководство</a>
-            <a href="terms.html" class="hover:text-gray-200" data-i18n="footer_nav_terms">Лицензия &amp; Отказ от ответственности</a>
-            <a href="security.html" class="hover:text-gray-200" data-i18n="footer_nav_sec">Безопасность</a>
+            <a href="index.html" class="hover:text-gray-200" data-i18n="footer_nav_main">Home</a>
+            <a href="about.html" class="hover:text-gray-200" data-i18n="footer_nav_about">Mission</a>
+            <a href="guide.html" class="hover:text-gray-200" data-i18n="footer_nav_guide">Manual</a>
+            <a href="terms.html" class="hover:text-gray-200" data-i18n="footer_nav_terms">License & Disclaimer</a>
+            <a href="security.html" class="hover:text-gray-200" data-i18n="footer_nav_sec">Security</a>
             <a href="sitemap.xml" class="hover:text-gray-200" data-i18n="footer_nav_sitemap">Sitemap</a>
         </div>
         <div data-i18n="footer_text_1">DARK GATEWAY OS • ZERO LOGS • ZERO COMPROMISES</div>
-        <div data-i18n="footer_text_2">HOSTED ON GITHUB PAGES &amp; TOR ONION NETWORK (.ONION v3)</div>
+        <div data-i18n="footer_text_2">HOSTED ON GITHUB PAGES & TOR ONION NETWORK (.ONION v3)</div>
     </footer>
 
     <script src="i18n.js"></script>
